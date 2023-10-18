@@ -24,7 +24,6 @@ jobs:
       - name: Build Project
         run: |
           make -C src
-        working-directory: ${{ github.workspace }}/src
 
       - name: Run Tests
         run: |
@@ -38,5 +37,5 @@ jobs:
 
       - name: Run Clang-Tidy
         run: |
-          clang-tidy src/*.{cpp,h}
+          clang-tidy src/*.cpp
         working-directory: ${{ github.workspace }}/src
