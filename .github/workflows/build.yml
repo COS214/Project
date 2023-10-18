@@ -16,10 +16,27 @@ jobs:
 
     steps:
       - name: Check Out Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
 
       - name: Install Clang-Tidy
         run: sudo apt-get install clang-tidy
 
+      - name: Build Project
+        run: |
+          make -C src
+        working-directory: src
+
+      - name: Run Tests
+        run: |
+          make -C src test
+        working-directory: src
+
+      - name: Run Unit Tests
+        run: |
+          make -C src run
+        working-directory: src
+
       - name: Run Clang-Tidy
-        run: clang-tidy src/*.{cpp,h}
+        run: |
+          clang-tidy src/*.{cpp,h}
+        working-directory: src
