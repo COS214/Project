@@ -28,14 +28,11 @@ jobs:
       - name: Run Tests
         run: |
           make -C src test
-        working-directory: ${{ github.workspace }}/src
 
       - name: Run Unit Tests
         run: |
           make -C src run
-        working-directory: ${{ github.workspace }}/src
 
       - name: Run Clang-Tidy
         run: |
           clang-tidy src/*.cpp
-        working-directory: ${{ github.workspace }}/src
