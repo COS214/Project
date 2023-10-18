@@ -25,10 +25,6 @@ jobs:
         run: |
           make -C src
 
-      - name: Run Tests
-        run: |
-          make -C src test
-
       - name: Run Unit Tests
         run: |
           make -C src run
@@ -36,3 +32,7 @@ jobs:
       - name: Run Clang-Tidy
         run: |
           clang-tidy src/*.cpp
+
+      - name: Run Unit Tests
+        run: |
+          make -C src clean
