@@ -24,19 +24,19 @@ jobs:
       - name: Build Project
         run: |
           make -C src
-        working-directory: src
+        working-directory: ${{ github.workspace }}/src
 
       - name: Run Tests
         run: |
           make -C src test
-        working-directory: src
+        working-directory: ${{ github.workspace }}/src
 
       - name: Run Unit Tests
         run: |
           make -C src run
-        working-directory: src
+        working-directory: ${{ github.workspace }}/src
 
       - name: Run Clang-Tidy
         run: |
           clang-tidy src/*.{cpp,h}
-        working-directory: src
+        working-directory: ${{ github.workspace }}/src
