@@ -1,0 +1,38 @@
+name: CI with Clang-Tidy
+
+on:
+  push:
+    branches:
+      - main
+      - Develop
+  pull_request:
+    branches:
+      - main
+      - Develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v2
+
+      - name: Install Clang-Tidy
+        run: sudo apt-get install clang-tidy
+
+      - name: Build Project
+        run: |
+          make -C src
+
+      - name: Run Unit Tests
+        run: |
+          make -C src run
+
+      - name: Run Clang-Tidy
+        run: |
+          clang-tidy src/*.cpp
+
+      - name: Run Unit Tests
+        run: |
+          make -C src clean
