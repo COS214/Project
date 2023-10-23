@@ -1,16 +1,16 @@
 #include <iostream>
-#include "Context.h"
+#include "Customer.h"
 
 void StateTest(){
     std::cout << "<=============================== State Unit Testing ===============================>" << std::endl;
 
-    Context* context = new Context();
+    Customer* customer = new Customer();
     for (int i = 0; i < 10; i++) {
-        std::string currentTLcolour = context->getColor();
-        std::cout << "Traffic light is currently: " << currentTLcolour << std::endl;
-        context->change();
+        std::string currentTLcolour = customer->getState();
+        std::cout << "Customer is currently: " << currentTLcolour << std::endl;
+        customer->change();
     }
-    delete context;
+    delete customer;
 }
 
 int main(){
