@@ -2,14 +2,14 @@
 #define STATE_H
 
 #include <string>
-#include "Context.h"
+#include "Customer.h"
 
-class Context;
+class Customer;
 
 class State {
   public:
-    virtual void handleChange(Context* c) = 0;
-    virtual std::string getColor() = 0;
+    virtual void handleChange(Customer* c) = 0;
+    virtual std::string getState() = 0;
     virtual ~State();
 };
 

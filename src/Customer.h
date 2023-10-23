@@ -1,5 +1,5 @@
-#ifndef CONTEXT_H
-#define CONTEXT_H
+#ifndef CUSTOMER_H
+#define CUSTOMER_H
 
 #include <string>
 #include <iostream>
@@ -7,12 +7,12 @@
 
 class State;
 
-class Context {
+class Customer {
 public:
-    Context();
-	~Context();
+    Customer();
+	~Customer();
 	void change();
-  	std::string getColor();
+  	std::string getState();
 	void setState(State* state);
   private: 
     State* state;
