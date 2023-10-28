@@ -19,6 +19,11 @@ Inventory::Inventory() {
 	//
 }
 
+Inventory::~Inventory()
+{
+	delete instance;
+}
+
 bool Inventory::addToInventory(string item, int count) {
 		if (inventory.find(item) != inventory.end()) {
 			// Item already exists in the inventory, add to the count

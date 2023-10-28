@@ -10,9 +10,9 @@ class Inventory {
 
 private:
 	static Inventory* instance;
-	static map<string, int> inventory;
+	map<string, int> inventory;
 	Inventory();
-
+	~Inventory();
 public:
 	static Inventory* getInstance();
 
