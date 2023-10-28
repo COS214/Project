@@ -3,17 +3,19 @@
 
 #include "Command.h"
 #include "Mediator.h"
+#include <iostream>
 
 class Chefs {
+	protected:
+		Chefs* nextHandler;
 
-private:
-	Chefs* nextHandler;
-	Mediator* mediator;
+	private:
+		Mediator* mediator;
 
-public:
-	void prepareOrder(Command order);
-
-	void setNext(Chefs next);
+	public:
+		Chefs();
+		virtual void prepareOrder(Command* order);
+		void setNext(Chefs* next);
 };
 
 #endif

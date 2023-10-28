@@ -5,12 +5,13 @@
 #include "Command.h"
 #include "CookStrategy.h"
 
-class MeatChef : Chefs {
+class MeatChef : public Chefs {
 
 public:
 	CookStrategy* cookStrategy;
 
-	void prepareOrder(Command order);
+	void prepareOrder(Command* order) override;
+	virtual ~MeatChef()=default;
 };
 
 #endif

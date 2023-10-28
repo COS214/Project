@@ -1,6 +1,7 @@
 #include "MeatChef.h"
 
-void MeatChef::prepareOrder(Command order) {
-	// TODO - implement MeatChef::prepareOrder
-	throw "Not yet implemented";
+void MeatChef::prepareOrder(Command* order) {
+	std::cout << "Meat Chef is preparing order: " << std::endl;
+    order->execute();
+    Chefs::prepareOrder(order);
 }

@@ -4,11 +4,12 @@
 #include "Chefs.h"
 #include "Command.h"
 
-class SauceChef : Chefs {
+class SauceChef : public Chefs {
 
 
 public:
-	void prepareOrder(Command order);
+	void prepareOrder(Command* order) override;
+	virtual ~SauceChef()=default;
 };
 
 #endif

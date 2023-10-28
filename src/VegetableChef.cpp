@@ -1,6 +1,7 @@
 #include "VegetableChef.h"
 
-void VegetableChef::prepareOrder(Command order) {
-	// TODO - implement VegetableChef::prepareOrder
-	throw "Not yet implemented";
+void VegetableChef::prepareOrder(Command* order) {
+	std::cout << "Vegetable Chef is preparing order: " << std::endl;
+    order->execute();
+    Chefs::prepareOrder(order);
 }

@@ -1,3 +1,4 @@
+//Invoker
 #ifndef WAITER_H
 #define WAITER_H
 
@@ -12,7 +13,7 @@ private:
 	State* customerState;
 
 public:
-	void placeOrder(Chefs Chefs, Command order);
+	void placeOrder(Chefs* Chefs, Command* order);
 
 	void update();
 };

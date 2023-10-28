@@ -2,10 +2,8 @@
 #define COMMAND_H
 
 class Command {
-
-
-public:
-	void execute();
+	public:
+		virtual void execute()=0;
 };
 
 #endif
