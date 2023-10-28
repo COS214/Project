@@ -9,6 +9,7 @@
 #include "Order.h"
 #include "Chefs.h"
 #include "KitchenOrder.h"
+#include "Inventory.h"
 
 void StateTest(){
     std::cout << "<=============================== State Unit Testing ===============================>" << std::endl;
@@ -22,7 +23,17 @@ void StateTest(){
     delete customer;
 }
 
-void CommandChainTest(){
+void CommandChainSingletonTest(){
+    std::cout << "<=============================== Command Chain Singleton Unit Testing ===============================>" << std::endl;
+
+    Inventory* inventory = Inventory::getInstance();
+    map<string, int> inv;
+    inv["Tomato"] = 10;
+    inv["Lettuce"] = 10;
+    inv["Bacon"] = 10;
+    inventory->initializeInventory(inv);
+
+
     JuniorChef* junior = new JuniorChef();
     VegetableChef* vegetable = new VegetableChef();
     MeatChef* meat = new MeatChef();
@@ -49,10 +60,13 @@ void CommandChainTest(){
     delete custorder;
 }
 
+
+
+
 int main(){
 
     //StateTest();
-    CommandChainTest();
+    CommandChainSingletonTest();
 
     return 0;
 }
