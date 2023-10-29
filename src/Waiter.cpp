@@ -1,6 +1,6 @@
 #include "Waiter.h"
 
-void Waiter::placeOrder(Chefs Chefs, Command order) {
+void Waiter::placeOrder(Chefs* chef, Command order) {
 	// TODO - implement Waiter::placeOrder
 	throw "Not yet implemented";
 }

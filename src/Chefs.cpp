@@ -5,7 +5,11 @@ void Chefs::prepareOrder(Command order) {
 	throw "Not yet implemented";
 }
 
-void Chefs::setNext(Chefs next) {
+void Chefs::setNext(Chefs* next) {
 	// TODO - implement Chefs::setNext
 	throw "Not yet implemented";
 }
+
+void Chefs::cook(std::string dish){
+	
+};

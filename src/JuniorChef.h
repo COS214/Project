@@ -9,6 +9,8 @@ class JuniorChef : Chefs {
 
 public:
 	void prepareOrder(Command order);
+	JuniorChef(Mediator* mediator) : Chefs(mediator) {}
+	void cook(std::string dish);
 };
 
 #endif

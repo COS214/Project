@@ -12,7 +12,7 @@ private:
 	State* customerState;
 
 public:
-	void placeOrder(Chefs Chefs, Command order);
+	void placeOrder(Chefs*, Command order);
 
 	void update();
 };

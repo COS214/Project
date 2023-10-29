@@ -9,6 +9,8 @@ class VegetableChef : Chefs {
 
 public:
 	void prepareOrder(Command order);
+	VegetableChef(Mediator* mediator) : Chefs(mediator) {}
+	void cook(std::string dish);
 };
 
 #endif

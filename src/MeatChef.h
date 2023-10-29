@@ -11,6 +11,8 @@ public:
 	CookStrategy* cookStrategy;
 
 	void prepareOrder(Command order);
+	MeatChef(Mediator* mediator) : Chefs(mediator) {}
+	void cook(std::string dish);
 };
 
 #endif
