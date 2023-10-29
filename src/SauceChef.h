@@ -9,7 +9,8 @@ class SauceChef : public Chefs {
 
 
 public:
-  SauceChef(Mediator* mediator) : Chefs(mediator) {}
+	SauceChef(){}
+  	SauceChef(Mediator* mediator) : Chefs(mediator) {}
 	void cook(std::string dish);
 	void prepareOrder(Command* order) override;
 	virtual ~SauceChef()=default;
