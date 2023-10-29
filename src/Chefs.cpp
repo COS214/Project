@@ -1,13 +1,17 @@
 #include "Chefs.h"
 
-void Chefs::prepareOrder(Command order) {
-	// TODO - implement Chefs::prepareOrder
-	throw "Not yet implemented";
+Chefs::Chefs() {
+	this->nextHandler = nullptr;
+}
+
+void Chefs::prepareOrder(Command* order) {
+	if (nextHandler) {
+        nextHandler->prepareOrder(order);
+    }
 }
 
 void Chefs::setNext(Chefs* next) {
-	// TODO - implement Chefs::setNext
-	throw "Not yet implemented";
+	this->nextHandler = next;
 }
 
 void Chefs::cook(std::string dish){

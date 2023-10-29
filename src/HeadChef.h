@@ -4,13 +4,16 @@
 #include "Chefs.h"
 #include "Command.h"
 
-class HeadChef : Chefs {
+class HeadChef : public Chefs {
 
 
 public:
-	void prepareOrder(Command order);
+
 	HeadChef(Mediator* mediator) : Chefs(mediator) {}
 	void cook(std::string dish);
+	void prepareOrder(Command* order) override;
+	virtual ~HeadChef()=default;
+
 };
 
 #endif

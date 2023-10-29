@@ -1,8 +1,10 @@
 #include "MeatChef.h"
 
-void MeatChef::prepareOrder(Command order) {
-	// TODO - implement MeatChef::prepareOrder
-	throw "Not yet implemented";
+void MeatChef::prepareOrder(Command* order) {
+	std::cout << "Meat Chef is preparing order and removing from Inventory: " << std::endl;
+    //inventory.removeFromInventory(item, int);
+    order->execute();
+    Chefs::prepareOrder(order);
 }
 
 void MeatChef::cook(std::string dish) {

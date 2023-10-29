@@ -5,11 +5,15 @@
 #include "Command.h"
 #include <iostream>
 
-class SauceChef : Chefs {
+class SauceChef : public Chefs {
+
+
 public:
-	void prepareOrder(Command order);
-	SauceChef(Mediator* mediator) : Chefs(mediator) {}
+  SauceChef(Mediator* mediator) : Chefs(mediator) {}
 	void cook(std::string dish);
+	void prepareOrder(Command* order) override;
+	virtual ~SauceChef()=default;
+
 };
 
 #endif

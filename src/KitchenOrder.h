@@ -2,15 +2,20 @@
 #define KITCHENORDER_H
 
 #include "Command.h"
+#include "Kitchen.h"
+#include "Order.h"
 
-class KitchenOrder : Command {
+class KitchenOrder : public Command {
 
 private:
-	int Kitchen;
-	int Order;
+	Kitchen* kitchen;
+	Order* order;
 
 public:
-	void execute();
+	KitchenOrder(Order* order);
+	~KitchenOrder();
+	void execute() override;
+	Order* getOrder() const;
 };
 
 #endif
