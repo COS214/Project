@@ -8,6 +8,7 @@
 class MeatChef : public Chefs {
 
 public:
+	MeatChef(){}
 	CookStrategy* cookStrategy;
 	MeatChef(Mediator* mediator) : Chefs(mediator) {}
 	void cook(std::string dish);
