@@ -6,3 +6,8 @@ void JuniorChef::prepareOrder(Command* order) {
     order->execute();
     Chefs::prepareOrder(order);
 }
+
+void JuniorChef::cook(std::string dish) {
+        std::cout << "Junior chef is cooking " << dish << std::endl;
+        this->mediator->notify(this, "cook");
+}

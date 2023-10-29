@@ -6,3 +6,8 @@ void VegetableChef::prepareOrder(Command* order) {
     order->execute();
     Chefs::prepareOrder(order);
 }
+
+void VegetableChef::cook(std::string dish) {
+        std::cout << "Sauce chef is cooking " << dish << std::endl;
+        this->mediator->notify(this, "cook");
+}

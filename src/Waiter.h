@@ -14,7 +14,6 @@ private:
 
 public:
 	void placeOrder(Chefs* Chefs, Command* order);
-
 	void update();
 };
 
