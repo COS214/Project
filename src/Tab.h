@@ -10,14 +10,14 @@
 class Tab {
 
 private:
-	map<int, BillMemento> mementobills;
+	map<string, BillMemento> mementobills;
 
 public:
-	void addBill(Bill bill, int OrderID);
+	void addBill(BillMemento bill, string OrderID);
 
-	void setBillMemento(BillMemento billMemento);
+	void setBillMemento(string OrderID,BillMemento billMemento);
 
-	BillMemento getBillMemento();
+	BillMemento getBillMemento(string OrderID);
 };
 
 #endif
