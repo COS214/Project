@@ -23,3 +23,31 @@ BillMemento::BillMemento() {
 	this->tabID = "";
 	this->paid = 0;
 }
+
+string BillMemento::getOrderID(){
+	return this->orderID;
+}
+
+string BillMemento::getCustomerID(){
+	return this->customerID;
+}
+
+double BillMemento::getTotalAmount(){
+	return this->totalAmount;
+}
+
+int BillMemento::getTableNum(){
+	return this->tableNum;
+}
+
+int BillMemento::getRating(){
+	return this->rating;
+}
+
+string BillMemento::getTabID(){
+	return this->tabID;
+}
+
+bool BillMemento::getPaid(){
+	return this->paid;
+}

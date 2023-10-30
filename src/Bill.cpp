@@ -1,4 +1,3 @@
-// Bill.cpp
 #include "Bill.h"
 
 /// @brief Implementation for the Bill class

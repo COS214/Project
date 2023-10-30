@@ -45,9 +45,6 @@ private:
 		int getRating(Bill bill);
 
 		bool isPaid(Bill bill);
-
-
-
 };
 
 #endif

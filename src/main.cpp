@@ -1,72 +1,47 @@
 #include <iostream>
-#include "Customer.h"
-#include "Waiter.h"
-#include "JuniorChef.h"
-#include "VegetableChef.h"
-#include "MeatChef.h"
-#include "SauceChef.h"
-#include "HeadChef.h"
-#include "Order.h"
-#include "Chefs.h"
-#include "KitchenOrder.h"
-#include "Inventory.h"
+#include "Bill.h"
+#include "Tab.h"
 
-void StateTest(){
-    std::cout << "<=============================== State Unit Testing ===============================>" << std::endl;
+// Function to test the Bill class
+void testBill() {
+    // Create a Bill
+    Bill bill("123", "John", 50.0, 2, 4, "TAB001", false);
 
-    Customer* customer = new Customer();
-    for (int i = 0; i < 10; i++) {
-        std::string currentTLcolour = customer->getState();
-        std::cout << "Customer is currently: " << currentTLcolour << std::endl;
-        customer->change();
+    // Test getTotalAmount
+    double expectedTotalAmount = 50.0;
+    double actualTotalAmount = bill.getTotalAmount(bill);
+    if (expectedTotalAmount == actualTotalAmount) {
+        std::cout << "getTotalAmount test passed" << std::endl;
+    } else {
+        std::cout << "getTotalAmount test failed" << std::endl;
     }
-    delete customer;
+
+    // Add more test cases for other Bill methods
 }
 
-void CommandChainSingletonTest(){
-    std::cout << "<=============================== Command Chain Singleton Unit Testing ===============================>" << std::endl;
+// Function to test the Tab class
+void testTab() {
+    // Create a Tab
+    Tab tab;
+    BillMemento memento("123", "John", 50.0, 2, 4, "TAB001", false);
 
-    Inventory* inventory = Inventory::getInstance();
-    map<string, int> inv;
-    inv["Tomato"] = 10;
-    inv["Lettuce"] = 10;
-    inv["Bacon"] = 10;
-    inventory->initializeInventory(inv);
+    // Test addBill and getBillMemento
+    tab.addBill(memento, "Order1");
+    BillMemento retrievedMemento = tab.getBillMemento("Order1");
 
+    if (retrievedMemento.getOrderID() == "123" && retrievedMemento.getCustomerID() == "John" && retrievedMemento.getTotalAmount() == 50.0) {
+        std::cout << "addBill and getBillMemento test passed" << std::endl;
+    } else {
+        std::cout << "addBill and getBillMemento test failed" << std::endl;
+    }
 
-    JuniorChef* junior = new JuniorChef();
-    VegetableChef* vegetable = new VegetableChef();
-    MeatChef* meat = new MeatChef();
-    SauceChef* sauce = new SauceChef();
-    HeadChef* head = new HeadChef();
-
-    junior->setNext(vegetable);
-    vegetable->setNext(meat);
-    meat->setNext(sauce);
-    sauce->setNext(head);
-
-    Waiter* waiter = new Waiter();
-    Order* custorder = new Order();
-    Command* order = new KitchenOrder(custorder);
-    waiter->placeOrder(junior, order);
-
-    delete junior;
-    delete vegetable;
-    delete meat;
-    delete sauce;
-    delete head;
-    delete waiter;
-    delete order;
-    delete custorder;
+    // Add more test cases for other Tab methods
 }
 
-
-
-
-int main(){
-
-    //StateTest();
-    CommandChainSingletonTest();
+int main() {
+    // Run the tests
+    testBill();
+    testTab();
 
     return 0;
 }
