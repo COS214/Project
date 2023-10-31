@@ -25,6 +25,7 @@
 #include "AddToDish.h"
 #include "RemoveFromDish.h"
 #include "SpecialCookingInstructions.h"
+#include "Floor.h"
 
 void StateTest()
 {
@@ -128,11 +129,31 @@ void TableTest()
 
     std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
                            "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
-    Table *T = new Table();
+    Table *T = new Table(2); // Need to make these table numbers assigned in Floor composite
     for (size_t i = 0; i < count; i++)
     {
         int randomIndex = rand() % count;
         T->addCustomer(new Customer(names[randomIndex]));
+    }
+}
+
+void FloorTest()
+{
+    srand(time(0));
+    int count = 10;
+
+    std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
+                           "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
+    Floor *floor = new Floor();
+    for (size_t i = 0; i < count; i++)
+    {
+        Table *T = new Table(i); // Need to make these table numbers assigned in Floor composite
+        for (size_t j = 0; j < count; j++)
+        {
+            int randomIndex = rand() % count;
+            T->addCustomer(new Customer(names[randomIndex]));
+        }
+        floor->addTable(T);
     }
 }
 
@@ -142,6 +163,7 @@ int main()
     // StateTest();
     // CommandChainSingletonTest();
     // DecoratorTest();
-    TableTest();
+    // TableTest();
+    FloorTest();
     return 0;
 }

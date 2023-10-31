@@ -7,11 +7,12 @@
 class Table : public Customer
 {
 private:
-    int numCustomers;
+    int tableNumber;
     std::list<Customer *> customers;
 
 public:
     Table();
+    Table(int tableNumber);
     ~Table();
     void addCustomer(Customer *newCustomer);
 };
