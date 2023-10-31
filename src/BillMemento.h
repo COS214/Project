@@ -22,6 +22,8 @@ public:
 
 	BillMemento(string orderID, string customerID, double totalAmount, int tableNum, int rating, string tabID, bool paid);
 
+	~BillMemento();
+
 	string getOrderID();
 
 	string getCustomerID();

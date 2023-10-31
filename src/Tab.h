@@ -18,6 +18,8 @@ public:
 	void setBillMemento(string OrderID,BillMemento billMemento);
 
 	BillMemento getBillMemento(string OrderID);
+
+	~Tab();
 };
 
 #endif

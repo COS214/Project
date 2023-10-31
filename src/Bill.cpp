@@ -25,7 +25,7 @@ void Bill::setBillMemento(BillMemento memento) {
 
 map<Bill, string> Bill::splitBill(int splitIntoNBills, Bill bill) {
     // Calculate the new total amount for each split bill
-    double newTotalAmount = bill.getTotalAmount(bill) / splitIntoNBills;
+    double newTotalAmount = bill.getTotalAmount() / splitIntoNBills;
 
     // Create a map to store the split bills
     map<Bill, string> splitBills;
@@ -33,13 +33,13 @@ map<Bill, string> Bill::splitBill(int splitIntoNBills, Bill bill) {
     // Generate and add split bills to the map
     for (int i = 1; i <= splitIntoNBills; ++i) {
         Bill splitBill(
-            generateOrderID(bill), // You need a method to generate unique Order IDs
-            bill.getCustomerID(bill),
+            generateOrderID(), // You need a method to generate unique Order IDs
+            bill.getCustomerID(),
             newTotalAmount,
-            bill.getTableNum(bill),
-            bill.getRating(bill),
-            generateTabID(bill.getCustomerID(bill)), // Use the generateTabID method
-            bill.isPaid(bill)
+            bill.getTableNum(),
+            bill.getRating(),
+            generateTabID(bill.getCustomerID()), // Use the generateTabID method
+            bill.isPaid()
         );
 
         splitBills[splitBill] = "Split Bill " + to_string(i);
@@ -62,26 +62,52 @@ string generateRandomTabID(string customerID) {
     return tabID; ///return the newly created TabID
 }
 
-double Bill::getTotalAmount(Bill bill){
-	return bill.totalAmount;
+double Bill::getTotalAmount(){
+	return this->totalAmount;
 }
 
-string Bill::generateOrderID(Bill bill){
-	return bill.orderID;
+string Bill::generateOrderID(){
+	std::hash<string> hasher;
+    std::srand(std::time(0)); ///seed the random with the customerID
+
+    int randomDigits = std::rand() % 1000; ///generates random digits
+
+    char randomLetter = static_cast<char>(std::rand() % 26 + 65); ///here we generate a random capital letter
+
+    string OID = "OID" + to_string(randomDigits) + randomLetter; ///put the string together
+
+    return OID; ///return the newly created OrderID
 }
 
-string Bill::getCustomerID(Bill bill){
-	return bill.customerID;
+string Bill::getCustomerID(){
+	return this->customerID;
 }
 
-int Bill::getTableNum(Bill bill){
-	return bill.tableNum;
+int Bill::getTableNum(){
+	return this->tableNum;
 }
 		
-int Bill::getRating(Bill bill){
-	return bill.rating;
+int Bill::getRating(){
+	return this->rating;
 }
 
-bool Bill::isPaid(Bill bill){
-	return bill.paid;
+bool Bill::isPaid(){
+	return this->paid;
+}
+
+string Bill::getTabID(){
+    return this->tabID;
+}
+
+void Bill::pay() {
+    this->paid = true;
+}
+
+void Bill::payBill() {
+    if (this->isPaid()) {
+        std::cout << "This bill has already been paid." << std::endl;
+    } else {
+        this->pay();
+        std::cout << "Bill with order ID " << this->getOrderID() << " has been paid." << std::endl;
+    }
 }

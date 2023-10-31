@@ -6,6 +6,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
+#include "Tab.h"
 
 #include "BillMemento.h"
 
@@ -26,25 +27,35 @@ private:
 	public:
 		Bill(string orderID, string customerID, double totalAmount,int tableNum, int rating, string tabID, bool paid);
 
+		~Bill();
+
 		BillMemento createBillMemento(string orderID, string customerID, double totalAmount, int tableNum, int rating, string tabID, bool paid);
 
 		void setBillMemento(BillMemento memento);
 
 		map<Bill, string> splitBill(int splitIntoNBills, Bill bill);
 
+		double getTotalAmount();
+		
+		string getCustomerID();
+
+		string getOrderID();
+
+		int getTableNum();
+		
+		int getRating();
+
+		bool isPaid();
+
+		string getTabID();
+
 		string generateTabID(string customerID);
 
-		double getTotalAmount(Bill bill);
+		string generateOrderID();
 
-		string generateOrderID(Bill bill);
+		void pay();
 
-		string getCustomerID(Bill bill);
-
-		int getTableNum(Bill bill);
-		
-		int getRating(Bill bill);
-
-		bool isPaid(Bill bill);
+		void payBill();
 };
 
 #endif
