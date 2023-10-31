@@ -1,6 +1,17 @@
+#include <iostream>
 #include "DishDecorator.h"
 
-double DishDecorator::totalCost() {
-	// TODO - implement DishDecorator::totalCost
-	throw "Not yet implemented";
+DishDecorator::DishDecorator(std::string name):Dish(name){
+
 }
+
+double DishDecorator::totalCost(){
+	return getCost();
+};
+
+DishDecorator::~DishDecorator(){
+
+};
+
+
+

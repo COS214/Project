@@ -6,15 +6,17 @@
 #include "State.h"
 #include "Chefs.h"
 
-class Waiter : Observer {
+class Waiter : public Observer {
 
 private:
+	string name;
 	State* waiterState;
 	State* customerState;
 
 public:
+	Waiter();
 	void placeOrder(Chefs* Chefs, Command* order);
-	void update();
+	void update(string message);
 };
 
 #endif
