@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Customer.h"
 #include "Arrived.h"
 
@@ -19,9 +20,13 @@ void Customer::setState(State* state_) {
     state = state_;
 }
 
+//ONLY EDITED HERE FOR OBSERVER FUNCTIONALITY
 void Customer::change() {
     state->handleChange(this);
+    std::string message="State changed to " + state->getState();
+    notify(message);
 }
+
 
 std::string Customer::getState() {
     return state->getState();

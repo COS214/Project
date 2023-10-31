@@ -13,3 +13,7 @@ void Chefs::prepareOrder(Command* order) {
 void Chefs::setNext(Chefs* next) {
 	this->nextHandler = next;
 }
+
+void Chefs::cook(std::string dish){
+	
+};

@@ -5,13 +5,11 @@
 
 using namespace std;
 
+class Chefs;
+
 class Mediator {
-
-
 public:
-	string orderStatus();
-
-	void orderPosition();
+	virtual void notify(Chefs* sender, std::string event) = 0;
 };
 
 #endif

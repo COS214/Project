@@ -8,14 +8,15 @@
 class Chefs {
 	protected:
 		Chefs* nextHandler;
-
-	private:
-		Mediator* mediator;
-
-	public:
+	
+  public:
+	  Mediator* mediator;
+	  Chefs(Mediator* mediator) : mediator(mediator) {}
+    virtual void cook(std::string dish) = 0;
 		Chefs();
 		virtual void prepareOrder(Command* order);
 		void setNext(Chefs* next);
+
 };
 
 #endif
