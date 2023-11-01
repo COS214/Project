@@ -24,3 +24,23 @@ BillMemento Tab::getBillMemento(string OrderID) {
 		return BillMemento();
     }
 }
+
+void Tab::payAllBills() {
+    for (auto it = mementobills.begin(); it != mementobills.end(); ++it) {
+        BillMemento memento = it->second;
+        if (!memento.getPaid()) {
+            ///first get the memento, then convert it to a bill and set the paid to true
+            Bill bill(memento.getOrderID(), memento.getCustomerID(), memento.getTotalAmount(), memento.getTableNum(), memento.getRating(), memento.getTabID(), true);
+
+            /// update the memento that you used to make the bill
+            memento = bill.createBillMemento(bill.getOrderID(), bill.getCustomerID(), bill.getTotalAmount(), bill.getTableNum(), bill.getRating(), bill.getTabID(), bill.isPaid());
+            
+            /// Update the memento that was in the map
+            it->second = memento;
+
+            /// print out the bill that has been paid
+            cout << "Bill with order ID " << memento.getOrderID() << " has been paid." << endl;
+            cout << bill.toString();
+        }
+    }
+}

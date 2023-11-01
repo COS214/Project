@@ -56,6 +56,10 @@ private:
 		void pay();
 
 		void payBill();
+
+		void restoreFromMemento(BillMemento memento);
+
+		string toString();
 };
 
 #endif

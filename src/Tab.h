@@ -19,6 +19,8 @@ public:
 
 	BillMemento getBillMemento(string OrderID);
 
+	void payAllBills();
+
 	~Tab();
 };
 
