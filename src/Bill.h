@@ -25,15 +25,15 @@ private:
 	bool paid;
 
 	public:
+		Bill();
+		
 		Bill(string orderID, string customerID, double totalAmount,int tableNum, int rating, string tabID, bool paid);
-
-		~Bill();
 
 		BillMemento createBillMemento(string orderID, string customerID, double totalAmount, int tableNum, int rating, string tabID, bool paid);
 
 		void setBillMemento(BillMemento memento);
 
-		map<Bill, string> splitBill(int splitIntoNBills, Bill bill);
+		map<string, Bill> splitBill(int splitIntoNBills, Bill bill);
 
 		double getTotalAmount();
 		
@@ -60,6 +60,8 @@ private:
 		void restoreFromMemento(BillMemento memento);
 
 		string toString();
+
+		bool operator<(const Bill& other) const;
 };
 
 #endif

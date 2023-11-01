@@ -1,5 +1,7 @@
 #include "Bill.h"
 
+using namespace std;
+
 /// @brief Implementation for the Bill class
 /// @param orderID 
 /// @param customerID 
@@ -23,12 +25,12 @@ void Bill::setBillMemento(BillMemento memento) {
 	this->billMemento = memento;
 }
 
-map<Bill, string> Bill::splitBill(int splitIntoNBills, Bill bill) {
+map<string, Bill> Bill::splitBill(int splitIntoNBills, Bill bill) {
     // Calculate the new total amount for each split bill
     double newTotalAmount = bill.getTotalAmount() / splitIntoNBills;
 
     // Create a map to store the split bills
-    map<Bill, string> splitBills;
+    map<string, Bill> splitBills;
 
     // Generate and add split bills to the map
     for (int i = 1; i <= splitIntoNBills; ++i) {
@@ -42,18 +44,18 @@ map<Bill, string> Bill::splitBill(int splitIntoNBills, Bill bill) {
             bill.isPaid()
         );
 
-        splitBills[splitBill] = "Split Bill " + to_string(i);
+        splitBills[splitBill.getOrderID()] = splitBill;
     }
 
     return splitBills;
 }
 
 
-string generateRandomTabID(string customerID) {
-    std::hash<string> hasher;
-    std::srand(hasher(customerID) + std::time(0)); ///seed the random with the customerID
+string Bill::generateTabID(string customerID) {
+    hash<string> hasher;
+    srand(hasher(customerID) + time(0)); ///seed the random with the customerID
 
-    int randomDigits = std::rand() % 1000; ///generates random digits
+    int randomDigits = rand() % 1000; ///generates random digits
 
     char randomLetter = static_cast<char>(std::rand() % 26 + 65); ///here we generate a random capital letter
 
@@ -67,12 +69,12 @@ double Bill::getTotalAmount(){
 }
 
 string Bill::generateOrderID(){
-	std::hash<string> hasher;
-    std::srand(std::time(0)); ///seed the random with the customerID
+	hash<string> hasher;
+    srand(time(0)); ///seed the random with the customerID
 
-    int randomDigits = std::rand() % 1000; ///generates random digits
+    int randomDigits = rand() % 1000; ///generates random digits
 
-    char randomLetter = static_cast<char>(std::rand() % 26 + 65); ///here we generate a random capital letter
+    char randomLetter = static_cast<char>(rand() % 26 + 65); ///here we generate a random capital letter
 
     string OID = "OID" + to_string(randomDigits) + randomLetter; ///put the string together
 
@@ -91,6 +93,10 @@ int Bill::getRating(){
 	return this->rating;
 }
 
+string Bill::getOrderID(){
+    return this->orderID;
+}
+
 bool Bill::isPaid(){
 	return this->paid;
 }
@@ -104,10 +110,10 @@ void Bill::pay() {
 }
 
 void Bill::payBill() {
-    if (this->isPaid()) {
+    if (this->isPaid()) { ///check if the bill has been paid
         std::cout << "This bill has already been paid." << std::endl;
     } else {
-        this->pay();
+        this->pay(); ///pay the bill
         std::cout << "Bill with order ID " << this->getOrderID() << " has been paid." << std::endl;
     }
 }
@@ -139,4 +145,11 @@ string Bill::toString() {
     
     return stemp;
 }
+
+bool Bill::operator<(const Bill& other) const {
+    return this->orderID < other.orderID;
+}
+
+Bill::Bill() : orderID(""), customerID(""), totalAmount(0.0), tableNum(0), rating(0), tabID(""), paid(false) {}
+
 

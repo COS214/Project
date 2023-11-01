@@ -44,3 +44,5 @@ void Tab::payAllBills() {
         }
     }
 }
+
+Tab::~Tab(){}

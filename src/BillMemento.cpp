@@ -51,3 +51,5 @@ string BillMemento::getTabID(){
 bool BillMemento::getPaid(){
 	return this->paid;
 }
+
+BillMemento::~BillMemento() {}
