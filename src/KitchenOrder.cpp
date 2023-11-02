@@ -16,3 +16,11 @@ void KitchenOrder::execute(){
 Order* KitchenOrder::getOrder() const{
 	return this->order;
 }
+
+void KitchenOrder::setState(std::string str) {
+	this->state = str;
+}
+
+std::string KitchenOrder::getState() {
+	return this->state;
+}

@@ -1,11 +1,23 @@
 #include "AddToDish.h"
+#include <iostream>
+#include <list>
 
-void AddToDish::addIngredient(string ingredient) {
-	// TODO - implement AddToDish::addIngredient
-	throw "Not yet implemented";
+AddToDish::AddToDish(std::string name) : DishDecorator(name){
+}
+    
+void AddToDish::setIngredient(std::string ingredient){
+	this->ingredient = ingredient;
 }
 
-double AddToDish::totalCost() {
-	// TODO - implement AddToDish::totalCost
-	throw "Not yet implemented";
+void AddToDish::setCostOfIngredient(double costOfIngredient){
+	this->costOfIngredient=costOfIngredient;
+}
+
+void AddToDish::addIngredient(std::string ingredient){
+	ingredientsForDish.push_back(ingredient);
+	setCost(getCost()+costOfIngredient);
+}
+
+double AddToDish::totalCost(){  
+	return getCost();
 }

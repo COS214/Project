@@ -1,22 +1,22 @@
 #ifndef ADDTODISH_H
 #define ADDTODISH_H
 
-#include <string>
-
+#include <iostream>
 #include "DishDecorator.h"
 
-using namespace std;
-
-class AddToDish : DishDecorator {
+class AddToDish : public DishDecorator {
 
 private:
-	string ingredient;
+	std::string ingredient;
 	double costOfIngredient;
 
 public:
-	void addIngredient(string ingredient);
-
+	AddToDish(std::string name);
+    void setIngredient(std::string ingredient);
+    void setCostOfIngredient(double costOfIngredient);
+	void addIngredient(std::string ingredient);
 	double totalCost();
 };
+
 
 #endif

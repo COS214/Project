@@ -1,16 +1,16 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 
-#include <string>
 #include <iostream>
 #include "State.h"
 #include <ctime>
 #include <cstdlib>
+#include "Subject.h"
 
 
 class State;
 
-class Customer {
+class Customer : public Subject {
 public:
     Customer();
 	~Customer();

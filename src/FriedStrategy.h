@@ -3,11 +3,11 @@
 
 #include "CookStrategy.h"
 
-class FriedStrategy : CookStrategy {
-
+class FriedStrategy : public CookStrategy {
 
 public:
-	void cookDish();
+	FriedStrategy(KitchenOrder* order);
+	void cookDish(KitchenOrder* order);
 };
 
 #endif
