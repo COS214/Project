@@ -13,6 +13,7 @@ public:
     Floor();
     ~Floor();
     void addTable(Table *newTable);
+    std::list<Table *> getTables();
 };
 
 #endif
