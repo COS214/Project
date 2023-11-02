@@ -22,7 +22,9 @@
 #include "AddToDish.h"
 #include "RemoveFromDish.h"
 #include "SpecialCookingInstructions.h"
-
+#include "CookStrategy.h"
+#include "GrilledStrategy.h"
+#include "FriedStrategy.h"
 
 void StateTest(){
     std::cout << "<=============================== State and Observer Unit Testing ===============================>" << std::endl;
@@ -78,6 +80,31 @@ void CommandChainSingletonTest(){
     delete custorder;
 }
 
+void StrategyTest() {
+    std::cout << "<=============================== Strategy Unit Testing ===============================>" << std::endl;
+
+    Order* customOrder = new Order();
+    KitchenOrder* ko = new KitchenOrder(customOrder);
+
+    std::cout << "Getting state" << std::endl;
+    std::cout << ko->getState() << std::endl;
+
+    GrilledStrategy* gs = new GrilledStrategy(ko);
+    std::cout << "Getting the state in the GrilledStrategy" << std::endl;
+    std::cout << ko->getState() << std::endl;
+    gs->cookDish(ko);
+    std::cout << "Getting the state after Grilling" << std::endl;
+    std::cout << ko->getState() << std::endl;
+    
+
+    FriedStrategy* fs = new FriedStrategy(ko);
+    std::cout << "Getting the state in the FriedStrategy" << std::endl;
+    std::cout << ko->getState() << std::endl;
+    fs->cookDish(ko);
+    std::cout << "Getting the state after Frying" << std::endl;
+    std::cout << ko->getState() << std::endl;
+}
+
 void DecoratorTest(){
     
     std::cout << "<=============================== Decorator Unit Testing ===============================>" << std::endl;
@@ -112,11 +139,11 @@ void DecoratorTest(){
 
 int main(){
 
-    //StateTest();
-    //CommandChainSingletonTest();
+    // StateTest();
+    // CommandChainSingletonTest();
+    // StrategyTest();
     DecoratorTest();
 
-   
     return 0;
 }
 
