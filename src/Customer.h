@@ -4,8 +4,11 @@
 #include <iostream>
 #include <string>
 #include "State.h"
+#include <ctime>
+#include <cstdlib>
 #include "Subject.h"
 #include "Bill.h" //added to use through waiter
+
 
 class State;
 
@@ -21,7 +24,7 @@ public:
 	Customer(std::string name);
 	~Customer();
 	void change();
-	std::string getState();
+  std::string getState();
 	void setState(State *state);
 	//added for waiter functionality
 	std::string getOrder();
@@ -29,9 +32,11 @@ public:
 	std::string getCustomerID();
 	int getRating();
 	int getTableNumber();
-
-private:
-	State *state;
+	std::string GenerateCustomerID();
+	void setCustomerID(std::string CID);
+  private: 
+    State* state;
+	std::string CustomerID;	
 	//added for waiter functionality
 	std::string order;
 };

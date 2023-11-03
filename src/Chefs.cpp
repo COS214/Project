@@ -17,3 +17,7 @@ void Chefs::setNext(Chefs* next) {
 void Chefs::cook(std::string dish){
 	
 };
+
+void Chefs::setMediator(Mediator* mediator) {
+        this->mediator = mediator;
+}

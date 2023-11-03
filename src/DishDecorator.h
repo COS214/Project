@@ -9,8 +9,15 @@ class DishDecorator : public Dish {
     protected:
         Dish* component;
     public:
-        DishDecorator(std::string name);
+        DishDecorator();
+        virtual void addIngredient(std::string);
+        virtual void removeIngredient(std::string);
+        virtual void addSpecialInstruction(std::string);
+        virtual void setCostOfIngredient(double);
+        virtual void setIngredient(std::string);
         virtual double totalCost();
+        virtual std::string getIngredientsList();
+        void setComponent(Dish* newComponent);
         virtual ~DishDecorator();
 };
 

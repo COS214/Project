@@ -1,7 +1,7 @@
 #include "SpecialCookingInstructions.h"
 #include <iostream>
 
-SpecialCookingInstructions::SpecialCookingInstructions(std::string name):DishDecorator(name) {
+SpecialCookingInstructions::SpecialCookingInstructions() {
 
 };
 
