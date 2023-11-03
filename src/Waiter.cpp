@@ -49,30 +49,59 @@ bool Waiter::isDone(){
 void Waiter::serveCustomers(Chefs* Chefs, Command* order) {
     	Customer* currentCustomer = first(); // Get the first customer to serve
 
-        // Get the state of the customer
-        if (currentCustomer->getState() == "Order")
-        {
-            //make a new Command object
-            //Command* order = currentCustomer->getOrder();
-            placeOrder(Chefs, order); // Forward the order to the kitchen using the placeOrder method.
-            std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
-        } else if (currentCustomer->getState() == "Pay")
-        {
-            //create a new bill
+    while (currentCustomer != nullptr) {
+            // Get the state of the customer
+            if (currentCustomer->getState() == "Order")
+            {
+                // Forward the order to the kitchen using the placeOrder method.
+                placeOrder(Chefs, order);
 
-            //continue here
-            Bill newBill = Bill(generateOrderID(),currentCustomer->getCustomerID,15,);
-            
+                std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
+            } else if (currentCustomer->getState() == "Pay")
+            {
+                //create a new bill
+                Bill newBill = Bill(
+                    newBill.generateOrderID(),
+                    currentCustomer->getCustomerID(),
+                    currentCustomer->getTotalAmount(),
+                    currentCustomer->getTableNumber(),
+                    currentCustomer->getRating(),
+                    newBill.generateTabID(currentCustomer->getCustomerID()),
+                    false);
+
+                // Pay the bill
+                newBill.pay();
+
+                // Create a bill memento
+                BillMemento billMemento(
+                    newBill.getOrderID(),
+                    newBill.getCustomerID(),
+                    newBill.getTotalAmount(),
+                    newBill.getTableNum(),
+                    newBill.getRating(),
+                    newBill.getTabID(),
+                    newBill.isPaid()
+                );
+
+            // Send the bill memento to a new tab
+            Tab newtab;
+            newtab.addBill(billMemento, newBill.getOrderID());
+
         } else if (currentCustomer->getState() == "Rate")
         {
-            std::cout << "Customer: " << currentCustomer->getName() << "has arrived at the restaurant." << std::endl;
+            std::cout << "Customer: " << currentCustomer->getName() << "has rated his meal a" << currentCustomer->getRating() << "out of 5." << std::endl;
         }  else if (currentCustomer->getState() == "Leave")
         {
             std::cout << "Customer: " << currentCustomer->getName() << "is about to leave the restaurant." << std::endl;
         }
         
+        //go to the next customer
         currentCustomer = next();
+    }
 }
+
+//default constructor
+//Waiter::Waiter() : name(""), waiterState(nullptr), customerState(nullptr), tables() {}
 
 
 

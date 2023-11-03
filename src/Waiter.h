@@ -8,6 +8,7 @@
 #include "Table.h"	
 #include "Iterator.h"
 #include "Bill.h"
+#include "Tab.h"
 
 class Waiter : public Observer, public Iterator {
 

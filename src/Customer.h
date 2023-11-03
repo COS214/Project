@@ -19,6 +19,7 @@ private:
 	std::string customerID;
 	int rating;
 	int tableNumber; 
+	double totalAmount;
 public:
 	Customer();
 	Customer(std::string name);
@@ -34,7 +35,8 @@ public:
 	int getTableNumber();
 	std::string GenerateCustomerID();
 	void setCustomerID(std::string CID);
-  private: 
+	double getTotalAmount(); 
+private: 
     State* state;
 	std::string CustomerID;	
 	//added for waiter functionality
