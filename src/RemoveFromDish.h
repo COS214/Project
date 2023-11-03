@@ -1,18 +1,22 @@
 #ifndef REMOVEFROMDISH_H
 #define REMOVEFROMDISH_H
 
-#include <string>
-
+#include <iostream>
 #include "DishDecorator.h"
 
-using namespace std;
-
-class RemoveFromDish : DishDecorator {
+class RemoveFromDish : public DishDecorator {
+private:
+	std::string ingredient;
+    double costOfIngredient;
 
 public:
-	string ingredient;
-
-	void removeIngredient(string ingredient);
+	RemoveFromDish();
+	void setIngredient(std::string ingredient);
+    void setCostOfIngredient(double costOfIngredient);
+	void removeIngredient(std::string ingredient);
+	double totalCost();
+    std::string getIngredientsList();
 };
+
 
 #endif

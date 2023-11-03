@@ -18,7 +18,25 @@ private:
 	bool paid;
 
 public:
+	BillMemento();
+
 	BillMemento(string orderID, string customerID, double totalAmount, int tableNum, int rating, string tabID, bool paid);
+
+	~BillMemento();
+
+	string getOrderID();
+
+	string getCustomerID();
+
+	double getTotalAmount();
+
+	int getTableNum();
+
+	int getRating();
+
+	string getTabID();
+
+	bool getPaid();
 };
 
 #endif

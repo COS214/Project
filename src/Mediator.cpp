@@ -1,11 +1,14 @@
+/**
+ * @file Mediator.cpp
+ * @brief Contains the declaration of the Mediator class functions.
+ */
+
 #include "Mediator.h"
 
-string Mediator::orderStatus() {
-	// TODO - implement Mediator::orderStatus
-	throw "Not yet implemented";
-}
+void Mediator::notify(Chefs* sender, std::string event){
 
-void Mediator::orderPosition() {
-	// TODO - implement Mediator::orderPosition
-	throw "Not yet implemented";
-}
+};
+
+Mediator::~Mediator(){
+    
+};

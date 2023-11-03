@@ -1,3 +1,4 @@
+//Invoker
 #ifndef WAITER_H
 #define WAITER_H
 
@@ -5,16 +6,18 @@
 #include "State.h"
 #include "Chefs.h"
 
-class Waiter : Observer {
+class Waiter : public Observer {
 
 private:
+	string name;
 	State* waiterState;
 	State* customerState;
 
 public:
-	void placeOrder(Chefs Chefs, Command order);
-
-	void update();
+	Waiter();
+	void placeOrder(Chefs* Chefs, Command* order);
+	void update(string message);
+	void receiveOrder(Command* order);
 };
 
 #endif

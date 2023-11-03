@@ -1,18 +1,20 @@
 #ifndef SPECIALCOOKINGINSTRUCTIONS_H
 #define SPECIALCOOKINGINSTRUCTIONS_H
 
-#include <string>
-
+#include <iostream>
 #include "DishDecorator.h"
 
-using namespace std;
+class SpecialCookingInstructions : public DishDecorator {
 
-class SpecialCookingInstructions : DishDecorator {
+private: 
+	std::string instruction;
 
 public:
-	string instruction;
-
-	void addSpecialInstruction(string instruction);
+	SpecialCookingInstructions();
+	virtual void addSpecialInstruction(std::string instruction);
+    double totalCost();
+	
 };
+
 
 #endif

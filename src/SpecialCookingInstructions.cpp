@@ -1,6 +1,16 @@
 #include "SpecialCookingInstructions.h"
+#include <iostream>
 
-void SpecialCookingInstructions::addSpecialInstruction(string instruction) {
-	// TODO - implement SpecialCookingInstructions::addSpecialInstruction
-	throw "Not yet implemented";
-}
+SpecialCookingInstructions::SpecialCookingInstructions() {
+
+};
+
+void SpecialCookingInstructions::addSpecialInstruction(std::string instruction){
+	this->instruction = instruction;
+	std::cout << "Added " << instruction << " for dish preparation." << std::endl;
+	// where does special instruction go to - who handles it?
+};
+
+double SpecialCookingInstructions::totalCost(){  
+	return getCost();
+};
