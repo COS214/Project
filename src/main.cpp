@@ -45,8 +45,6 @@
 #include "Mediator.h"
 #include "concreteMediator.h"
 
-
-
 using namespace std;
 
 void testBill()
@@ -206,11 +204,9 @@ void testCustomerAndTab()
     cout << "Customer test and Tab test end ==================================================================" << endl;
 }
 
-
 void CommandChainSingletonTest()
 {
     std::cout << "<=============================== Command Chain Singleton Unit Testing ===============================>" << std::endl;
-
 
     Inventory *inventory = Inventory::getInstance();
     map<string, int> inv;
@@ -225,7 +221,6 @@ void CommandChainSingletonTest()
     SauceChef *sauce = new SauceChef();
     HeadChef *head = new HeadChef();
 
-
     Mediator *cm = new concreteMediator(head, junior, meat, sauce, vegetable);
 
     junior->setMediator(cm);    // Set the mediator for junior
@@ -233,7 +228,6 @@ void CommandChainSingletonTest()
     meat->setMediator(cm);      // Set the mediator for meat
     sauce->setMediator(cm);     // Set the mediator for sauce
     head->setMediator(cm);      // Set the mediator for head
-
 
     junior->setNext(vegetable);
     vegetable->setNext(meat);
@@ -282,57 +276,64 @@ void StrategyTest()
     std::cout << ko->getState() << std::endl;
 }
 
-void DecoratorTest(){
+void DecoratorTest()
+{
 
     std::cout << "<=============================== Decorator Unit Testing ===============================>" << std::endl;
 
-    Dish* dish1 = new BasicDish();
+    Dish *dish1 = new BasicDish();
     dish1->setName("Pasta");
     dish1->setCost(10.0);
     list<string> ingredients1 = {"Pasta", "Sauce"};
     dish1->setIngredientsList(ingredients1);
 
-    Dish* dish2 = new BasicDish();
+    Dish *dish2 = new BasicDish();
     dish2->setName("Pizza");
     dish2->setCost(12.0);
     list<string> ingredients2 = {"Dough", "Cheese", "Tomato"};
     dish2->setIngredientsList(ingredients2);
 
-    Menu menu;  
+    Menu menu;
     menu.addDish("1", dish1, 10.0);
     menu.addDish("2", dish2, 12.0);
     menu.printMenu();
 
-    std::pair<Dish*, double> dishInfo = menu.getDish("1");
-    if (dishInfo.first) {
+    std::pair<Dish *, double> dishInfo = menu.getDish("1");
+    if (dishInfo.first)
+    {
         std::cout << "Selected Dish: " << dishInfo.first->getName() << " - Cost: $" << dishInfo.second << std::endl;
-    } else {
+    }
+    else
+    {
         std::cout << "Dish not found in the menu." << std::endl;
     }
 
-    DishDecorator* decoratedDish1 = new AddToDish();
+    DishDecorator *decoratedDish1 = new AddToDish();
     decoratedDish1->setComponent(dish1);
     decoratedDish1->setCostOfIngredient(2.0);
     decoratedDish1->setIngredient("Pickles");
     decoratedDish1->addIngredient("Pickles");
-    std::cout << "Updated Add to Dish with Ingredients: \n" << decoratedDish1->getIngredientsList() << std::endl;
+    std::cout << "Updated Add to Dish with Ingredients: \n"
+              << decoratedDish1->getIngredientsList() << std::endl;
     std::cout << "Updated Add to Dish Cost: $" << decoratedDish1->totalCost() << std::endl;
     std::cout << endl;
 
-    DishDecorator* decoratedDish2 = new RemoveFromDish();
+    DishDecorator *decoratedDish2 = new RemoveFromDish();
     decoratedDish2->setComponent(dish1);
     decoratedDish2->setCostOfIngredient(3.0);
     decoratedDish2->setIngredient("Pasta");
     decoratedDish2->removeIngredient("Pasta");
-    std::cout << "Updated Remove to Dish with Ingredients: \n" << decoratedDish2->getIngredientsList() << std::endl;
+    std::cout << "Updated Remove to Dish with Ingredients: \n"
+              << decoratedDish2->getIngredientsList() << std::endl;
     std::cout << "Updated Remove to Dish Cost: $" << decoratedDish2->totalCost() << std::endl;
     std::cout << endl;
 
-    DishDecorator* decoratedDish3 = new SpecialCookingInstructions();
+    DishDecorator *decoratedDish3 = new SpecialCookingInstructions();
     decoratedDish3->setComponent(dish2);
     decoratedDish3->addSpecialInstruction("No Sauce");
-    std::cout << "Special Cooking Instructions - Total Cost: $" << decoratedDish3->totalCost() <<"\n" << endl;
-    
+    std::cout << "Special Cooking Instructions - Total Cost: $" << decoratedDish3->totalCost() << "\n"
+              << endl;
+
     delete dish1;
     delete dish2;
     delete decoratedDish1;
