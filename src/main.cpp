@@ -433,7 +433,7 @@ void IteratorTest()
     Order *custorder = new Order();
     Command *order = new KitchenOrder(custorder);
     waiter->placeOrder(junior, order);
-    // waiter->serveCustomers(head, order);
+    waiter->serveCustomers(junior, order);
 }
 
 int main()
@@ -444,7 +444,7 @@ int main()
     // testCustomer();
     // testCustomerAndTab();
     // StateTest();
-    CommandChainSingletonTest();
+    // CommandChainSingletonTest();
     // StrategyTest();
     // DecoratorTest();
     // StateTest();

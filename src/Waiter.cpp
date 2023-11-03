@@ -1,9 +1,5 @@
 #include "Waiter.h"
 
-Waiter::Waiter()
-{
-}
-
 void Waiter::placeOrder(Chefs *Chefs, Command *order)
 {
     std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
@@ -25,13 +21,17 @@ Waiter::Waiter(std::list<Table *> tables) : tables(tables)
 
 Customer *Waiter::first()
 {
-    currentTable = tables.begin();                             // set to the first table
+    if (tables.empty())
+        return nullptr; // No tables to serve
+
+    currentTable = tables.begin(); // set to the first table
+
+    if ((*currentTable)->getCustomers().empty())
+        return nullptr; // No customers at the first table
+
     currentCustomer = (*currentTable)->getCustomers().begin(); // first customer at the table
-    if (!tables.empty() && !(*currentTable)->getCustomers().empty())
-    {
-        return *currentCustomer; // return the first customer at the table...
-    }
-    return nullptr; // No customers to serve
+
+    return *currentCustomer; // return the first customer at the table...
 }
 
 Customer *Waiter::next()
@@ -89,6 +89,8 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
 
             // Pay the bill
             newBill.pay();
+            std::cout << "Bill paid in full"
+                      << "\n";
 
             // Create a bill memento
             BillMemento billMemento(
@@ -122,6 +124,10 @@ Waiter::~Waiter()
 {
 }
 
+void Waiter::receiveOrder(Command *order)
+{
+    cout << "Waiter received order" << endl;
+}
 // default constructor
 Waiter::Waiter()
 {
