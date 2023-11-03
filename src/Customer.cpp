@@ -40,3 +40,24 @@ std::string Customer::getState()
 {
     return state->getState();
 }
+
+//ADDED FOR WAITER
+std::string Customer::getOrder(){
+    return this->order;
+}
+
+std::string Customer::getName(){
+    return this->name;
+}
+
+std::string Customer::getCustomerID(){
+    return this->customerID;
+}
+
+int Customer::getRating(){
+    return this->rating;
+}
+
+int Customer::getTableNumber(){
+    return this->tableNumber;
+}

@@ -46,27 +46,32 @@ bool Waiter::isDone(){
     return currentTable == tables.end();
 }
 
-void Waiter::serveCustomers() {
+void Waiter::serveCustomers(Chefs* Chefs, Command* order) {
     	Customer* currentCustomer = first(); // Get the first customer to serve
 
         // Get the state of the customer
+        if (currentCustomer->getState() == "Order")
+        {
+            //make a new Command object
+            //Command* order = currentCustomer->getOrder();
+            placeOrder(Chefs, order); // Forward the order to the kitchen using the placeOrder method.
+            std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
+        } else if (currentCustomer->getState() == "Pay")
+        {
+            //create a new bill
 
-        // Check the customer's state and perform actions accordingly
-        //if in waiting state
-        	// Customer is in the WaitingToOrder state, take the order and forward it to the kitchen.
-            	// create the order
+            //continue here
+            Bill newBill = Bill(generateOrderID(),currentCustomer->getCustomerID,15,);
             
-            // else
+        } else if (currentCustomer->getState() == "Rate")
+        {
+            std::cout << "Customer: " << currentCustomer->getName() << "has arrived at the restaurant." << std::endl;
+        }  else if (currentCustomer->getState() == "Leave")
+        {
+            std::cout << "Customer: " << currentCustomer->getName() << "is about to leave the restaurant." << std::endl;
+        }
         
-            // Customer is in the ReadyToPay state, collect payment and process it.
-            // get the bill from memento
-            // make payment
-            
-        
-        // Handle other customer states or actions as needed.
-
-        // Move to the next customer
-          
+        currentCustomer = next();
 }
 
 

@@ -7,6 +7,7 @@
 #include "Chefs.h"
 #include "Table.h"	
 #include "Iterator.h"
+#include "Bill.h"
 
 class Waiter : public Observer, public Iterator {
 
@@ -29,7 +30,9 @@ public:
 	Customer* first()	;
     Customer* next();
     bool isDone();
-	void serveCustomers();
+	void serveCustomers(Chefs* Chefs, Command* order);
+
+	~Waiter(); //Destructor
 };
 
 #endif
