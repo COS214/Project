@@ -2,7 +2,7 @@
 #include "BasicDish.h"
 
 
-BasicDish::BasicDish(std::string name) : Dish(name) {
+BasicDish::BasicDish() {
 	
 };
 

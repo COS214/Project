@@ -1,23 +1,34 @@
 #include "AddToDish.h"
 #include <iostream>
 #include <list>
+AddToDish::AddToDish() {
 
-AddToDish::AddToDish(std::string name) : DishDecorator(name){
 }
-    
-void AddToDish::setIngredient(std::string ingredient){
+
+void AddToDish::setIngredient(std::string ingredient) {
 	this->ingredient = ingredient;
 }
 
-void AddToDish::setCostOfIngredient(double costOfIngredient){
-	this->costOfIngredient=costOfIngredient;
+void AddToDish::setCostOfIngredient(double costOfIngredient) {
+	this->costOfIngredient = costOfIngredient;
 }
 
-void AddToDish::addIngredient(std::string ingredient){
-	ingredientsForDish.push_back(ingredient);
-	setCost(getCost()+costOfIngredient);
+void AddToDish::addIngredient(std::string ingredient) {
+	this->ingredientsForDish.push_back(ingredient);
+	double newCost = this->getCost() + costOfIngredient;
+	setCost(newCost);
 }
 
-double AddToDish::totalCost(){  
-	return getCost();
+
+double AddToDish::totalCost(){
+return getCost(); 
+}
+
+std::string AddToDish::getIngredientsList(){
+	std::string list= "";
+	for (std::string& item : ingredientsForDish) 
+	{
+		list += item + "\n";
+	}
+	return list;
 }

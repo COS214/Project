@@ -11,12 +11,12 @@ private:
 	double costOfIngredient;
 
 public:
-	AddToDish(std::string name);
+	AddToDish();
     void setIngredient(std::string ingredient);
     void setCostOfIngredient(double costOfIngredient);
-	void addIngredient(std::string ingredient);
-	double totalCost();
+    void addIngredient(std::string ingredient);
+    double totalCost();
+    std::string getIngredientsList();
 };
-
 
 #endif
