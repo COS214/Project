@@ -1,10 +1,12 @@
 #include <list>
 #include <string>
 #include <iostream>
+#include <algorithm>
+
 #include "Bill.h"
+#include "BillMemento.h"
 #include "Tab.h"
 #include "Customer.h"
-#include <algorithm>
 #include "Waiter.h"
 #include "JuniorChef.h"
 #include "VegetableChef.h"
@@ -16,7 +18,17 @@
 #include "Kitchen.h"
 #include "KitchenOrder.h"
 #include "Inventory.h"
+#include "Arrived.h"
+#include "Observer.h"
+#include "Subject.h"
+#include "State.h"
+#include "Rate.h"
+#include "Waiting.h"
+#include "Pay.h"
+#include "Seated.h"
+#include "Leave.h"
 #include "Dish.h"
+#include "Menu.h"
 #include "BasicDish.h"
 #include "DishDecorator.h"
 #include "AddToDish.h"
@@ -27,6 +39,8 @@
 #include "FriedStrategy.h"
 #include "Mediator.h"
 #include "concreteMediator.h"
+
+
 
 using namespace std;
 
@@ -259,45 +273,64 @@ void StrategyTest()
     std::cout << ko->getState() << std::endl;
 }
 
-void DecoratorTest()
-{
+void DecoratorTest(){
 
     std::cout << "<=============================== Decorator Unit Testing ===============================>" << std::endl;
 
-    Dish *basicDish = new BasicDish("cheeseburger");
-    std::cout << "Ingredient list: \n"
-              << basicDish->getIngredientsList() << std::endl;
-    std::cout << "Basic Dish - Total Cost: $" << basicDish->totalCost() << "\n"
-              << std::endl;
+    Dish* dish1 = new BasicDish();
+    dish1->setName("Pasta");
+    dish1->setCost(10.0);
+    list<string> ingredients1 = {"Pasta", "Sauce"};
+    dish1->setIngredientsList(ingredients1);
 
-    AddToDish *addToDish = new AddToDish("cheeseburger");
-    addToDish->setCostOfIngredient(2.0);
-    addToDish->setIngredient("Pickles");
-    addToDish->addIngredient("Pickles");
-    std::cout << "Ingredient list after adding pickles: \n"
-              << addToDish->getIngredientsList() << std::endl;
-    std::cout << "Add To Dish - Total Cost: $" << addToDish->totalCost() << "\n"
-              << std::endl;
+    Dish* dish2 = new BasicDish();
+    dish2->setName("Pizza");
+    dish2->setCost(12.0);
+    list<string> ingredients2 = {"Dough", "Cheese", "Tomato"};
+    dish2->setIngredientsList(ingredients2);
 
-    RemoveFromDish *removeFromDish = new RemoveFromDish("cheeseburger");
-    removeFromDish->setCostOfIngredient(1.0);
-    removeFromDish->setIngredient("Lettuce");
-    removeFromDish->removeIngredient("Lettuce");
-    std::cout << "Ingredient list after removing lettuce: \n"
-              << removeFromDish->getIngredientsList() << std::endl;
-    std::cout << "Remove From Dish - Total Cost:: $" << removeFromDish->totalCost() << "\n"
-              << std::endl;
+    Menu menu;  
+    menu.addDish("1", dish1, 10.0);
+    menu.addDish("2", dish2, 12.0);
+    menu.printMenu();
 
-    SpecialCookingInstructions *specialInstructions = new SpecialCookingInstructions("cheeseburger");
-    specialInstructions->addSpecialInstruction("No Sauce");
-    std::cout << "Special Cooking Instructions - Total Cost: $" << specialInstructions->totalCost() << "\n"
-              << endl;
+    std::pair<Dish*, double> dishInfo = menu.getDish("1");
+    if (dishInfo.first) {
+        std::cout << "Selected Dish: " << dishInfo.first->getName() << " - Cost: $" << dishInfo.second << std::endl;
+    } else {
+        std::cout << "Dish not found in the menu." << std::endl;
+    }
 
-    delete basicDish;
-    delete addToDish;
-    delete removeFromDish;
-    delete specialInstructions;
+    DishDecorator* decoratedDish1 = new AddToDish();
+    decoratedDish1->setComponent(dish1);
+    decoratedDish1->setCostOfIngredient(2.0);
+    decoratedDish1->setIngredient("Pickles");
+    decoratedDish1->addIngredient("Pickles");
+    std::cout << "Updated Add to Dish with Ingredients: \n" << decoratedDish1->getIngredientsList() << std::endl;
+    std::cout << "Updated Add to Dish Cost: $" << decoratedDish1->totalCost() << std::endl;
+    std::cout << endl;
+
+    DishDecorator* decoratedDish2 = new RemoveFromDish();
+    decoratedDish2->setComponent(dish1);
+    decoratedDish2->setCostOfIngredient(3.0);
+    decoratedDish2->setIngredient("Pasta");
+    decoratedDish2->removeIngredient("Pasta");
+    std::cout << "Updated Remove to Dish with Ingredients: \n" << decoratedDish2->getIngredientsList() << std::endl;
+    std::cout << "Updated Remove to Dish Cost: $" << decoratedDish2->totalCost() << std::endl;
+    std::cout << endl;
+
+    DishDecorator* decoratedDish3 = new SpecialCookingInstructions();
+    decoratedDish3->setComponent(dish2);
+    decoratedDish3->addSpecialInstruction("No Sauce");
+    std::cout << "Special Cooking Instructions - Total Cost: $" << decoratedDish3->totalCost() <<"\n" << endl;
+    
+    delete dish1;
+    delete dish2;
+    delete decoratedDish1;
+    delete decoratedDish2;
+    delete decoratedDish3;
 }
+
 
 int main()
 {
@@ -306,9 +339,13 @@ int main()
     // testTab();
     // testCustomer();
     // testCustomerAndTab();
-    //  StateTest();
-    CommandChainSingletonTest();
+    // StateTest();
+    // CommandChainSingletonTest();
     // StrategyTest();
     // DecoratorTest();
+    
+
+
     return 0;
 }
+

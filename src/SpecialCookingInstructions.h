@@ -4,14 +4,14 @@
 #include <iostream>
 #include "DishDecorator.h"
 
-class SpecialCookingInstructions : DishDecorator {
+class SpecialCookingInstructions : public DishDecorator {
 
 private: 
 	std::string instruction;
 
 public:
-	SpecialCookingInstructions(std::string name);
-	void addSpecialInstruction(std::string instruction);
+	SpecialCookingInstructions();
+	virtual void addSpecialInstruction(std::string instruction);
     double totalCost();
 	
 };

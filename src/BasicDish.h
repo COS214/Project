@@ -7,7 +7,7 @@
 class BasicDish : public Dish {
 	public:
 	
-        BasicDish(std::string name);
+        BasicDish();
 		double totalCost();
      
 };
