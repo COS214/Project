@@ -11,7 +11,7 @@ public:
 	VegetableChef(){}
 	VegetableChef(Mediator* mediator) : Chefs(mediator) {}
 	void cook(std::string dish);
-	void prepareOrder(Command* order) override;
+	void prepareOrder(Command* order, Waiter* currWaiter) override;
 	virtual ~VegetableChef()=default;
 };
 

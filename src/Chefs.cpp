@@ -4,9 +4,9 @@ Chefs::Chefs() {
 	this->nextHandler = nullptr;
 }
 
-void Chefs::prepareOrder(Command* order) {
+void Chefs::prepareOrder(Command* order, Waiter* currWaiter) {
 	if (nextHandler) {
-        nextHandler->prepareOrder(order);
+        nextHandler->prepareOrder(order, currWaiter);
     }
 }
 
