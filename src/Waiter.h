@@ -17,6 +17,7 @@ public:
 	Waiter();
 	void placeOrder(Chefs* Chefs, Command* order);
 	void update(string message);
+	void receiveOrder(Command* order);
 };
 
 #endif

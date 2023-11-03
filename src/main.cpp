@@ -340,7 +340,7 @@ int main()
     // testCustomer();
     // testCustomerAndTab();
     // StateTest();
-    // CommandChainSingletonTest();
+    CommandChainSingletonTest();
     // StrategyTest();
     // DecoratorTest();
     
