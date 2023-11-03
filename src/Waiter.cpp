@@ -21,15 +21,10 @@ Waiter::Waiter(std::list<Table *> tables) : tables(tables)
 
 Customer *Waiter::first()
 {
-    if (tables.empty())
-        return nullptr; // No tables to serve
 
     currentTable = tables.begin(); // set to the first table
-
-    if ((*currentTable)->getCustomers().empty())
-        return nullptr; // No customers at the first table
-
-    currentCustomer = (*currentTable)->getCustomers().begin(); // first customer at the table
+    currentCustomer = (*currentTable)->getCustomers().begin();
+    // first customer at the table
 
     return *currentCustomer; // return the first customer at the table...
 }
@@ -39,16 +34,16 @@ Customer *Waiter::next()
     if (!isDone())
     {
         ++currentCustomer;
-        if (currentCustomer == (*currentTable)->getCustomers().end())
+        if (currentTable != tables.end() && currentCustomer == (*currentTable)->getCustomers().end())
         {
             // Move to the next table
             ++currentTable;
-            if (!isDone())
+            if (currentTable != tables.end())
             {
                 currentCustomer = (*currentTable)->getCustomers().begin();
             }
         }
-        if (!isDone())
+        if (currentTable != tables.end() && currentCustomer != (*currentTable)->getCustomers().end())
         {
             return *currentCustomer;
         }

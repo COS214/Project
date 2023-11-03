@@ -399,7 +399,7 @@ void IteratorTest()
             ithTable->addCustomer(new Customer(names[randomIndex]));
         }
 
-        std::advance(it, i);
+        std::advance(it, 1);
     }
 
     // Need to populate tables with customers before instantiating Waiter
@@ -429,10 +429,10 @@ void IteratorTest()
     meat->setNext(sauce);
     sauce->setNext(head);
 
-    Waiter *waiter = new Waiter();
+    Waiter *waiter = new Waiter(floor);
     Order *custorder = new Order();
     Command *order = new KitchenOrder(custorder);
-    waiter->placeOrder(junior, order);
+    // waiter->placeOrder(junior, order);
     waiter->serveCustomers(junior, order);
 }
 
