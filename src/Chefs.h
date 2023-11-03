@@ -16,7 +16,7 @@ class Chefs {
 		Chefs();
 		virtual void prepareOrder(Command* order);
 		void setNext(Chefs* next);
-
+		void setMediator(Mediator* mediator);
 };
 
 #endif
