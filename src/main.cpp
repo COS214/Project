@@ -2,6 +2,9 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <string>
+#include <cstdlib> // for rand() and srand()
+#include <ctime>   // for time()
 
 #include "Bill.h"
 #include "BillMemento.h"
@@ -34,13 +37,13 @@
 #include "AddToDish.h"
 #include "RemoveFromDish.h"
 #include "SpecialCookingInstructions.h"
+#include "Floor.h"
 #include "CookStrategy.h"
 #include "GrilledStrategy.h"
 #include "FriedStrategy.h"
 #include "Mediator.h"
 #include "concreteMediator.h"
-
-
+#include "Table.h"
 
 using namespace std;
 
@@ -203,7 +206,7 @@ void testCustomerAndTab()
 
 void CommandChainSingletonTest()
 {
-    std::cout << "<=============================== Command Chain Singleton Mediator Unit Testing ===============================>" << std::endl;
+    std::cout << "<=============================== Command Chain Singleton Unit Testing ===============================>" << std::endl;
 
     Inventory *inventory = Inventory::getInstance();
     map<string, int> inv;
@@ -273,57 +276,64 @@ void StrategyTest()
     std::cout << ko->getState() << std::endl;
 }
 
-void DecoratorTest(){
+void DecoratorTest()
+{
 
     std::cout << "<=============================== Decorator Unit Testing ===============================>" << std::endl;
 
-    Dish* dish1 = new BasicDish();
+    Dish *dish1 = new BasicDish();
     dish1->setName("Pasta");
     dish1->setCost(10.0);
     list<string> ingredients1 = {"Pasta", "Sauce"};
     dish1->setIngredientsList(ingredients1);
 
-    Dish* dish2 = new BasicDish();
+    Dish *dish2 = new BasicDish();
     dish2->setName("Pizza");
     dish2->setCost(12.0);
     list<string> ingredients2 = {"Dough", "Cheese", "Tomato"};
     dish2->setIngredientsList(ingredients2);
 
-    Menu menu;  
+    Menu menu;
     menu.addDish("1", dish1, 10.0);
     menu.addDish("2", dish2, 12.0);
     menu.printMenu();
 
-    std::pair<Dish*, double> dishInfo = menu.getDish("1");
-    if (dishInfo.first) {
+    std::pair<Dish *, double> dishInfo = menu.getDish("1");
+    if (dishInfo.first)
+    {
         std::cout << "Selected Dish: " << dishInfo.first->getName() << " - Cost: $" << dishInfo.second << std::endl;
-    } else {
+    }
+    else
+    {
         std::cout << "Dish not found in the menu." << std::endl;
     }
 
-    DishDecorator* decoratedDish1 = new AddToDish();
+    DishDecorator *decoratedDish1 = new AddToDish();
     decoratedDish1->setComponent(dish1);
     decoratedDish1->setCostOfIngredient(2.0);
     decoratedDish1->setIngredient("Pickles");
     decoratedDish1->addIngredient("Pickles");
-    std::cout << "Updated Add to Dish with Ingredients: \n" << decoratedDish1->getIngredientsList() << std::endl;
+    std::cout << "Updated Add to Dish with Ingredients: \n"
+              << decoratedDish1->getIngredientsList() << std::endl;
     std::cout << "Updated Add to Dish Cost: $" << decoratedDish1->totalCost() << std::endl;
     std::cout << endl;
 
-    DishDecorator* decoratedDish2 = new RemoveFromDish();
+    DishDecorator *decoratedDish2 = new RemoveFromDish();
     decoratedDish2->setComponent(dish1);
     decoratedDish2->setCostOfIngredient(3.0);
     decoratedDish2->setIngredient("Pasta");
     decoratedDish2->removeIngredient("Pasta");
-    std::cout << "Updated Remove to Dish with Ingredients: \n" << decoratedDish2->getIngredientsList() << std::endl;
+    std::cout << "Updated Remove to Dish with Ingredients: \n"
+              << decoratedDish2->getIngredientsList() << std::endl;
     std::cout << "Updated Remove to Dish Cost: $" << decoratedDish2->totalCost() << std::endl;
     std::cout << endl;
 
-    DishDecorator* decoratedDish3 = new SpecialCookingInstructions();
+    DishDecorator *decoratedDish3 = new SpecialCookingInstructions();
     decoratedDish3->setComponent(dish2);
     decoratedDish3->addSpecialInstruction("No Sauce");
-    std::cout << "Special Cooking Instructions - Total Cost: $" << decoratedDish3->totalCost() <<"\n" << endl;
-    
+    std::cout << "Special Cooking Instructions - Total Cost: $" << decoratedDish3->totalCost() << "\n"
+              << endl;
+
     delete dish1;
     delete dish2;
     delete decoratedDish1;
@@ -331,6 +341,100 @@ void DecoratorTest(){
     delete decoratedDish3;
 }
 
+void TableTest()
+{
+    srand(time(0));
+    int count = 10;
+
+    std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
+                           "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
+    Table *T = new Table(2); // Need to make these table numbers assigned in Floor composite
+    for (size_t i = 0; i < count; i++)
+    {
+        int randomIndex = rand() % count;
+        T->addCustomer(new Customer(names[randomIndex]));
+    }
+}
+
+void FloorTest()
+{
+    srand(time(0));
+    int count = 10;
+
+    std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
+                           "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
+    Floor *floor = new Floor();
+    for (size_t i = 0; i < count; i++)
+    {
+        Table *T = new Table(i); // Need to make these table numbers assigned in Floor composite
+        for (size_t j = 0; j < count; j++)
+        {
+            int randomIndex = rand() % count;
+            T->addCustomer(new Customer(names[randomIndex]));
+        }
+        floor->addTable(T);
+    }
+}
+
+void IteratorTest()
+{
+
+    std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
+                           "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
+    srand(time(0));
+    int count = 5;
+    std::list<Table *> floor; // Not actually a floor object
+    for (int i = 0; i < count; i++)
+    {
+        floor.push_back(new Table(i));
+    }
+    std::list<Table *>::iterator it = floor.begin();
+
+    for (int i = 0; i < count; i++)
+    {
+        Table *ithTable = *it;
+        for (int j = 0; j < count; j++)
+        {
+            int randomIndex = rand() % count;
+            ithTable->addCustomer(new Customer(names[randomIndex]));
+        }
+
+        std::advance(it, i);
+    }
+
+    // Need to populate tables with customers before instantiating Waiter
+    Inventory *inventory = Inventory::getInstance();
+    map<string, int> inv;
+    inv["Tomato"] = 10;
+    inv["Lettuce"] = 10;
+    inv["Bacon"] = 10;
+    inventory->initializeInventory(inv);
+
+    JuniorChef *junior = new JuniorChef();
+    VegetableChef *vegetable = new VegetableChef();
+    MeatChef *meat = new MeatChef();
+    SauceChef *sauce = new SauceChef();
+    HeadChef *head = new HeadChef();
+
+    Mediator *cm = new concreteMediator(head, junior, meat, sauce, vegetable);
+
+    junior->setMediator(cm);    // Set the mediator for junior
+    vegetable->setMediator(cm); // Set the mediator for vegetable
+    meat->setMediator(cm);      // Set the mediator for meat
+    sauce->setMediator(cm);     // Set the mediator for sauce
+    head->setMediator(cm);      // Set the mediator for head
+
+    junior->setNext(vegetable);
+    vegetable->setNext(meat);
+    meat->setNext(sauce);
+    sauce->setNext(head);
+
+    Waiter *waiter = new Waiter();
+    Order *custorder = new Order();
+    Command *order = new KitchenOrder(custorder);
+    waiter->placeOrder(junior, order);
+    // waiter->serveCustomers(head, order);
+}
 
 int main()
 {
@@ -343,9 +447,10 @@ int main()
     CommandChainSingletonTest();
     // StrategyTest();
     // DecoratorTest();
-    
-
+    // StateTest();
+    // TableTest();
+    // FloorTest();
+    IteratorTest();
 
     return 0;
 }
-
