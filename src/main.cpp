@@ -2,11 +2,15 @@
 #include <string>
 #include <iostream>
 #include <algorithm>
+#include <string>
+#include <cstdlib> // for rand() and srand()
+#include <ctime>   // for time()
 
 #include "Bill.h"
 #include "BillMemento.h"
 #include "Tab.h"
 #include "Customer.h"
+#include "Table.h"
 #include "Waiter.h"
 #include "JuniorChef.h"
 #include "VegetableChef.h"
@@ -34,6 +38,7 @@
 #include "AddToDish.h"
 #include "RemoveFromDish.h"
 #include "SpecialCookingInstructions.h"
+#include "Floor.h"
 #include "CookStrategy.h"
 #include "GrilledStrategy.h"
 #include "FriedStrategy.h"
@@ -201,9 +206,11 @@ void testCustomerAndTab()
     cout << "Customer test and Tab test end ==================================================================" << endl;
 }
 
+
 void CommandChainSingletonTest()
 {
-    std::cout << "<=============================== Command Chain Singleton Mediator Unit Testing ===============================>" << std::endl;
+    std::cout << "<=============================== Command Chain Singleton Unit Testing ===============================>" << std::endl;
+
 
     Inventory *inventory = Inventory::getInstance();
     map<string, int> inv;
@@ -218,6 +225,7 @@ void CommandChainSingletonTest()
     SauceChef *sauce = new SauceChef();
     HeadChef *head = new HeadChef();
 
+
     Mediator *cm = new concreteMediator(head, junior, meat, sauce, vegetable);
 
     junior->setMediator(cm);    // Set the mediator for junior
@@ -225,6 +233,7 @@ void CommandChainSingletonTest()
     meat->setMediator(cm);      // Set the mediator for meat
     sauce->setMediator(cm);     // Set the mediator for sauce
     head->setMediator(cm);      // Set the mediator for head
+
 
     junior->setNext(vegetable);
     vegetable->setNext(meat);
@@ -331,6 +340,40 @@ void DecoratorTest(){
     delete decoratedDish3;
 }
 
+void TableTest()
+{
+    srand(time(0));
+    int count = 10;
+
+    std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
+                           "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
+    Table *T = new Table(2); // Need to make these table numbers assigned in Floor composite
+    for (size_t i = 0; i < count; i++)
+    {
+        int randomIndex = rand() % count;
+        T->addCustomer(new Customer(names[randomIndex]));
+    }
+}
+
+void FloorTest()
+{
+    srand(time(0));
+    int count = 10;
+
+    std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
+                           "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
+    Floor *floor = new Floor();
+    for (size_t i = 0; i < count; i++)
+    {
+        Table *T = new Table(i); // Need to make these table numbers assigned in Floor composite
+        for (size_t j = 0; j < count; j++)
+        {
+            int randomIndex = rand() % count;
+            T->addCustomer(new Customer(names[randomIndex]));
+        }
+        floor->addTable(T);
+    }
+}
 
 int main()
 {
@@ -343,9 +386,9 @@ int main()
     // CommandChainSingletonTest();
     // StrategyTest();
     // DecoratorTest();
-    
-
+    // StateTest();
+    // TableTest();
+    FloorTest();
 
     return 0;
 }
-
