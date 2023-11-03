@@ -7,7 +7,7 @@ void Floor::addTable(Table *newTable)
     this->tables.push_back(newTable);
 }
 
-Floor::Floor(){}
+Floor::Floor() {}
 
 Floor::~Floor()
 {
@@ -19,6 +19,7 @@ Floor::~Floor()
     std::cout << "Deleted Floor" << std::endl;
 }
 
-std::list<Table *> Floor::getTables(){
+std::list<Table *> Floor::getTables()
+{
     return this->tables;
 }

@@ -29,7 +29,7 @@ public:
 	void update(string message);
 
 	// added for iterator pattern
-	Waiter(std::list<Table *> &tables);
+	Waiter(std::list<Table *> tables);
 	Customer *first();
 	Customer *next();
 	bool isDone();

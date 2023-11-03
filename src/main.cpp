@@ -10,7 +10,6 @@
 #include "BillMemento.h"
 #include "Tab.h"
 #include "Customer.h"
-#include "Table.h"
 #include "Waiter.h"
 #include "JuniorChef.h"
 #include "VegetableChef.h"
@@ -44,6 +43,7 @@
 #include "FriedStrategy.h"
 #include "Mediator.h"
 #include "concreteMediator.h"
+#include "Table.h"
 
 using namespace std;
 
@@ -376,6 +376,66 @@ void FloorTest()
     }
 }
 
+void IteratorTest()
+{
+
+    std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
+                           "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
+    srand(time(0));
+    int count = 5;
+    std::list<Table *> floor; // Not actually a floor object
+    for (int i = 0; i < count; i++)
+    {
+        floor.push_back(new Table(i));
+    }
+    std::list<Table *>::iterator it = floor.begin();
+
+    for (int i = 0; i < count; i++)
+    {
+        Table *ithTable = *it;
+        for (int j = 0; j < count; j++)
+        {
+            int randomIndex = rand() % count;
+            ithTable->addCustomer(new Customer(names[randomIndex]));
+        }
+
+        std::advance(it, i);
+    }
+
+    // Need to populate tables with customers before instantiating Waiter
+    Inventory *inventory = Inventory::getInstance();
+    map<string, int> inv;
+    inv["Tomato"] = 10;
+    inv["Lettuce"] = 10;
+    inv["Bacon"] = 10;
+    inventory->initializeInventory(inv);
+
+    JuniorChef *junior = new JuniorChef();
+    VegetableChef *vegetable = new VegetableChef();
+    MeatChef *meat = new MeatChef();
+    SauceChef *sauce = new SauceChef();
+    HeadChef *head = new HeadChef();
+
+    Mediator *cm = new concreteMediator(head, junior, meat, sauce, vegetable);
+
+    junior->setMediator(cm);    // Set the mediator for junior
+    vegetable->setMediator(cm); // Set the mediator for vegetable
+    meat->setMediator(cm);      // Set the mediator for meat
+    sauce->setMediator(cm);     // Set the mediator for sauce
+    head->setMediator(cm);      // Set the mediator for head
+
+    junior->setNext(vegetable);
+    vegetable->setNext(meat);
+    meat->setNext(sauce);
+    sauce->setNext(head);
+
+    Waiter *waiter = new Waiter();
+    Order *custorder = new Order();
+    Command *order = new KitchenOrder(custorder);
+    waiter->placeOrder(junior, order);
+    // waiter->serveCustomers(head, order);
+}
+
 int main()
 {
     /// run the tests
@@ -384,12 +444,13 @@ int main()
     // testCustomer();
     // testCustomerAndTab();
     // StateTest();
-    CommandChainSingletonTest();
+    // CommandChainSingletonTest();
     // StrategyTest();
     // DecoratorTest();
     // StateTest();
     // TableTest();
     // FloorTest();
+    IteratorTest();
 
     return 0;
 }

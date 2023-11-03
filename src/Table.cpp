@@ -25,6 +25,7 @@ Table::~Table()
     std::cout << "Deleted Table" << std::endl;
 }
 
-std::list<Customer *> Table::getCustomers(){
+std::list<Customer *> Table::getCustomers()
+{
     return this->customers;
 }

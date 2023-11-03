@@ -12,7 +12,7 @@ void Waiter::update(string message)
     cout << "Customer has changed state: " << message << endl;
 }
 
-Waiter::Waiter(std::list<Table *> &tables) : tables(tables)
+Waiter::Waiter(std::list<Table *> tables) : tables(tables)
 {
     currentTable = tables.begin();                             // sets to the start of the table
     currentCustomer = (*currentTable)->getCustomers().begin(); // sets to the beginning of the customers
