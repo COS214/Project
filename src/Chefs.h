@@ -12,7 +12,6 @@ class Waiter;
 class Chefs {
 	protected:
 		Chefs* nextHandler;
-		Waiter* currWaiter;
 	
   public:
 	  Mediator* mediator;
