@@ -19,7 +19,7 @@ private:
 	State *customerState;
 
 	// added for iterator pattern
-	std::list<Table *> &tables; // reference to tables
+	std::list<Table *> tables; // reference to tables
 	std::list<Table *>::iterator currentTable;
 	std::list<Customer *>::iterator currentCustomer;
 

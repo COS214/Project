@@ -1,5 +1,4 @@
 #include "Waiter.h"
-
 void Waiter::placeOrder(Chefs *Chefs, Command *order)
 {
     std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
@@ -114,5 +113,14 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
     }
 }
 
+Waiter::~Waiter()
+{
+}
+
 // default constructor
-// Waiter::Waiter() : name(""), waiterState(nullptr), customerState(nullptr), tables() {}
+Waiter::Waiter()
+{
+    this->tables;
+    this->currentTable;
+    this->currentCustomer;
+}

@@ -384,12 +384,12 @@ int main()
     // testCustomer();
     // testCustomerAndTab();
     // StateTest();
-    // CommandChainSingletonTest();
+    CommandChainSingletonTest();
     // StrategyTest();
     // DecoratorTest();
     // StateTest();
     // TableTest();
-    FloorTest();
+    // FloorTest();
 
     return 0;
 }
