@@ -132,7 +132,7 @@ string Bill::toString() {
     std::string stemp;
     stemp += "Order ID: " + this->orderID + "\n";
     stemp += "Customer ID: " + customerID + "\n";
-    stemp += "Total Amount: $" + std::to_string(totalAmount) + "\n";
+    stemp += "Total Amount: R" + std::to_string(totalAmount) + "\n";
     stemp += "Table Number: " + std::to_string(tableNum) + "\n";
     stemp += "Rating: " + std::to_string(rating) + "\n";
     stemp += "Tab ID: " + tabID + "\n";
