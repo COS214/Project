@@ -1,5 +1,10 @@
 #include "Tab.h"
 
+Tab::Tab() {
+    mementobills = std::map<string, BillMemento>(); //make new map
+}
+
+
 /// @brief adds a bill to the map 
 /// @param bill 
 /// @param OrderID 
