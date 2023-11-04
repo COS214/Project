@@ -444,8 +444,7 @@ void newFloorTest()
         for (int j = 0; j < numCustomersPerTable; j++)
         {
             int randomIndex = rand() % numCustomersPerTable;
-            Customer *customer = new Customer(names[randomIndex]);
-            table->addCustomer(customer);
+            table->addCustomer(new Customer(names[randomIndex]));
         }
 
         /// Add the newly created table to the floor
@@ -455,7 +454,7 @@ void newFloorTest()
     /// Print information about the floor
     cout << "Restaurant Floor Config:" << endl;
 
-    // Iterate over tables and their customers
+    /// Iterate over tables and their customers
     for (auto &table : floor->getTables())
     {
         cout << "Table: " << table->getTableNumber() << ":" << endl;

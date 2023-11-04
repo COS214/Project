@@ -106,6 +106,9 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
             else if ((*currCustomer)->getState() == "Leave")
             {
                 std::cout << "Customer: " << (*currCustomer)->getName() << " is about to leave the restaurant." << std::endl;
+
+                /// Remove the customer from the table
+                currCustomer = myCusts.erase(currCustomer);
             }
         }
     }
