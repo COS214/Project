@@ -422,6 +422,51 @@ void IteratorTest()
     waiter->serveCustomers(junior, order);
 }
 
+void newFloorTest()
+{
+    srand(time(0)); ///make the seed use time
+    int numTables = 5;  /// Number of tables in the restaurant
+    int numCustomersPerTable = 5;  /// Number of customers at each table
+
+    std::string names[] = {"Siya", "Troy", "Kurt-Lee", "Eben", "Luke", "Olivia", "Daniel", "Ryan", "Hamza", "Luca",
+    "Mapimpi", "Deetlef", "Luke", "Mihir", "Piery", "Jimmy", "Lucas", "Aliyah", "Saeed", "Bongi", "Pieter-Steph","Frans",
+    "Trevor","Vincent","RG","Jean","Franco","Marco","Kwagga","Duane","Jasper","Faf","Handre","Grant","Cobus","Manie","Cheslin", "Willie","Tabraiz",
+    "Keshav","Temba","Marco","Aiden","Reeza","Kagiso", "Lungi", "Lizaad"};
+
+    Floor *floor = new Floor(); ///make a new floor
+
+    /// Create tables and add customers to them
+    for (int i = 1; i <= numTables; i++)
+    {
+        Table *table = new Table(i); ///make new table
+
+        // Add customers to the table
+        for (int j = 0; j < numCustomersPerTable; j++)
+        {
+            int randomIndex = rand() % numCustomersPerTable;
+            Customer *customer = new Customer(names[randomIndex]);
+            table->addCustomer(customer);
+        }
+
+        /// Add the newly created table to the floor
+        floor->addTable(table);
+    }
+
+    /// Print information about the floor
+    cout << "Restaurant Floor Config:" << endl;
+
+    // Iterate over tables and their customers
+    for (auto &table : floor->getTables())
+    {
+        cout << "Table: " << table->getTableNumber() << ":" << endl;
+        for (auto &customer : table->getCustomers())
+        {
+            cout << "  Customer: " << customer->getName() << endl;
+        }
+    }
+}
+
+
 int main()
 {
     /// run the tests
@@ -437,6 +482,7 @@ int main()
     // TableTest();
     // FloorTest();
     IteratorTest();
+    newFloorTest();
 
     return 0;
 }
