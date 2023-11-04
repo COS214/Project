@@ -2,7 +2,8 @@
 
 void Waiter::placeOrder(Chefs *Chefs, Command *order)
 {
-    std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
+    //std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
+    std::cout << "-Waiter sends order to the kitchen: ";;
     Chefs->prepareOrder(order, this);
 }
 
@@ -10,7 +11,7 @@ void Waiter::update(string message)
 {
     // name can be the name given to the waiter object observing a specific customer
     // can be changed to an id instead
-    cout << "Customer has changed state: " << message << endl;
+    //cout << "Customer has changed state: " << message << endl;
 }
 
 Waiter::Waiter(std::list<Table *> tables) : tables(tables)
@@ -170,7 +171,7 @@ Waiter::~Waiter()
 
 void Waiter::receiveOrder(Command *order)
 {
-    cout << "Waiter received order" << endl;
+    cout << "----------------Waiter received order----------------" << endl;
 }
 // default constructor
 Waiter::Waiter()

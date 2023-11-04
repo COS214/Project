@@ -4,7 +4,7 @@
 
 Customer::Customer()
 {
-    std::cout << "Customer has arrived!" << std::endl;
+    //std::cout << "Customer has arrived!" << std::endl;
     state = new Arrived();
 
     std::string CID = GenerateCustomerID();
@@ -14,7 +14,7 @@ Customer::Customer()
 Customer::Customer(std::string name)
 {
     this->name = name;
-    std::cout << name << " has arrived!" << std::endl;
+    //std::cout << name << " has arrived!" << std::endl;
     state = new Arrived();
 }
 Customer::~Customer()
@@ -26,7 +26,7 @@ Customer::~Customer()
 
 void Customer::setState(State *state_)
 {
-    std::cout << "setState called" << std::endl;
+    //std::cout << "setState called" << std::endl;
     delete state;
     state = state_;
 }
