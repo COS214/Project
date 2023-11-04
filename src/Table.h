@@ -14,6 +14,7 @@ public:
     Table();
     Table(int tableNumber);
     ~Table();
+    int getTableNumber() { return this->tableNumber; }
     void addCustomer(Customer *newCustomer);
     std::list<Customer *> getCustomers();
 };

@@ -15,39 +15,31 @@ void Waiter::update(string message)
 
 Waiter::Waiter(std::list<Table *> tables) : tables(tables)
 {
-    currentTable = tables.begin();                             // sets to the start of the table
-    currentCustomer = (*currentTable)->getCustomers().begin(); // sets to the beginning of the customers
+    this->currentTable = tables.begin();                             // sets to the start of the table
+    this->currentCustomer = (*currentTable)->getCustomers().begin(); // sets to the beginning of the customers
 }
 
 Customer *Waiter::first()
 {
+    // deprecated
+    //  currentTable = tables.begin(); // set to the first table
+    //  currentCustomer = (*currentTable)->getCustomers().begin();
+    //  // first customer at the table
 
-    currentTable = tables.begin(); // set to the first table
-    currentCustomer = (*currentTable)->getCustomers().begin();
-    // first customer at the table
-
-    return *currentCustomer; // return the first customer at the table...
+    return nullptr; // return the first customer at the table...
 }
 
 Customer *Waiter::next()
 {
-    if (!isDone())
-    {
-        ++currentCustomer;
-        if (currentTable != tables.end() && currentCustomer == (*currentTable)->getCustomers().end())
-        {
-            // Move to the next table
-            ++currentTable;
-            if (currentTable != tables.end())
-            {
-                currentCustomer = (*currentTable)->getCustomers().begin();
-            }
-        }
-        if (currentTable != tables.end() && currentCustomer != (*currentTable)->getCustomers().end())
-        {
-            return *currentCustomer;
-        }
-    }
+    // deprecated
+    //  if (!isDone() && *currentTable != nullptr)
+    //  {
+    //      if ((*currentCustomer)++ != *(*currentTable)->getCustomers().end())
+    //      {
+    //          return *currentCustomer;
+    //      }
+    //  }
+
     return nullptr; // No more customers to serve
 }
 
@@ -58,61 +50,67 @@ bool Waiter::isDone()
 
 void Waiter::serveCustomers(Chefs *Chefs, Command *order)
 {
-    Customer *currentCustomer = first(); // Get the first customer to serve
-
-    while (currentCustomer != nullptr)
+    std::list<Table *> myTables = this->tables;
+    for (auto currTable = myTables.begin(); currTable != myTables.end(); ++currTable)
     {
-        // Get the state of the customer
-        if (currentCustomer->getState() == "Order")
+        std::cout << "Table Nr: " << (*currTable)->getTableNumber() << "\n\n=========\n";
+        std::list<Customer *> myCusts = (*currTable)->getCustomers();
+        for (auto currCustomer = myCusts.begin(); currCustomer != myCusts.end(); ++currCustomer)
         {
-            // Forward the order to the kitchen using the placeOrder method.
-            placeOrder(Chefs, order);
-
-            std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
+            // Iterate over every customer
+            std::cout << (*currCustomer)->getName() << "\n";
         }
-        else if (currentCustomer->getState() == "Pay")
-        {
-            // create a new bill
-            Bill newBill = Bill(
-                newBill.generateOrderID(),
-                currentCustomer->getCustomerID(),
-                currentCustomer->getTotalAmount(),
-                currentCustomer->getTableNumber(),
-                currentCustomer->getRating(),
-                newBill.generateTabID(currentCustomer->getCustomerID()),
-                false);
-
-            // Pay the bill
-            newBill.pay();
-            std::cout << "Bill paid in full"
-                      << "\n";
-
-            // Create a bill memento
-            BillMemento billMemento(
-                newBill.getOrderID(),
-                newBill.getCustomerID(),
-                newBill.getTotalAmount(),
-                newBill.getTableNum(),
-                newBill.getRating(),
-                newBill.getTabID(),
-                newBill.isPaid());
-
-            // Send the bill memento to a new tab
-            Tab newtab;
-            newtab.addBill(billMemento, newBill.getOrderID());
-        }
-        else if (currentCustomer->getState() == "Rate")
-        {
-            std::cout << "Customer: " << currentCustomer->getName() << "has rated his meal a" << currentCustomer->getRating() << "out of 5." << std::endl;
-        }
-        else if (currentCustomer->getState() == "Leave")
-        {
-            std::cout << "Customer: " << currentCustomer->getName() << "is about to leave the restaurant." << std::endl;
-        }
-
-        // go to the next customer
-        currentCustomer = next();
     }
+
+    // // Get the state of the customer
+    // if (currentCustomer->getState() == "Order")
+    // {
+    //     // Forward the order to the kitchen using the placeOrder method.
+    //     placeOrder(Chefs, order);
+
+    //     std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
+    // }
+    // else if (currentCustomer->getState() == "Pay")
+    // {
+    //     // create a new bill
+    //     Bill newBill = Bill(
+    //         newBill.generateOrderID(),
+    //         currentCustomer->getCustomerID(),
+    //         currentCustomer->getTotalAmount(),
+    //         currentCustomer->getTableNumber(),
+    //         currentCustomer->getRating(),
+    //         newBill.generateTabID(currentCustomer->getCustomerID()),
+    //         false);
+
+    //     // Pay the bill
+    //     newBill.pay();
+    //     std::cout << "Bill paid in full"
+    //               << "\n";
+
+    //     // Create a bill memento
+    //     BillMemento billMemento(
+    //         newBill.getOrderID(),
+    //         newBill.getCustomerID(),
+    //         newBill.getTotalAmount(),
+    //         newBill.getTableNum(),
+    //         newBill.getRating(),
+    //         newBill.getTabID(),
+    //         newBill.isPaid());
+
+    //     // Send the bill memento to a new tab
+    //     Tab newtab;
+    //     newtab.addBill(billMemento, newBill.getOrderID());
+    // }
+    // else if (currentCustomer->getState() == "Rate")
+    // {
+    //     std::cout << "Customer: " << currentCustomer->getName() << "has rated his meal a" << currentCustomer->getRating() << "out of 5." << std::endl;
+    // }
+    // else if (currentCustomer->getState() == "Leave")
+    // {
+    //     std::cout << "Customer: " << currentCustomer->getName() << "is about to leave the restaurant." << std::endl;
+    // }
+
+    // go to the next customer
 }
 
 Waiter::~Waiter()

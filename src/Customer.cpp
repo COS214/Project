@@ -83,11 +83,6 @@ int Customer::getRating()
     return this->rating;
 }
 
-int Customer::getTableNumber()
-{
-    return this->tableNumber;
-}
-
 double Customer::getTotalAmount()
 {
     return 0.0;

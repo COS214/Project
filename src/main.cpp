@@ -341,21 +341,6 @@ void DecoratorTest()
     delete decoratedDish3;
 }
 
-void TableTest()
-{
-    srand(time(0));
-    int count = 10;
-
-    std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
-                           "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
-    Table *T = new Table(2); // Need to make these table numbers assigned in Floor composite
-    for (size_t i = 0; i < count; i++)
-    {
-        int randomIndex = rand() % count;
-        T->addCustomer(new Customer(names[randomIndex]));
-    }
-}
-
 void FloorTest()
 {
     srand(time(0));
@@ -381,7 +366,7 @@ void IteratorTest()
 
     std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
                            "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
-    srand(time(0));
+
     int count = 5;
     std::list<Table *> floor; // Not actually a floor object
     for (int i = 0; i < count; i++)
@@ -392,6 +377,7 @@ void IteratorTest()
 
     for (int i = 0; i < count; i++)
     {
+        srand(0);
         Table *ithTable = *it;
         for (int j = 0; j < count; j++)
         {
