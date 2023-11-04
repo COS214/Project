@@ -59,6 +59,54 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
         {
             // Iterate over every customer
             std::cout << (*currCustomer)->getName() << "\n";
+
+            if ((*currCustomer)->getState() == "Order")
+            {
+                // Forward the order to the kitchen using the placeOrder method.
+                placeOrder(Chefs, order);
+
+                std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
+            }
+            else if ((*currCustomer)->getState() == "Pay")
+            {
+                // Create a new bill
+                Bill newBill = Bill(
+                    newBill.generateOrderID(),
+                    (*currCustomer)->getCustomerID(),
+                    (*currCustomer)->getTotalAmount(),
+                    (*currTable)->getTableNumber(),
+                    (*currCustomer)->getRating(),
+                    newBill.generateTabID((*currCustomer)->getCustomerID()),
+                    false);
+
+                // Pay the bill
+                newBill.pay();
+                std::cout << "Bill paid in full" << "\n";
+
+                // Create a bill memento
+                BillMemento billMemento(
+                    newBill.getOrderID(),
+                    newBill.getCustomerID(),
+                    newBill.getTotalAmount(),
+                    newBill.getTableNum(),
+                    newBill.getRating(),
+                    newBill.getTabID(),
+                    newBill.isPaid());
+
+                cout << newBill.toString();
+
+                // Send the bill memento to a new tab
+                Tab newtab;
+                newtab.addBill(billMemento, newBill.getOrderID());
+            }
+            else if ((*currCustomer)->getState() == "Rate")
+            {
+                std::cout << "Customer: " << (*currCustomer)->getName() << " has rated the meal " << (*currCustomer)->getRating() << " out of 5." << std::endl;
+            }
+            else if ((*currCustomer)->getState() == "Leave")
+            {
+                std::cout << "Customer: " << (*currCustomer)->getName() << " is about to leave the restaurant." << std::endl;
+            }
         }
     }
 
