@@ -96,8 +96,8 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
                 cout << newBill.toString();
 
                 // Send the bill memento to a new tab
-                Tab newtab;
-                newtab.addBill(billMemento, newBill.getOrderID());
+                Tab *newTab = new Tab();
+                newTab->addBill(billMemento, newBill.getOrderID());
             }
             else if ((*currCustomer)->getState() == "Rate")
             {

@@ -13,6 +13,8 @@ private:
 	map<string, BillMemento> mementobills;
 
 public:
+	Tab();
+
 	void addBill(BillMemento bill, string OrderID);
 
 	void setBillMemento(string OrderID,BillMemento billMemento);
