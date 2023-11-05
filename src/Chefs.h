@@ -8,12 +8,14 @@ class Waiter;
 #include "Order.h"
 // #include "Waiter.h"
 #include <iostream>
+#include "Inventory.h"	
 
 class Chefs {
 	protected:
 		Chefs* nextHandler;
 	
   public:
+		static Inventory* inventory;
 	  Mediator* mediator;
 	  Chefs(Mediator* mediator) : mediator(mediator) {}
     virtual void cook(std::string dish) = 0;

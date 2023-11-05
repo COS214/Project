@@ -15,6 +15,8 @@ public:
 	void prepareOrder(Command* order, Waiter* currWaiter) override;
 	virtual ~SauceChef()=default;
 
+	bool isSauce(string item);
+
 };
 
 #endif

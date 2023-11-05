@@ -1,5 +1,8 @@
 #include "Chefs.h"
 
+Inventory* Chefs::inventory = nullptr;
+
+
 Chefs::Chefs() {
 	this->nextHandler = nullptr;
 }

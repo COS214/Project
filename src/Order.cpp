@@ -8,3 +8,13 @@ void Order::handleChange(Customer* c) {
 std::string Order::getState() {
     return "Order";
 }
+
+void Order::setCustomer(Customer* c)
+{
+    this->customer = c;
+}
+
+Customer* Order::getCustomer()
+{
+    return this->customer;
+}

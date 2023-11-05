@@ -20,6 +20,7 @@ public:
 	void initializeInventory(map<string, int> inventory);
 	bool removeFromInventory(string item, int count);
 	bool addToInventory(string item, int count);
+	void printInventory();
 };
 
 #endif

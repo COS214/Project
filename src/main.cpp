@@ -9,6 +9,7 @@
 #include <chrono>
 #include <sstream>
 
+
 #include "Bill.h"
 #include "BillMemento.h"
 #include "Tab.h"
@@ -220,6 +221,7 @@ void CommandChainSingletonTest()
     inventory->initializeInventory(inv);
 
     JuniorChef *junior = new JuniorChef();
+    junior->setInventory(inventory);
     VegetableChef *vegetable = new VegetableChef();
     MeatChef *meat = new MeatChef();
     SauceChef *sauce = new SauceChef();
@@ -471,6 +473,7 @@ void newFloorTest()
     }
 }
 
+
 string generateUniqueOrderID(int orders) {
      
     std::ostringstream idStream;
@@ -483,6 +486,41 @@ void FinalMain(){
     
     //-------------------------------------------------------CREATE KITCHEN----------------------------------------------------------------
     JuniorChef *junior = new JuniorChef();
+    
+    //-------------------------------------------------CREATE INVENTORY---------------------------------------------------------------
+    cout << endl;
+    Inventory *inventory = Inventory::getInstance();
+    map<string, int> inv;
+
+    inv["Spaghetti"] = 20; //
+    inv["Pancetta"] = 10; //
+    inv["Parmesan Cheese"] = 30; //
+    inv["Black Pepper"] = 40; //
+    inv["Pizza Dough"] = 25; //
+    inv["Tomato Sauce"] = 20; //
+    inv["Mozzarella Cheese"] = 35; //
+    inv["Fresh Basil"] = 15; //
+    inv["Lasagna Sheets"] = 10; //
+    inv["Bolognese Sauce"] = 18; //
+    inv["Ladyfingers"] = 25; //
+    inv["Mascarpone Cheese"] = 20; //
+    inv["Espresso"] = 30; //
+    inv["Cocoa Powder"] = 40; //
+    inv["Vegetable Broth"] = 20; //
+    inv["Tomatoes"] = 30; //
+    inv["Beans"] = 25; //
+    inv["Pasta"] = 30; //
+
+    inventory->initializeInventory(inv);
+    // One at bottom aswell to see inventory change after orders
+    // cout<<"\n\n\n"<<endl;
+    // inventory->printInventory(); 
+    cout << endl;
+    //-------------------------------------------------------CREATE KITCHEN----------------------------------------------------------------
+    JuniorChef *junior = new JuniorChef();
+    // junior->setInventory(inventory);
+    Chefs::inventory = inventory;
+
     VegetableChef *vegetable = new VegetableChef();
     MeatChef *meat = new MeatChef();
     SauceChef *sauce = new SauceChef();
@@ -490,16 +528,18 @@ void FinalMain(){
 
     Mediator *cm = new concreteMediator(head, junior, meat, sauce, vegetable);
 
-    junior->setMediator(cm);  
-    vegetable->setMediator(cm); 
-    meat->setMediator(cm);      
-    sauce->setMediator(cm);     
-    head->setMediator(cm);      
+    junior->setMediator(cm);    // Set the mediator for junior
+    vegetable->setMediator(cm); // Set the mediator for vegetable
+    meat->setMediator(cm);      // Set the mediator for meat
+    sauce->setMediator(cm);     // Set the mediator for sauce
+    head->setMediator(cm);      // Set the mediator for head
+
 
     junior->setNext(vegetable);
     vegetable->setNext(meat);
     meat->setNext(sauce);
     sauce->setNext(head);
+
 
     //-------------------------------------------------CREATE INVENTORY---------------------------------------------------------------
     cout << endl;
@@ -531,6 +571,7 @@ void FinalMain(){
     //cout<<"\n\n\n"<<endl;
     //inventory->printInventory(); 
 
+
     //--------------------------------------------------CREATE FLOOR-----------------------------------------------------------------
     srand(time(0)); 
     int numTables = 5; 
@@ -556,6 +597,7 @@ void FinalMain(){
 
     random_shuffle(&names[0], &names[numCustomers]);
     int customerIndex = 0;
+
     int customerID = 101;
 
     for (int i = 1; i <= numTables; i++)
@@ -564,7 +606,9 @@ void FinalMain(){
    
         for (int j = 0; j < numCustomersPerTable; j++)
         {
+
             Customer *customer = new Customer(names[customerIndex], customerID); // state = arrived
+
             table->addCustomer(customer);
             if(i==1){
                 customer->attach(waiter1);
@@ -581,9 +625,11 @@ void FinalMain(){
             if(i==5){
                 customer->attach(waiter5);
             }
+
             customer->change(); // state = waiting  
             customerIndex++;
             customerID++;
+
         }
         floor->addTable(table);
     }
@@ -595,6 +641,7 @@ void FinalMain(){
         cout << "Table: " << table->getTableNumber() << ":" << endl;
         for (auto &customer : table->getCustomers())
         {
+
             customer->change(); // state = seated
             //customer->setCustomerID("aba");
             cout << "  Customer: " << customer->getCustomerID() << " : " << customer->getName() << endl;
@@ -602,6 +649,7 @@ void FinalMain(){
     }
 
     // --------------------------------------------------CREATE MENU---------------------------------------------------------------------
+
     Dish *dish1 = new BasicDish();
     dish1->setName("Spaghetti Carbonara");
     dish1->setCost(140.0);
@@ -632,7 +680,6 @@ void FinalMain(){
     list<string> ingredients5 = {"Vegetable Broth", "Tomatoes", "Beans", "Pasta"};
     dish5->setIngredientsList(ingredients5);
 
-    
     Menu menu;
     menu.addDish("1", dish1, 140.0);
     menu.addDish("2", dish2, 120.0);
@@ -643,6 +690,7 @@ void FinalMain(){
     cout << endl;
     cout << "Menu has been presented to customers!" << endl;
     cout << endl;
+
     int orders=2034;
 
     //------------------------------------------------------CUSTOMERS ORDERS FOOD----------------------------------------------------------------
@@ -656,12 +704,15 @@ void FinalMain(){
         int count = 0;
         double tableTotalCost = 0.0;
 
+
         for (auto &customer : table->getCustomers())
         {
             count++;
             cout << "Customer number " << count;
             customer->change(); // state = order
+
             double customerTotalCost = 0.0;
+
                 
             int randomDish = (rand() % 5)+1;
             if(randomDish==1)
@@ -672,7 +723,9 @@ void FinalMain(){
                 decoratedDish1->addIngredient("Pickles");
                 cout << " chose Spaghetti Carbonara: " ; 
                 cout << "Dish price changes from R" << dish1->getCost() <<" to R" << decoratedDish1->getCost() << endl; 
+
                 customerTotalCost += decoratedDish1->getCost();
+
             }
             
             if(randomDish==2)
@@ -683,7 +736,9 @@ void FinalMain(){
                 decoratedDish2->removeIngredient("Basil");
                 cout << " chose Margherita Pizza: ";
                 cout << "Dish price changes from R" << dish2->getCost() <<" to R" << decoratedDish2->getCost() << endl;  
+
                 customerTotalCost += decoratedDish2->getCost();
+
             }
 
             if(randomDish==3)
@@ -693,20 +748,25 @@ void FinalMain(){
                 cout << " chose Lasagna and requested Special instructions : ";
                 decoratedDish3->addSpecialInstruction("Make sure cheese does not burn. ");
                 cout << "Dish price remains the same: " << decoratedDish3->getCost() << endl; 
+
                 customerTotalCost += decoratedDish3->getCost();
+
             }
 
             if(randomDish==4)
             {
                 cout << " chose Tiramisu: ";
                 cout << "Dish price remains the same: " << dish4->getCost() << endl; 
+
                 customerTotalCost += dish4->getCost();
+
             }
 
              if(randomDish==5)
             {
                 cout << " chose Minestrone Soup: ";
                 cout << "Dish price remains the same: " << dish5->getCost() << endl; 
+
                 customerTotalCost += dish5->getCost();
             }
             tableTotalCost += customerTotalCost; 
@@ -718,6 +778,7 @@ void FinalMain(){
     }
 
     // ---------------------------------------------------FOOD IS SENT TO THE KITCHEN----------------------------------------------------------------------
+
     for(auto &table : floor->getTables())
     {
         cout << "-----------------Table: " << table->getTableNumber() << " -----------------------" << endl;
@@ -725,6 +786,9 @@ void FinalMain(){
         for (auto &customer : table->getCustomers())
         {
             Order *custorder = new Order();
+
+            custorder->setCustomer(customer);
+
             Command *order = new KitchenOrder(custorder);
 
             if(table->getTableNumber()==1){
@@ -750,6 +814,7 @@ void FinalMain(){
     }
 
     // One at top as well to see inventory before orders
+
     //cout<<"\n\n\n"<<endl;
     //inventory->printInventory();
 
@@ -835,9 +900,11 @@ void FinalMain(){
     delete dish3;
     delete dish4;
     delete dish5;
+
     // delete decoratedDish1;
     // delete decoratedDish2;
     // delete decoratedDish3;
+
     delete junior;
     delete vegetable;
     delete meat;

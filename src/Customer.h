@@ -7,6 +7,7 @@
 #include <ctime>
 #include <cstdlib>
 #include "Subject.h"
+#include "Dish.h"
 #include "Bill.h" //added to use through waiter
 
 class State;
@@ -19,6 +20,7 @@ private:
 	int rating;
 	int tableNumber;
 	double totalAmount;
+	Dish *orderedDish;
 
 public:
 	Customer();
@@ -36,6 +38,8 @@ public:
 	std::string generateCustomerID();
 	void setCustomerID(std::string cID);
 	double getTotalAmount();
+	void setDish(Dish *d);
+	Dish *getDish();
 
 private:
 	State *state;

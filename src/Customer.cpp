@@ -21,6 +21,7 @@ Customer::Customer(std::string name, int id)
     
     // std::string CID = generateCustomerID();
     // customerID=CID;
+
     //std::cout << name << " has arrived!" << std::endl;
     state = new Arrived();
     
@@ -102,4 +103,14 @@ int Customer::getRating()
 double Customer::getTotalAmount()
 {
     return 0.0;
+}
+
+void Customer::setDish(Dish *d)
+{
+    this->orderedDish = d;
+}
+
+Dish* Customer::getDish()
+{
+    return this->orderedDish;
 }
