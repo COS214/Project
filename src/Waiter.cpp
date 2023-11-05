@@ -3,8 +3,7 @@
 void Waiter::placeOrder(Chefs *Chefs, Command *order, int cookStrategy)
 {
     //std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
-    std::cout << "-Waiter sends order to the kitchen: ";
-
+    std::cout << "-Waiter sends order to the kitchen: ";;
     Chefs->prepareOrder(order, this, cookStrategy);
 }
 
@@ -91,7 +90,7 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
             if ((*currCustomer)->getState() == "Order")
             {
                 // Forward the order to the kitchen using the placeOrder method.
-                placeOrder(Chefs, order,1);
+                placeOrder(Chefs, order, 1);
 
                 std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
             }
@@ -198,7 +197,7 @@ Waiter::~Waiter()
 
 void Waiter::receiveOrder(Command *order)
 {
-    cout << "----------------Waiter received order----------------" << endl;
+    cout << "----------------Waiter received order----------------" << endl << endl;
 }
 // default constructor
 Waiter::Waiter()

@@ -599,7 +599,7 @@ void FinalMain(){
         floor->addTable(table);
     }
 
-    cout << "Layout of the Restaurant Floor:" << endl;
+    cout << "\nLayout of the Restaurant Floor:" << endl;
     cout << endl;
     for (auto &table : floor->getTables())
     {
@@ -610,6 +610,8 @@ void FinalMain(){
             customer->change(); // state = seated
             cout << "  Customer: " << customer->getCustomerID() << " : " << customer->getName() << endl;
         }
+
+        cout << endl;
     }
 
     // --------------------------------------------------CREATE MENU---------------------------------------------------------------------
