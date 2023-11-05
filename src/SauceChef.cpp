@@ -1,9 +1,13 @@
+/**
+ * @file SauceChef.cpp
+ * @brief Contains the declaration of the SauceChef class functions.
+ */
+
 #include "SauceChef.h"
 
 SauceChef::SauceChef(){
     std::cout << "Sauce Chef has arrived." << std::endl;
 }
-
 
 void SauceChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) {
 	std::cout << "Sauce Chef is preparing & removing from Inventory. " << std::endl;

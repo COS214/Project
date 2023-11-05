@@ -1,3 +1,8 @@
+/**
+ * @file Subject.cpp
+ * @brief Contains the declaration of the Subject class functions.
+ */
+
 #include "Subject.h"
 #include <iostream>
 #include <vector>

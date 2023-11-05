@@ -1,3 +1,8 @@
+/**
+ * @file Table.cpp
+ * @brief Contains the declaration of the Table class functions.
+ */
+
 #include <iostream>
 #include "Table.h"
 #include "Customer.h"
@@ -11,6 +16,7 @@ Table::Table(int tableNumber)
 {
     this->tableNumber = tableNumber;
 }
+
 Table::Table()
 {
 }

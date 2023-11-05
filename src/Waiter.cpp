@@ -1,3 +1,8 @@
+/**
+ * @file Waiter.cpp
+ * @brief Contains the declaration of the Waiter class functions.
+ */
+
 #include "Waiter.h"
 
 void Waiter::placeOrder(Chefs *Chefs, Command *order, int cookStrategy)
@@ -199,7 +204,7 @@ void Waiter::receiveOrder(Command *order)
 {
     cout << "----------------Waiter received order----------------" << endl << endl;
 }
-// default constructor
+
 Waiter::Waiter()
 {
     this->tables;

@@ -1,3 +1,8 @@
+/**
+ * @file Waiting.cpp
+ * @brief Contains the declaration of the Waiting class functions.
+ */
+
 #include "Waiting.h"
 #include "Seated.h"
 

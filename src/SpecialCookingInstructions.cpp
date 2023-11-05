@@ -1,3 +1,8 @@
+/**
+ * @file SpecialCookingInstructions.cpp
+ * @brief Contains the declaration of the SpecialCookingInstructions class functions.
+ */
+
 #include "SpecialCookingInstructions.h"
 #include <iostream>
 

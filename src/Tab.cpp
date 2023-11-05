@@ -1,3 +1,8 @@
+/**
+ * @file Tab.cpp
+ * @brief Contains the declaration of the Tab class functions.
+ */
+
 #include "Tab.h"
 
 Tab::Tab() {

@@ -1,3 +1,8 @@
+/**
+ * @file VegetableChef.cpp
+ * @brief Contains the declaration of the VegetableChef class functions.
+ */
+
 #include "VegetableChef.h"
 
 VegetableChef::VegetableChef(){
