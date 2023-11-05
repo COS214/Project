@@ -7,44 +7,44 @@
 
 void Waiter::placeOrder(Chefs *Chefs, Command *order, int cookStrategy)
 {
-    //std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
-    std::cout << "\033[0;37m-------------------Waiter sends order to the kitchen: ";;
+    // std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
+    std::cout << "\033[0;37m-------------------Waiter sends order to the kitchen: ";
+    ;
     Chefs->prepareOrder(order, this, cookStrategy);
 }
 
 void Waiter::update(string message)
 {
-    if (message=="Arrived")
+    if (message == "Arrived")
     {
         cout << "Waiter notices : Customer arrived. " << endl;
     }
-    if (message=="Waiting")
+    if (message == "Waiting")
     {
-        cout << "Waiter notices : Customer waiting to be seated. " << endl;        
+        cout << "Waiter notices : Customer waiting to be seated. " << endl;
     }
-    if (message=="Seated")
+    if (message == "Seated")
     {
-        cout << "Waiter has seated customer : ";   
+        cout << "Waiter has seated customer : ";
     }
-    if (message=="Order")
+    if (message == "Order")
     {
-        cout << "Waiter notices Customer ready to order : " ;  
+        cout << "Waiter notices Customer ready to order : ";
     }
-    if (message=="Rate")
+    if (message == "Rate")
     {
-        cout << "Waiter notices Customer would like to Rate experience : " ;
+        cout << "Waiter notices Customer would like to Rate experience : ";
     }
-    if (message=="Pay")
+    if (message == "Pay")
     {
-        cout << "Waiter notices Customer would like to pay the Bill. " << endl;   
+        cout << "Waiter notices Customer would like to pay the Bill. " << endl;
     }
-    if (message=="Leave")
+    if (message == "Leave")
     {
-        cout << "Waiter notices Customer ready to leave - allows them to do so." << endl;   
+        cout << "Waiter notices Customer ready to leave - allows them to do so." << endl;
     }
     // cout << "Customer has changed state: " << message << endl;
 }
-
 
 Waiter::Waiter(std::list<Table *> tables) : tables(tables)
 {
@@ -80,7 +80,12 @@ bool Waiter::isDone()
 {
     return currentTable == tables.end();
 }
-
+/**
+ * @brief This method allows the waiter to serve customers based on their current state.
+ *
+ * @param Chefs Pointer to the Chefs object.
+ * @param order Pointer to the Command object representing the customer's order.
+ */
 void Waiter::serveCustomers(Chefs *Chefs, Command *order)
 {
     std::list<Table *> myTables = this->tables;
@@ -114,7 +119,8 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
 
                 // Pay the bill
                 newBill.pay();
-                std::cout << "Bill paid in full" << "\n";
+                std::cout << "Bill paid in full"
+                          << "\n";
 
                 // Create a bill memento
                 BillMemento billMemento(
@@ -196,16 +202,23 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
 
     // go to the next customer
 }
-
+/**
+ * @brief Destructor
+ *
+ */
 Waiter::~Waiter()
 {
 }
 
 void Waiter::receiveOrder(Command *order)
 {
-    cout << "\033[0;37m---------------------------------------------------Waiter received order---------------------------------------------------\033[0m" << endl << endl;
+    cout << "\033[0;37m---------------------------------------------------Waiter received order---------------------------------------------------\033[0m" << endl
+         << endl;
 }
-
+/**
+ * @brief Default Constructor.
+ *
+ */
 Waiter::Waiter()
 {
     this->tables;

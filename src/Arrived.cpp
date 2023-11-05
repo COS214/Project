@@ -5,11 +5,19 @@
 
 #include "Arrived.h"
 #include "Waiting.h"
-
-void Arrived::handleChange(Customer* c) {
+/**
+ * @brief  Handles the state change of a customer.
+ * @param  c The customer whose state is to be changed.
+ */
+void Arrived::handleChange(Customer *c)
+{
     c->setState(new Waiting());
 }
-
-std::string Arrived::getState() {
+/**
+ * @brief  Gets the state of the customer.
+ * @return The state of the customer.
+ */
+std::string Arrived::getState()
+{
     return "Arrived";
 }

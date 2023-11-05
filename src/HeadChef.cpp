@@ -4,17 +4,32 @@
  */
 
 #include "HeadChef.h"
-
-HeadChef::HeadChef(){
+/**
+ * @brief Default constructor for the HeadChef class.
+ */
+HeadChef::HeadChef()
+{
     std::cout << "Head Chef has arrived." << std::endl;
 }
-
-void HeadChef::cook(std::string dish) {
+/**
+ * @brief This method allows the HeadChef to cook a specific dish.
+ *
+ * @param dish String representing the name of the dish to be cooked.
+ */
+void HeadChef::cook(std::string dish)
+{
     std::cout << "Head chef is cooking " << dish << std::endl;
     this->mediator->notify(this, "cook");
 }
-
-void HeadChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) {
+/**
+ * @brief This method allows the HeadChef to prepare an order and send it to the waiter.
+ *
+ * @param order Pointer to the Command object representing the customer's order.
+ * @param currWaiter Pointer to the Waiter object who is currently serving.
+ * @param cookStrategy Integer representing the cooking strategy to be used.
+ */
+void HeadChef::prepareOrder(Command *order, Waiter *currWaiter, int cookStrategy)
+{
     std::cout << "Head Chef is preparing & removing from Inventory. " << std::endl;
     order->execute();
     // After the head chef prepares the order, send it to the waiter
