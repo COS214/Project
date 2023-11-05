@@ -1,19 +1,43 @@
 #include "Waiter.h"
-#include <cstdlib> // for rand() and srand()
 
-void Waiter::placeOrder(Chefs *Chefs, Command *order, int cookStrategy)
+void Waiter::placeOrder(Chefs *Chefs, Command *order)
 {
     //std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
-    std::cout << "-Waiter sends order to the kitchen: ";
-
-    Chefs->prepareOrder(order, this, cookStrategy);
+    std::cout << "-Waiter sends order to the kitchen: ";;
+    Chefs->prepareOrder(order, this);
 }
 
 void Waiter::update(string message)
 {
-    // name can be the name given to the waiter object observing a specific customer
-    // can be changed to an id instead
-    //cout << "Customer has changed state: " << message << endl;
+    if (message=="Arrived")
+    {
+        cout << "The Waiter has noticed that the Customer has arrived" << endl;
+    }
+    if (message=="Waiting")
+    {
+        cout << "The Waiter has noticed that the Customer is waiting to be seated" << endl;        
+    }
+    if (message=="Seated")
+    {
+        cout << "The Waiter has now seated the Customer at a table" << endl;   
+    }
+    if (message=="Order")
+    {
+        cout << "The Waiter has noted that the Customer is ready to order and the Waiter will now take that order" << endl;   
+    }
+    if (message=="Rate")
+    {
+        cout << "The Waiter has been informed that the Customer would like to Rate their experience" << endl;   
+    }
+    if (message=="Pay")
+    {
+        cout << "The Waiter recognizes that the Customer wants to pay their bill and the Waiter brings the bill to the table" << endl;   
+    }
+    if (message=="Leave")
+    {
+        cout << "The Waiter sees the Customer wants to leave and they are free to do so since they have paid" << endl;   
+    }
+    // cout << "Customer has changed state: " << message << endl;
 }
 
 Waiter::Waiter(std::list<Table *> tables) : tables(tables)
@@ -66,7 +90,7 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
             if ((*currCustomer)->getState() == "Order")
             {
                 // Forward the order to the kitchen using the placeOrder method.
-                placeOrder(Chefs, order, 1);
+                placeOrder(Chefs, order);
 
                 std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
             }
@@ -173,7 +197,7 @@ Waiter::~Waiter()
 
 void Waiter::receiveOrder(Command *order)
 {
-    cout << "----------------Waiter received order----------------" << endl << endl;
+    cout << "----------------Waiter received order----------------" << endl;
 }
 // default constructor
 Waiter::Waiter()

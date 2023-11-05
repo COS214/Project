@@ -37,7 +37,10 @@ Customer::~Customer()
 void Customer::setState(State *state_)
 {
     //std::cout << "setState called" << std::endl;
-    delete state;
+    if (state != nullptr)
+    {
+        delete state;
+    }
     state = state_;
 }
 
@@ -49,8 +52,7 @@ void Customer::setRating(int rating){
 void Customer::change()
 {
     state->handleChange(this);
-    std::string message = "State changed to " + state->getState();
-    notify(message);
+    notify(getState());
 }
 
 std::string Customer::getState()
