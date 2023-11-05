@@ -26,7 +26,7 @@ void Bill::setBillMemento(BillMemento memento) {
 	this->billMemento = memento;
 }
 
-map<string, Bill> Bill::splitBill(int splitIntoNBills, Bill bill, int order) {
+map<string, Bill> Bill::splitBill(int splitIntoNBills, Bill bill, int order, std::string customerIDs[]) {
     // Calculate the new total amount for each split bill
     double newTotalAmount = bill.getTotalAmount(); // splitIntoNBills;
 
@@ -42,13 +42,15 @@ map<string, Bill> Bill::splitBill(int splitIntoNBills, Bill bill, int order) {
 
         Bill splitBill(
             orderID, // You need a method to generate unique Order IDs
-            bill.getCustomerID(),
+            customerIDs[i-1],
             newTotalAmount,
             bill.getTableNum(),
             bill.getRating(),
             generateTabID(bill.getCustomerID()), // Use the generateTabID method
             bill.isPaid()
         );
+
+     
 
         splitBills[splitBill.getOrderID()] = splitBill;
         order++;
@@ -118,10 +120,10 @@ void Bill::pay() {
 
 void Bill::payBill() {
     if (this->isPaid()) { ///check if the bill has been paid
-        std::cout << "This bill has already been paid." << std::endl;
+        std::cout << "This bill has already been paid by "<< this->getCustomerID() << std::endl;
     } else {
         this->pay(); ///pay the bill
-        std::cout << "Bill with order ID " << this->getOrderID() << " has been paid." << std::endl;
+        std::cout << "Bill with order ID " << this->getOrderID() << " has been paid by customer "<< this->getCustomerID() << std::endl;
     }
 }
 

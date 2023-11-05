@@ -1,8 +1,3 @@
-/**
- * @file Tab.cpp
- * @brief Contains the declaration of the Tab class functions.
- */
-
 #include "Tab.h"
 
 Tab::Tab() {
@@ -15,7 +10,7 @@ Tab::Tab() {
 /// @param OrderID 
 void Tab::addBill(BillMemento bill, string OrderID) {
     mementobills[OrderID] = bill;
-    cout << "Bill succesffully added to a tab!" << endl;
+    cout << "Bill for order " << OrderID << " succesfully added to tab of customer "<< bill.getCustomerID() << ". "<< endl;
 }
 /// @brief sets a specific BillMemento
 /// @param OrderID 

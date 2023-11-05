@@ -3,10 +3,9 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
-#include <cstdlib> // for rand() and srand()
-#include <ctime>   // for time()
+#include <cstdlib> 
+#include <ctime>   
 #include <random>
-#include <chrono>
 #include <sstream>
 
 
@@ -564,6 +563,7 @@ void FinalMain(){
     int customerIndex = 0;
 
     int customerID = 101;
+    
 
     for (int i = 1; i <= numTables; i++)
     {
@@ -815,35 +815,30 @@ void FinalMain(){
     {
         cout << "-----------------Table: " << table->getTableNumber() << " -----------------------" << endl;
         int split = (rand()%3)+1;
-        
+        string customerIDs[5]={"","","","",""};
         string payingCustomer = "";
-
+        int i=0;
         for (auto &customer : table->getCustomers())
         {
             customer->change(); // state = bill
+            customerIDs[i]=customer->getCustomerID();
             payingCustomer = customer->getCustomerID();
+            i++;
         }
     
 
         if(split == 1)
         {
             cout << "Bill will be split" << endl;
-       
             Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(),  averageTableRating[table->getTableNumber()], bill.generateTabID("CID785K"), false);
-
             int splitIntoNBills = 5;
-           
-            map<string, Bill> splitBills = bill.splitBill(splitIntoNBills, bill, order);
-
+            map<string, Bill> splitBills = bill.splitBill(splitIntoNBills, bill, order, customerIDs);
             for (auto it =splitBills.begin(); it != splitBills.end(); ++it) 
             {
 
                 it->second.payBill();
                 
-            }
-
-           
-                    
+            }     
         }
 
         else if(split==2)
