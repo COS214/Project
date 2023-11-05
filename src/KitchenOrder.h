@@ -10,7 +10,7 @@ class KitchenOrder : public Command {
 
 private:
 	Kitchen* kitchen;
-	Order* order;
+	
 	std::string state = "Uncooked";
 
 public:

@@ -34,6 +34,13 @@ bool Inventory::addToInventory(string item, int count) {
 		}
 		return true;  // You can add error handling logic if needed
 	}
+    
+    void Inventory::printInventory()
+    {
+        for (const auto& pair : inventory) {
+        std::cout << "Key: " << pair.first << ", Value: " << pair.second << std::endl;
+        }
+    }
 
 bool Inventory::removeFromInventory(string item, int count) {
         if (inventory.find(item) != inventory.end()) {
@@ -42,7 +49,8 @@ bool Inventory::removeFromInventory(string item, int count) {
                 inventory[item] -= count;
                 if (inventory[item] == 0) {
                     // If count reaches zero, remove the item from the inventory
-                    inventory.erase(item);
+                    // inventory.erase(item);
+                    cout<<"Item "<<item<<" is out of stock!"<<endl;
                 }
                 return true;
             } else {
@@ -53,4 +61,5 @@ bool Inventory::removeFromInventory(string item, int count) {
             // Item doesn't exist in the inventory
             return false;
         }
+        
     }

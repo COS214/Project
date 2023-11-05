@@ -8,10 +8,10 @@ void HeadChef::cook(std::string dish) {
 void HeadChef::prepareOrder(Command* order, Waiter* currWaiter) {
     std::cout << "Head Chef is preparing & removing from Inventory. " << std::endl;
     order->execute();
-    currWaiter->receiveOrder(order);
     // After the head chef prepares the order, send it to the waiter
     this->mediator->notify(this, "cook");
-    std::cout << "Order prepared by Head Chef. Sending it to the waiter.\n" << std::endl;
+    std::cout << "Order prepared by Head Chef. Sending it to the waiter." << std::endl;
+    currWaiter->receiveOrder(order);
     
 }
 

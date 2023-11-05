@@ -13,6 +13,7 @@ public:
 	void cook(std::string dish);
 	void prepareOrder(Command* order, Waiter* currWaiter) override;
 	virtual ~JuniorChef()=default;
+	void setInventory(Inventory* inventory);
 
 };
 
