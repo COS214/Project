@@ -1,8 +1,18 @@
 #include "MeatChef.h"
 
-void MeatChef::prepareOrder(Command* order, Waiter* currWaiter) {
+void MeatChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) {
 	std::cout << "Meat Chef is preparing & removing from Inventory. " << std::endl;
 
+    if(cookStrategy == 1)
+    {
+        std::cout << "-Meat Chef is grilling the meat. " << std::endl;
+    }
+
+    else
+    {
+        std::cout << "-Meat Chef is frying the meat. " << std::endl;
+    }
+    
     Dish* dish = order->order->getCustomer()->getDish();
     for (const std::string& ingredient : dish->getList()) {
         // Check if the ingredient is vegetable-related
@@ -15,7 +25,7 @@ void MeatChef::prepareOrder(Command* order, Waiter* currWaiter) {
 
     order->execute();
     this->mediator->notify(this, "cook");
-    Chefs::prepareOrder(order, currWaiter);
+    Chefs::prepareOrder(order, currWaiter, cookStrategy);
 }
 
 bool MeatChef::isMeat(string item)

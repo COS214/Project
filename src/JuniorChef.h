@@ -11,7 +11,7 @@ public:
 	JuniorChef(){}
 	JuniorChef(Mediator* mediator) : Chefs(mediator) {}
 	void cook(std::string dish);
-	void prepareOrder(Command* order, Waiter* currWaiter) override;
+	void prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) override;
 	virtual ~JuniorChef()=default;
 	void setInventory(Inventory* inventory);
 

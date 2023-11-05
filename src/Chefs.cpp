@@ -7,9 +7,9 @@ Chefs::Chefs() {
 	this->nextHandler = nullptr;
 }
 
-void Chefs::prepareOrder(Command* order, Waiter* currWaiter) {
+void Chefs::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) {
 	if (nextHandler) {
-        nextHandler->prepareOrder(order, currWaiter);
+        nextHandler->prepareOrder(order, currWaiter, cookStrategy);
     }
 }
 

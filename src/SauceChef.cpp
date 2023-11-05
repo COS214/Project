@@ -1,6 +1,6 @@
 #include "SauceChef.h"
 
-void SauceChef::prepareOrder(Command* order, Waiter* currWaiter) {
+void SauceChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) {
 	std::cout << "Sauce Chef is preparing & removing from Inventory. " << std::endl;
 
     Dish* dish = order->order->getCustomer()->getDish();
@@ -15,7 +15,7 @@ void SauceChef::prepareOrder(Command* order, Waiter* currWaiter) {
 
     order->execute();
     this->mediator->notify(this, "cook");
-    Chefs::prepareOrder(order, currWaiter);
+    Chefs::prepareOrder(order, currWaiter, cookStrategy);
 }
 
 bool SauceChef::isSauce(string item)

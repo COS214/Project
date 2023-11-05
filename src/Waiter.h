@@ -25,7 +25,7 @@ private:
 
 public:
 	Waiter();
-	void placeOrder(Chefs *Chefs, Command *order);
+	void placeOrder(Chefs *Chefs, Command *order, int cookStrategy);
 	void update(string message);
 
 	// added for iterator pattern

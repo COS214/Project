@@ -20,7 +20,7 @@ class Chefs {
 	  Chefs(Mediator* mediator) : mediator(mediator) {}
     virtual void cook(std::string dish) = 0;
 		Chefs();
-		virtual void prepareOrder(Command* order, Waiter* currWaiter);
+		virtual void prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy);
 		void setNext(Chefs* next);
 		void setMediator(Mediator* mediator);
 };

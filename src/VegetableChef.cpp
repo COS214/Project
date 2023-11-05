@@ -1,6 +1,6 @@
 #include "VegetableChef.h"
 
-void VegetableChef::prepareOrder(Command* order, Waiter* currWaiter) {
+void VegetableChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) {
 	std::cout << "Vegetable Chef is preparing & removing from Inventory. " << std::endl;
 
     Dish* dish = order->order->getCustomer()->getDish();
@@ -16,7 +16,7 @@ void VegetableChef::prepareOrder(Command* order, Waiter* currWaiter) {
 
     order->execute();
     this->mediator->notify(this, "cook");
-    Chefs::prepareOrder(order, currWaiter);
+    Chefs::prepareOrder(order, currWaiter, cookStrategy);
     
 }
 

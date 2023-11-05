@@ -243,7 +243,7 @@ void CommandChainSingletonTest()
     Waiter *waiter = new Waiter();
     Order *custorder = new Order();
     Command *order = new KitchenOrder(custorder);
-    waiter->placeOrder(junior, order);
+    waiter->placeOrder(junior, order, 1);
 
     std::cout << "<=============================== Command Chain Singleton Mediator Unit Testing Ends ===============================>" << std::endl;
 
@@ -737,7 +737,7 @@ void FinalMain(){
         }
         tableTotalCosts[table->getTableNumber()] = tableTotalCost;
         cout << "Total cost for Table " << table->getTableNumber() << ": R" << tableTotalCost << endl;
-        cout << "Order ID for this table: " << orderID << endl;
+        cout << "Order ID for this table: " << orderID << endl << endl;
         orders++;
     }
 
@@ -755,32 +755,33 @@ void FinalMain(){
 
             Command *order = new KitchenOrder(custorder);
 
+            int cookStrategy = (rand() % 2)+1;
+
             if(table->getTableNumber()==1){
-                waiter1->placeOrder(junior, order);
+                waiter1->placeOrder(junior, order, cookStrategy);
             }
 
             if(table->getTableNumber()==2){
-                waiter2->placeOrder(junior, order);
+                waiter2->placeOrder(junior, order, cookStrategy);
             }
 
             if(table->getTableNumber()==3){
-                waiter3->placeOrder(junior, order);
+                waiter3->placeOrder(junior, order, cookStrategy);
             }
 
             if(table->getTableNumber()==4){
-                waiter4->placeOrder(junior, order);
+                waiter4->placeOrder(junior, order, cookStrategy);
             }
 
             if(table->getTableNumber()==5){
-                waiter5->placeOrder(junior, order);
+                waiter5->placeOrder(junior, order, cookStrategy);
             }
         }
     }
 
-    
-
     cout<<"Inventory after order has been sent to the kitchen: "<<endl;
     inventory->printInventory();
+    cout << endl;
 
     //----------------------------------------------------------CUSTOMERS RATE FOOD--------------------------------------------------------------------
     
@@ -800,7 +801,8 @@ void FinalMain(){
             cout << "Customer " << customer->getCustomerID() << " " << customer->getName() << " rated food " << customer->getRating() << " stars" << endl;
         }
         averageTableRating[table->getTableNumber()] = average/5;
-        cout << "Overall table rating: "<< averageTableRating[table->getTableNumber()]  << endl;
+        cout << "Overall table rating: "<< averageTableRating[table->getTableNumber()]  << endl << endl;
+
     }
 
     //-----------------------------------------------------------CUSTOMERS PAY BILL--------------------------------------------------------------------
@@ -851,13 +853,10 @@ void FinalMain(){
             tab.addBill(memento, memento.getOrderID());
              
         }
+        cout << endl;
 
     } 
     
-
-    // add in strategy
-
-
     // detach waiter objects from customer
     // delete dynamic objects
     delete dish1;
@@ -897,11 +896,6 @@ int main()
     // newFloorTest();
 
     FinalMain();
-    
 
-
-
-   
-    
     return 0;
 }

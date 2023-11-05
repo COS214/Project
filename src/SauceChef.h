@@ -12,7 +12,7 @@ public:
 	SauceChef(){}
   	SauceChef(Mediator* mediator) : Chefs(mediator) {}
 	void cook(std::string dish);
-	void prepareOrder(Command* order, Waiter* currWaiter) override;
+	void prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) override;
 	virtual ~SauceChef()=default;
 
 	bool isSauce(string item);
