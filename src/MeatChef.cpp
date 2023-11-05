@@ -8,7 +8,7 @@ void MeatChef::prepareOrder(Command* order, Waiter* currWaiter) {
         if (isMeat(ingredient)) {
             // Call the removeFromInventory function to decrement the quantity
             // cout<<"Meat Chef is removing "<<ingredient<<" from inventory"<<endl;
-            inventory->removeFromInventory(ingredient, 1);
+            Chefs::inventory->removeFromInventory(ingredient, 1);
         }
     }
     order->execute();

@@ -13,9 +13,9 @@ class Waiter;
 class Chefs {
 	protected:
 		Chefs* nextHandler;
-		Inventory* inventory;
 	
   public:
+		static Inventory* inventory;
 	  Mediator* mediator;
 	  Chefs(Mediator* mediator) : mediator(mediator) {}
     virtual void cook(std::string dish) = 0;

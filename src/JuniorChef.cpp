@@ -10,7 +10,7 @@ void JuniorChef::prepareOrder(Command* order, Waiter* currWaiter) {
 
 void JuniorChef::setInventory(Inventory* inventory)
 {
-    this->inventory = inventory;
+    Chefs::inventory = inventory;
 }
 
 void JuniorChef::cook(std::string dish) {

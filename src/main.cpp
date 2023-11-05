@@ -496,10 +496,14 @@ void FinalMain(){
     inv["Pasta"] = 30; //
 
     inventory->initializeInventory(inv);
+    // One at bottom aswell to see inventory change after orders
+    // cout<<"\n\n\n"<<endl;
+    // inventory->printInventory(); 
     cout << endl;
     //-------------------------------------------------------CREATE KITCHEN----------------------------------------------------------------
     JuniorChef *junior = new JuniorChef();
-    junior->setInventory(inventory);
+    // junior->setInventory(inventory);
+    Chefs::inventory = inventory;
     VegetableChef *vegetable = new VegetableChef();
     MeatChef *meat = new MeatChef();
     SauceChef *sauce = new SauceChef();
@@ -722,6 +726,10 @@ void FinalMain(){
             }
         }
     }
+
+    // One at top as well to see inventory before orders
+    // cout<<"\n\n\n"<<endl;
+    // inventory->printInventory();
 
 
     // add in strategy
