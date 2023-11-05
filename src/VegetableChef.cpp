@@ -4,16 +4,19 @@ void VegetableChef::prepareOrder(Command* order, Waiter* currWaiter) {
 	std::cout << "Vegetable Chef is preparing & removing from Inventory. " << std::endl;
     
     Dish* dish = order->order->getCustomer()->getDish();
+    // cout<<"\n========================\n"<<endl;
     for (const std::string& ingredient : dish->getList()) {
-    // Check if the ingredient is vegetable-related
-    if (isVegetable(ingredient)) {
-        // Call the removeFromInventory function to decrement the quantity
-        inventory->removeFromInventory(ingredient, 1);
+        // Check if the ingredient is vegetable-related
+        if (isVegetable(ingredient)) {
+            // Call the removeFromInventory function to decrement the quantity
+            // cout<<"Vegetable Chef is removing "<<ingredient<<" from inventory"<<endl;
+            inventory->removeFromInventory(ingredient, 1);
+        }
     }
     order->execute();
     this->mediator->notify(this, "cook");
     Chefs::prepareOrder(order, currWaiter);
-    }
+    
 }
 
 void VegetableChef::cook(std::string dish) {

@@ -2,7 +2,15 @@
 
 void SauceChef::prepareOrder(Command* order, Waiter* currWaiter) {
 	std::cout << "Sauce Chef is preparing & removing from Inventory. " << std::endl;
-    //inventory.removeFromInventory(item, int);
+    Dish* dish = order->order->getCustomer()->getDish();
+    for (const std::string& ingredient : dish->getList()) {
+        // Check if the ingredient is vegetable-related
+        if (isSauce(ingredient)) {
+            // Call the removeFromInventory function to decrement the quantity
+            // cout<<"Sauce Chef is removing "<<ingredient<<" from inventory"<<endl;
+            inventory->removeFromInventory(ingredient, 1);
+        }
+    }
     order->execute();
     this->mediator->notify(this, "cook");
     Chefs::prepareOrder(order, currWaiter);
