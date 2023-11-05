@@ -1,10 +1,11 @@
 #include "Waiter.h"
 
-void Waiter::placeOrder(Chefs *Chefs, Command *order)
+void Waiter::placeOrder(Chefs *Chefs, Command *order, int cookStrategy)
 {
     //std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
-    std::cout << "-Waiter sends order to the kitchen: ";;
-    Chefs->prepareOrder(order, this);
+    std::cout << "-Waiter sends order to the kitchen: ";
+
+    Chefs->prepareOrder(order, this, cookStrategy);
 }
 
 void Waiter::update(string message)
@@ -90,7 +91,7 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
             if ((*currCustomer)->getState() == "Order")
             {
                 // Forward the order to the kitchen using the placeOrder method.
-                placeOrder(Chefs, order);
+                placeOrder(Chefs, order,1);
 
                 std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
             }
