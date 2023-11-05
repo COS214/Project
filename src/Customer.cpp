@@ -29,7 +29,7 @@ Customer::Customer(std::string name, int id)
 }
 Customer::~Customer()
 {
-    std::cout << "Destructor called" << std::endl;
+    //std::cout << "Destructor called" << std::endl;
     delete state;
     state = 0;
 }
