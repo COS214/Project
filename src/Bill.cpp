@@ -1,16 +1,13 @@
+/**
+ * @file Bill.cpp
+ * @brief Contains the implementation of the Bill class.
+ */
+
 #include "Bill.h"
 #include <sstream>
 #include <map>
 using namespace std;
 
-/// @brief Implementation for the Bill class
-/// @param orderID 
-/// @param customerID 
-/// @param totalAmount 
-/// @param tableNum 
-/// @param rating 
-/// @param tabID 
-/// @param paid 
 
 ///  initialize the constructor for the bill, when you make the bill it makes a memento too
 Bill::Bill(
@@ -160,5 +157,4 @@ bool Bill::operator<(const Bill& other) const {
 }
 
 Bill::Bill() : orderID(""), customerID(""), totalAmount(0.0), tableNum(0), rating(0), tabID(""), paid(false) {}
-
 

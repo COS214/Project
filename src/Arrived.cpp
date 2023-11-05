@@ -1,3 +1,8 @@
+/**
+ * @file Arrived.cpp
+ * @brief Contains the implementation of the Arrived class.
+ */
+
 #include "Arrived.h"
 #include "Waiting.h"
 

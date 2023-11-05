@@ -1,13 +1,9 @@
-#include "BillMemento.h"
+/**
+ * @file BillMemento.cpp
+ * @brief Contains the implementation of the BillMemento class.
+ */
 
-/// @brief This is the MementoBill implementation
-/// @param orderID 
-/// @param customerID 
-/// @param totalAmount 
-/// @param tableNum 
-/// @param rating 
-/// @param tabID 
-/// @param paid 
+#include "BillMemento.h"
 
 /// Set the constructor for the BillMemento
 BillMemento::BillMemento(string orderID, string customerID, double totalAmount,int tableNum, int rating, string tabID, bool paid) : 

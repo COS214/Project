@@ -1,7 +1,11 @@
+/**
+ * @file Chefs.cpp
+ * @brief Contains the implementation of the Chefs class.
+ */
+
 #include "Chefs.h"
 
 Inventory* Chefs::inventory = nullptr;
-
 
 Chefs::Chefs() {
 	this->nextHandler = nullptr;

@@ -1,3 +1,8 @@
+/**
+ * @file AddToDish.cpp
+ * @brief Contains the implementation of the AddToDish class.
+ */
+
 #include "AddToDish.h"
 #include <iostream>
 #include <list>
