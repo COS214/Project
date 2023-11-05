@@ -515,8 +515,9 @@ void FinalMain(){
 
     //-------------------------------------------------------CREATE KITCHEN----------------------------------------------------------------
     
-    Chefs::inventory = inventory;
+
     JuniorChef *junior = new JuniorChef();
+    Chefs::inventory = inventory;
     VegetableChef *vegetable = new VegetableChef();
     MeatChef *meat = new MeatChef();
     SauceChef *sauce = new SauceChef();
@@ -686,7 +687,7 @@ void FinalMain(){
                 decoratedDish1->addIngredient("Pickles");
                 cout << " chose Spaghetti Carbonara: " ; 
                 cout << "Dish price changes from R" << dish1->getCost() <<" to R" << decoratedDish1->getCost() << endl; 
-
+                customer->setDish(decoratedDish1);
                 customerTotalCost += decoratedDish1->getCost();
 
             }
@@ -699,7 +700,7 @@ void FinalMain(){
                 decoratedDish2->removeIngredient("Basil");
                 cout << " chose Margherita Pizza: ";
                 cout << "Dish price changes from R" << dish2->getCost() <<" to R" << decoratedDish2->getCost() << endl;  
-
+                customer->setDish(decoratedDish2);
                 customerTotalCost += decoratedDish2->getCost();
 
             }
@@ -711,7 +712,7 @@ void FinalMain(){
                 cout << " chose Lasagna and requested Special instructions : ";
                 decoratedDish3->addSpecialInstruction("Make sure cheese does not burn. ");
                 cout << "Dish price remains the same: " << decoratedDish3->getCost() << endl; 
-
+                customer->setDish(decoratedDish3);
                 customerTotalCost += decoratedDish3->getCost();
 
             }
@@ -720,7 +721,7 @@ void FinalMain(){
             {
                 cout << " chose Tiramisu: ";
                 cout << "Dish price remains the same: " << dish4->getCost() << endl; 
-
+                customer->setDish(dish4);
                 customerTotalCost += dish4->getCost();
 
             }
@@ -729,7 +730,7 @@ void FinalMain(){
             {
                 cout << " chose Minestrone Soup: ";
                 cout << "Dish price remains the same: " << dish5->getCost() << endl; 
-
+                customer->setDish(dish5);
                 customerTotalCost += dish5->getCost();
             }
             tableTotalCost += customerTotalCost; 
@@ -742,39 +743,39 @@ void FinalMain(){
 
     // ---------------------------------------------------FOOD IS SENT TO THE KITCHEN----------------------------------------------------------------------
     // SEG FAULT OCCURING SOMEWHERE HERE
-    // for(auto &table : floor->getTables())
-    // {
-    //     cout << "-----------------Table: " << table->getTableNumber() << " -----------------------" << endl;
+    for(auto &table : floor->getTables())
+    {
+        cout << "-----------------Table: " << table->getTableNumber() << " -----------------------" << endl;
 
-    //     for (auto &customer : table->getCustomers())
-    //     {
-    //         Order *custorder = new Order();
+        for (auto &customer : table->getCustomers())
+        {
+            Order *custorder = new Order();
 
-    //         custorder->setCustomer(customer);
+            custorder->setCustomer(customer);
 
-    //         Command *order = new KitchenOrder(custorder);
+            Command *order = new KitchenOrder(custorder);
 
-    //         if(table->getTableNumber()==1){
-    //             waiter1->placeOrder(junior, order);
-    //         }
+            if(table->getTableNumber()==1){
+                waiter1->placeOrder(junior, order);
+            }
 
-    //         if(table->getTableNumber()==2){
-    //             waiter2->placeOrder(junior, order);
-    //         }
+            if(table->getTableNumber()==2){
+                waiter2->placeOrder(junior, order);
+            }
 
-    //         if(table->getTableNumber()==3){
-    //             waiter3->placeOrder(junior, order);
-    //         }
+            if(table->getTableNumber()==3){
+                waiter3->placeOrder(junior, order);
+            }
 
-    //         if(table->getTableNumber()==4){
-    //             waiter4->placeOrder(junior, order);
-    //         }
+            if(table->getTableNumber()==4){
+                waiter4->placeOrder(junior, order);
+            }
 
-    //         if(table->getTableNumber()==5){
-    //             waiter5->placeOrder(junior, order);
-    //         }
-    //     }
-    // }
+            if(table->getTableNumber()==5){
+                waiter5->placeOrder(junior, order);
+            }
+        }
+    }
 
     
 
