@@ -1,3 +1,8 @@
+/**
+ * @file RemoveFromDish.cpp
+ * @brief Contains the declaration of the RemoveFromDish class functions.
+ */
+
 #include <iostream>
 #include <list>
 #include <algorithm>

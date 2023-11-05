@@ -1,5 +1,9 @@
-#include "MeatChef.h"
+/**
+ * @file MeatChef.cpp
+ * @brief Contains the declaration of the MeatChef class functions.
+ */
 
+#include "MeatChef.h"
 
 MeatChef::MeatChef(){
     std::cout << "Meat Chef has arrived." << std::endl;

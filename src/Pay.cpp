@@ -1,3 +1,8 @@
+/**
+ * @file Pay.cpp
+ * @brief Contains the declaration of the Pay class functions.
+ */
+
 #include "Pay.h"
 #include "Leave.h"
 

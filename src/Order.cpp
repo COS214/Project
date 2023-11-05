@@ -1,3 +1,8 @@
+/**
+ * @file Order.cpp
+ * @brief Contains the declaration of the Order class functions.
+ */
+
 #include "Order.h"
 #include "Rate.h"
 

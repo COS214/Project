@@ -1,5 +1,9 @@
-#include "Menu.h"
+/**
+ * @file Menu.cpp
+ * @brief Contains the declaration of the Menu class functions.
+ */
 
+#include "Menu.h"
 
 void Menu::addDish(const std::string& key, Dish* dish, double cost) {
         menuItems[key] = std::make_pair(dish, cost);
