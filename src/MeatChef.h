@@ -1,5 +1,5 @@
 /**
- * @file MeatChef
+ * @file MeatChef.h
  * @brief Contains the declaration of the MeatChef class.
  */
 
