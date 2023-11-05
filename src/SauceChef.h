@@ -9,7 +9,7 @@ class SauceChef : public Chefs {
 
 
 public:
-	SauceChef(){}
+	SauceChef();
   	SauceChef(Mediator* mediator) : Chefs(mediator) {}
 	void cook(std::string dish);
 	void prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) override;

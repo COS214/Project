@@ -11,7 +11,7 @@ class HeadChef : public Chefs {
 
 
 public:
-	HeadChef(){}
+	HeadChef();
 	HeadChef(Mediator* mediator) : Chefs(mediator) {}
 	void cook(std::string dish);
 	void prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy ) override;

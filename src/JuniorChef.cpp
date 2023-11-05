@@ -1,5 +1,9 @@
 #include "JuniorChef.h"
 
+JuniorChef::JuniorChef(){
+    std::cout << "Junior Chef has arrived." << std::endl;
+}
+
 void JuniorChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) {
 	std::cout << "Junior Chef is preparing & removing from Inventory. "<< std::endl;
 

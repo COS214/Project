@@ -1,5 +1,10 @@
 #include "MeatChef.h"
 
+
+MeatChef::MeatChef(){
+    std::cout << "Meat Chef has arrived." << std::endl;
+}
+
 void MeatChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) {
 	std::cout << "Meat Chef is preparing & removing from Inventory. " << std::endl;
 

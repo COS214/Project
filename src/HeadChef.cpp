@@ -1,5 +1,9 @@
 #include "HeadChef.h"
 
+HeadChef::HeadChef(){
+    std::cout << "Head Chef has arrived." << std::endl;
+}
+
 void HeadChef::cook(std::string dish) {
     std::cout << "Head chef is cooking " << dish << std::endl;
     this->mediator->notify(this, "cook");

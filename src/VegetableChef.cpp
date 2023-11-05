@@ -1,5 +1,9 @@
 #include "VegetableChef.h"
 
+VegetableChef::VegetableChef(){
+    std::cout << "Vegetable Chef has arrived." << std::endl;
+}
+
 void VegetableChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) {
 	std::cout << "Vegetable Chef is preparing & removing from Inventory. " << std::endl;
 

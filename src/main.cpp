@@ -243,7 +243,7 @@ void CommandChainSingletonTest()
     Waiter *waiter = new Waiter();
     Order *custorder = new Order();
     Command *order = new KitchenOrder(custorder);
-    waiter->placeOrder(junior, order, 1);
+    waiter->placeOrder(junior, order,1);
 
     std::cout << "<=============================== Command Chain Singleton Mediator Unit Testing Ends ===============================>" << std::endl;
 
@@ -483,9 +483,9 @@ string generateUniqueOrderID(int orders) {
 }
 
 void FinalMain(){
-    
-    //-------------------------------------------------CREATE INVENTORY---------------------------------------------------------------
-    cout << endl;
+
+    cout << "-------------------------------------------STOCKING UP RESTAURANT INVENTORY-----------------------------------------------\n" << endl;
+
     Inventory *inventory = Inventory::getInstance();
     map<string, int> inv;
 
@@ -509,13 +509,12 @@ void FinalMain(){
     inv["Pasta"] = 30; 
 
     inventory->initializeInventory(inv);
-    cout<<"Inventory before orders: "<<endl;
+    cout<<"INVENTORY: "<<endl;
     inventory->printInventory(); 
     cout << endl;
 
-    //-------------------------------------------------------CREATE KITCHEN----------------------------------------------------------------
-    
-
+    cout << "--------------------------------------------------PREPARING KITCHEN STAFF-----------------------------------------------\n" << endl;
+  
     JuniorChef *junior = new JuniorChef();
     Chefs::inventory = inventory;
     VegetableChef *vegetable = new VegetableChef();
@@ -525,19 +524,20 @@ void FinalMain(){
 
     Mediator *cm = new concreteMediator(head, junior, meat, sauce, vegetable);
 
-    junior->setMediator(cm);    // Set the mediator for junior
-    vegetable->setMediator(cm); // Set the mediator for vegetable
-    meat->setMediator(cm);      // Set the mediator for meat
-    sauce->setMediator(cm);     // Set the mediator for sauce
-    head->setMediator(cm);      // Set the mediator for head
+    junior->setMediator(cm);    
+    vegetable->setMediator(cm); 
+    meat->setMediator(cm);      
+    sauce->setMediator(cm);     
+    head->setMediator(cm);     
 
     junior->setNext(vegetable);
     vegetable->setNext(meat);
     meat->setNext(sauce);
     sauce->setNext(head);
+    cout << endl;
 
+    cout << "-------------------------------------------SETTING UP THE RESTAURANT FLOOR-----------------------------------------------\n" << endl;
 
-    //--------------------------------------------------CREATE FLOOR-----------------------------------------------------------------
     srand(time(0)); 
     int numTables = 5; 
     int numCustomersPerTable = 5;
@@ -599,7 +599,7 @@ void FinalMain(){
         floor->addTable(table);
     }
 
-    cout << "\nLayout of the Restaurant Floor:" << endl;
+    cout << "Layout of the Restaurant Floor:" << endl;
     cout << endl;
     for (auto &table : floor->getTables())
     {
@@ -610,12 +610,10 @@ void FinalMain(){
             customer->change(); // state = seated
             cout << "  Customer: " << customer->getCustomerID() << " : " << customer->getName() << endl;
         }
-
         cout << endl;
     }
 
-    // --------------------------------------------------CREATE MENU---------------------------------------------------------------------
-
+    cout << "---------------------------------------------------CREATING MENU-------------------------------------------------------------------\n" << endl;
     Dish *dish1 = new BasicDish();
     dish1->setName("Spaghetti Carbonara");
     dish1->setCost(140.0);
@@ -654,18 +652,17 @@ void FinalMain(){
     menu.addDish("5", dish5, 90.0);
     menu.printMenu();
     cout << endl;
-    cout << "Menu has been presented to customers!" << endl;
-    cout << endl;
 
-    int orders=2034;
 
-    //------------------------------------------------------CUSTOMERS ORDERS FOOD----------------------------------------------------------------
+    cout << "-------------------------------------------CUSTOMERS READY TO ORDER DISHES-----------------------------------------------\n" << endl;
+    
     std::map<int, double> tableTotalCosts;
     std::map<int, string> tableOrderIDs;
+    int orders=2034;
     for(auto &table : floor->getTables())
     {
         cout << "-----------------Table: " << table->getTableNumber() << " -----------------------" << endl;
-        string orderID = generateUniqueOrderID(orders); // Generate a unique order ID
+        string orderID = generateUniqueOrderID(orders);
         tableOrderIDs[table->getTableNumber()] = orderID; 
         int count = 0;
         double tableTotalCost = 0.0;
@@ -739,13 +736,15 @@ void FinalMain(){
         }
         tableTotalCosts[table->getTableNumber()] = tableTotalCost;
         cout << "Total cost for Table " << table->getTableNumber() << ": R" << tableTotalCost << endl;
-        cout << "Order ID for this table: " << orderID << endl << endl;
+        cout << "Order ID for this table: " << orderID << endl;
         orders++;
+        cout << endl;
     }
 
-    // ---------------------------------------------------FOOD IS SENT TO THE KITCHEN----------------------------------------------------------------------
-    // SEG FAULT OCCURING SOMEWHERE HERE
-    for(auto &table : floor->getTables())
+   
+    cout << "------------------------------------------ORDERS ARE SENT TO THE KITCHEN-----------------------------------------------" << endl;
+    cout << endl;
+  for(auto &table : floor->getTables())
     {
         cout << "-----------------Table: " << table->getTableNumber() << " -----------------------" << endl;
 
@@ -780,13 +779,14 @@ void FinalMain(){
             }
         }
     }
+    cout << "-----------------------------------------------UPDATED INVENTORY----------------------------------------------------\n" << endl;
 
-    cout<<"Inventory after order has been sent to the kitchen: "<<endl;
+    cout<<"INVENTORY:"<<endl;
     inventory->printInventory();
     cout << endl;
 
-    //----------------------------------------------------------CUSTOMERS RATE FOOD--------------------------------------------------------------------
-    
+    cout << "-------------------------------------------CUSTOMERS RATE THEIR MEALS-----------------------------------------------" << endl;
+    cout << endl;
     srand(time(0));
     std::map<int, double> averageTableRating;
     for(auto &table : floor->getTables())
@@ -803,16 +803,19 @@ void FinalMain(){
             cout << "Customer " << customer->getCustomerID() << " " << customer->getName() << " rated food " << customer->getRating() << " stars" << endl;
         }
         averageTableRating[table->getTableNumber()] = average/5;
-        cout << "Overall table rating: "<< averageTableRating[table->getTableNumber()]  << endl << endl;
-
+        cout << "Overall table rating: "<< averageTableRating[table->getTableNumber()]  << endl;
+        cout << endl;
     }
 
-    //-----------------------------------------------------------CUSTOMERS PAY BILL--------------------------------------------------------------------
-     for(auto &table : floor->getTables())
+    
+    cout << "-------------------------------------------CUSTOMERS ARE READY TO PAY THEIR BILLS----------------------------------------------" << endl;
+    cout << endl;
+    int order = 881;
+    for(auto &table : floor->getTables())
     {
         cout << "-----------------Table: " << table->getTableNumber() << " -----------------------" << endl;
         int split = (rand()%3)+1;
-        //int split = 3;
+        
         string payingCustomer = "";
 
         for (auto &customer : table->getCustomers())
@@ -829,7 +832,8 @@ void FinalMain(){
             Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(),  averageTableRating[table->getTableNumber()], bill.generateTabID("CID785K"), false);
 
             int splitIntoNBills = 5;
-            map<string, Bill> splitBills = bill.splitBill(splitIntoNBills, bill);
+           
+            map<string, Bill> splitBills = bill.splitBill(splitIntoNBills, bill, order);
 
             for (auto it =splitBills.begin(); it != splitBills.end(); ++it) 
             {
@@ -837,6 +841,8 @@ void FinalMain(){
                 it->second.payBill();
                 
             }
+
+           
                     
         }
 
@@ -855,10 +861,15 @@ void FinalMain(){
             tab.addBill(memento, memento.getOrderID());
              
         }
+        order += 5;
         cout << endl;
 
     } 
     
+
+    // add in strategy
+
+
     // detach waiter objects from customer
     // delete dynamic objects
     delete dish1;
@@ -898,6 +909,11 @@ int main()
     // newFloorTest();
 
     FinalMain();
+    
 
+
+
+   
+    
     return 0;
 }

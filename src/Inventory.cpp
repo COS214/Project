@@ -4,7 +4,7 @@ Inventory* Inventory::instance = 0;
 
 Inventory* Inventory::getInstance() {
 	if (instance == 0) {
-		cout<<"Inventory instance has been created!"<<endl;
+		//cout<<"Inventory instance has been created!"<<endl;
 		instance = new Inventory();
 	}
 	return instance;

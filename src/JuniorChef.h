@@ -8,7 +8,7 @@ class JuniorChef : public Chefs {
 
 
 public:
-	JuniorChef(){}
+	JuniorChef();
 	JuniorChef(Mediator* mediator) : Chefs(mediator) {}
 	void cook(std::string dish);
 	void prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) override;

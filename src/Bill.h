@@ -33,7 +33,7 @@ private:
 
 		void setBillMemento(BillMemento memento);
 
-		map<string, Bill> splitBill(int splitIntoNBills, Bill bill);
+		map<string, Bill> splitBill(int splitIntoNBills, Bill bill, int order);
 
 		double getTotalAmount();
 		

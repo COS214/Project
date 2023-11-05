@@ -1,5 +1,6 @@
 #include "Bill.h"
-
+#include <sstream>
+#include <map>
 using namespace std;
 
 /// @brief Implementation for the Bill class
@@ -25,17 +26,22 @@ void Bill::setBillMemento(BillMemento memento) {
 	this->billMemento = memento;
 }
 
-map<string, Bill> Bill::splitBill(int splitIntoNBills, Bill bill) {
+map<string, Bill> Bill::splitBill(int splitIntoNBills, Bill bill, int order) {
     // Calculate the new total amount for each split bill
-    double newTotalAmount = bill.getTotalAmount() / splitIntoNBills;
+    double newTotalAmount = bill.getTotalAmount(); // splitIntoNBills;
 
     // Create a map to store the split bills
     map<string, Bill> splitBills;
-
+    
+    
     // Generate and add split bills to the map
     for (int i = 1; i <= splitIntoNBills; ++i) {
+    std::ostringstream idStream;
+    idStream << "OID" << order;
+    orderID = idStream.str();
+
         Bill splitBill(
-            generateOrderID(), // You need a method to generate unique Order IDs
+            orderID, // You need a method to generate unique Order IDs
             bill.getCustomerID(),
             newTotalAmount,
             bill.getTableNum(),
@@ -45,6 +51,7 @@ map<string, Bill> Bill::splitBill(int splitIntoNBills, Bill bill) {
         );
 
         splitBills[splitBill.getOrderID()] = splitBill;
+        order++;
     }
 
     return splitBills;
