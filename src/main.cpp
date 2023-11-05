@@ -484,9 +484,6 @@ string generateUniqueOrderID(int orders) {
 
 void FinalMain(){
     
-    //-------------------------------------------------------CREATE KITCHEN----------------------------------------------------------------
-    JuniorChef *junior = new JuniorChef();
-    
     //-------------------------------------------------CREATE INVENTORY---------------------------------------------------------------
     cout << endl;
     Inventory *inventory = Inventory::getInstance();
@@ -508,19 +505,18 @@ void FinalMain(){
     inv["Cocoa Powder"] = 40; //
     inv["Vegetable Broth"] = 20; //
     inv["Tomatoes"] = 30; //
-    inv["Beans"] = 25; //
-    inv["Pasta"] = 30; //
+    inv["Beans"] = 25; 
+    inv["Pasta"] = 30; 
 
     inventory->initializeInventory(inv);
-    // One at bottom aswell to see inventory change after orders
-    // cout<<"\n\n\n"<<endl;
-    // inventory->printInventory(); 
+    cout<<"Inventory before orders: "<<endl;
+    inventory->printInventory(); 
     cout << endl;
-    //-------------------------------------------------------CREATE KITCHEN----------------------------------------------------------------
-    JuniorChef *junior = new JuniorChef();
-    // junior->setInventory(inventory);
-    Chefs::inventory = inventory;
 
+    //-------------------------------------------------------CREATE KITCHEN----------------------------------------------------------------
+    
+    Chefs::inventory = inventory;
+    JuniorChef *junior = new JuniorChef();
     VegetableChef *vegetable = new VegetableChef();
     MeatChef *meat = new MeatChef();
     SauceChef *sauce = new SauceChef();
@@ -534,42 +530,10 @@ void FinalMain(){
     sauce->setMediator(cm);     // Set the mediator for sauce
     head->setMediator(cm);      // Set the mediator for head
 
-
     junior->setNext(vegetable);
     vegetable->setNext(meat);
     meat->setNext(sauce);
     sauce->setNext(head);
-
-
-    //-------------------------------------------------CREATE INVENTORY---------------------------------------------------------------
-    cout << endl;
-    Inventory *inventory = Inventory::getInstance();
-    map<string, int> inv;
-
-    inv["Spaghetti"] = 20;
-    inv["Pancetta"] = 10;
-    inv["Parmesan Cheese"] = 30;
-    inv["Black Pepper"] = 40;
-    inv["Pizza Dough"] = 25;
-    inv["Tomato Sauce"] = 20;
-    inv["Mozzarella Cheese"] = 35;
-    inv["Fresh Basil"] = 15;
-    inv["Lasagna Sheets"] = 10;
-    inv["Bolognese Sauce"] = 18;
-    inv["Ladyfingers"] = 25;
-    inv["Mascarpone Cheese"] = 20;
-    inv["Espresso"] = 30;
-    inv["Cocoa Powder"] = 40;
-    inv["Vegetable Broth"] = 20;
-    inv["Tomatoes"] = 30;
-    inv["Beans"] = 25;
-    inv["Pasta"] = 30;
-
-    inventory->initializeInventory(inv);
-    cout << endl;
-    // One at bottom aswell to see inventory change after orders
-    //cout<<"\n\n\n"<<endl;
-    //inventory->printInventory(); 
 
 
     //--------------------------------------------------CREATE FLOOR-----------------------------------------------------------------
@@ -643,7 +607,6 @@ void FinalMain(){
         {
 
             customer->change(); // state = seated
-            //customer->setCustomerID("aba");
             cout << "  Customer: " << customer->getCustomerID() << " : " << customer->getName() << endl;
         }
     }
@@ -778,47 +741,48 @@ void FinalMain(){
     }
 
     // ---------------------------------------------------FOOD IS SENT TO THE KITCHEN----------------------------------------------------------------------
+    // SEG FAULT OCCURING SOMEWHERE HERE
+    // for(auto &table : floor->getTables())
+    // {
+    //     cout << "-----------------Table: " << table->getTableNumber() << " -----------------------" << endl;
 
-    for(auto &table : floor->getTables())
-    {
-        cout << "-----------------Table: " << table->getTableNumber() << " -----------------------" << endl;
+    //     for (auto &customer : table->getCustomers())
+    //     {
+    //         Order *custorder = new Order();
 
-        for (auto &customer : table->getCustomers())
-        {
-            Order *custorder = new Order();
+    //         custorder->setCustomer(customer);
 
-            custorder->setCustomer(customer);
+    //         Command *order = new KitchenOrder(custorder);
 
-            Command *order = new KitchenOrder(custorder);
+    //         if(table->getTableNumber()==1){
+    //             waiter1->placeOrder(junior, order);
+    //         }
 
-            if(table->getTableNumber()==1){
-                waiter1->placeOrder(junior, order);
-            }
+    //         if(table->getTableNumber()==2){
+    //             waiter2->placeOrder(junior, order);
+    //         }
 
-            if(table->getTableNumber()==2){
-                waiter2->placeOrder(junior, order);
-            }
+    //         if(table->getTableNumber()==3){
+    //             waiter3->placeOrder(junior, order);
+    //         }
 
-            if(table->getTableNumber()==3){
-                waiter3->placeOrder(junior, order);
-            }
+    //         if(table->getTableNumber()==4){
+    //             waiter4->placeOrder(junior, order);
+    //         }
 
-            if(table->getTableNumber()==4){
-                waiter4->placeOrder(junior, order);
-            }
+    //         if(table->getTableNumber()==5){
+    //             waiter5->placeOrder(junior, order);
+    //         }
+    //     }
+    // }
 
-            if(table->getTableNumber()==5){
-                waiter5->placeOrder(junior, order);
-            }
-        }
-    }
+    
 
-    // One at top as well to see inventory before orders
-
-    //cout<<"\n\n\n"<<endl;
-    //inventory->printInventory();
+    cout<<"Inventory after order has been sent to the kitchen: "<<endl;
+    inventory->printInventory();
 
     //----------------------------------------------------------CUSTOMERS RATE FOOD--------------------------------------------------------------------
+    
     srand(time(0));
     std::map<int, double> averageTableRating;
     for(auto &table : floor->getTables())
@@ -837,6 +801,7 @@ void FinalMain(){
         averageTableRating[table->getTableNumber()] = average/5;
         cout << "Overall table rating: "<< averageTableRating[table->getTableNumber()]  << endl;
     }
+
     //-----------------------------------------------------------CUSTOMERS PAY BILL--------------------------------------------------------------------
      for(auto &table : floor->getTables())
     {
@@ -863,13 +828,13 @@ void FinalMain(){
 
             for (auto it =splitBills.begin(); it != splitBills.end(); ++it) 
             {
-                //cout << splitBills.begin()->first().toString() << endl;
+
                 it->second.payBill();
-                //cout << it->first() << endl;
+                
             }
                     
         }
-        // fix this
+
         else if(split==2)
         {
             cout << "Bill will be paid by one customer at the table" << endl;
@@ -880,7 +845,6 @@ void FinalMain(){
         else if(split==3)
         {
             cout << "Bill will be added to a tab" << endl;
-            /// create a new tab
             Tab tab;
             BillMemento memento(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], "TID149L", false);
             tab.addBill(memento, memento.getOrderID());
