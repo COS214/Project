@@ -1,3 +1,8 @@
+/**
+ * @file FriedStrategy.cpp
+ * @brief Contains the declaration of the FriedStrategy class functions.
+ */
+
 #include "FriedStrategy.h"
 
 FriedStrategy::FriedStrategy(KitchenOrder* order) {

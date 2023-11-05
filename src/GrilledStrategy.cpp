@@ -1,3 +1,8 @@
+/**
+ * @file GrilledStrategy.cpp
+ * @brief Contains the declaration of the GrilledStrategy class functions.
+ */
+
 #include "GrilledStrategy.h"
 
 GrilledStrategy::GrilledStrategy(KitchenOrder* order) {

@@ -1,3 +1,8 @@
+/**
+ * @file DishDecorator.cpp
+ * @brief Contains the declaration of the DishDecorator class functions.
+ */
+
 #include <iostream>
 #include "DishDecorator.h"
 

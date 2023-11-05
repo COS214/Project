@@ -1,3 +1,8 @@
+/**
+ * @file Floor.cpp
+ * @brief Contains the declaration of the Floor class functions.
+ */
+
 #include <iostream>
 #include "Floor.h"
 #include "Table.h"
