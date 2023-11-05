@@ -1,3 +1,8 @@
+/**
+ * @file KitchenOrder.cpp
+ * @brief Contains the declaration of the KitchenOrder class.
+ */
+
 #include "KitchenOrder.h"
 
 KitchenOrder::KitchenOrder(Order* order){

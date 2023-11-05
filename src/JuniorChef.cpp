@@ -1,3 +1,8 @@
+/**
+ * @file JuniorChef.cpp
+ * @brief Contains the declaration of the JuniorChef class functions.
+ */
+
 #include "JuniorChef.h"
 
 JuniorChef::JuniorChef(){

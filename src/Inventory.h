@@ -1,3 +1,8 @@
+/**
+ * @file Inventory.h
+ * @brief Contains the declaration of the Inventory class.
+ */
+
 #ifndef INVENTORY_H
 #define INVENTORY_H
 

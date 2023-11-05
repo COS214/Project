@@ -1,3 +1,8 @@
+/**
+ * @file HeadChef.cpp
+ * @brief Contains the declaration of the HeadChef class functions.
+ */
+
 #include "HeadChef.h"
 
 HeadChef::HeadChef(){
@@ -17,7 +22,4 @@ void HeadChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy
 
     std::cout << "Order prepared by Head Chef. Sending it to the waiter." << std::endl;
     currWaiter->receiveOrder(order);
-
-    
 }
-

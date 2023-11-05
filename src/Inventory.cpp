@@ -1,10 +1,15 @@
+/**
+ * @file Inventory.cpp
+ * @brief Contains the declaration of the Inventory class functions.
+ */
+
 #include "Inventory.h"
 
 Inventory* Inventory::instance = 0;
 
 Inventory* Inventory::getInstance() {
 	if (instance == 0) {
-		//cout<<"Inventory instance has been created!"<<endl;
+		cout<<"Inventory instance has been created!"<<endl;
 		instance = new Inventory();
 	}
 	return instance;
