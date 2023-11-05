@@ -2,6 +2,7 @@
 
 void VegetableChef::prepareOrder(Command* order, Waiter* currWaiter) {
 	std::cout << "Vegetable Chef is preparing & removing from Inventory. " << std::endl;
+
     Dish* dish = order->order->getCustomer()->getDish();
     // cout<<"\n========================\n"<<endl;
     for (string ingredient : dish->getList()) {
@@ -12,6 +13,7 @@ void VegetableChef::prepareOrder(Command* order, Waiter* currWaiter) {
              Chefs::inventory->removeFromInventory(ingredient, 1);
         }
     }
+
     order->execute();
     this->mediator->notify(this, "cook");
     Chefs::prepareOrder(order, currWaiter);

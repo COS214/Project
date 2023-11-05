@@ -2,7 +2,7 @@
 
 void JuniorChef::prepareOrder(Command* order, Waiter* currWaiter) {
 	std::cout << "Junior Chef is preparing & removing from Inventory. "<< std::endl;
-    
+
     order->execute();
     this->mediator->notify(this, "cook");
     Chefs::prepareOrder(order, currWaiter);

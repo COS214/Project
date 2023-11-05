@@ -10,6 +10,7 @@ Tab::Tab() {
 /// @param OrderID 
 void Tab::addBill(BillMemento bill, string OrderID) {
     mementobills[OrderID] = bill;
+    cout << "Bill succesffully added to a tab!" << endl;
 }
 /// @brief sets a specific BillMemento
 /// @param OrderID 

@@ -10,8 +10,10 @@ void HeadChef::prepareOrder(Command* order, Waiter* currWaiter) {
     order->execute();
     // After the head chef prepares the order, send it to the waiter
     this->mediator->notify(this, "cook");
+
     std::cout << "Order prepared by Head Chef. Sending it to the waiter." << std::endl;
     currWaiter->receiveOrder(order);
+
     
 }
 
