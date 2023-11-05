@@ -10,7 +10,7 @@ JuniorChef::JuniorChef(){
 }
 
 void JuniorChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy) {
-	std::cout << "Junior Chef is preparing & removing from Inventory. "<< std::endl;
+	std::cout << "Junior Chef is preparing & removing from Inventory.------------------- \033[0m "<< std::endl;
 
     order->execute();
     this->mediator->notify(this, "cook");

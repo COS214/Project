@@ -9,7 +9,7 @@ Inventory* Inventory::instance = 0;
 
 Inventory* Inventory::getInstance() {
 	if (instance == 0) {
-		cout<<"Inventory instance has been created!"<<endl;
+		//cout<<"Inventory instance has been created!"<<endl;
 		instance = new Inventory();
 	}
 	return instance;
@@ -40,11 +40,15 @@ bool Inventory::addToInventory(string item, int count) {
 		return true;  // You can add error handling logic if needed
 	}
     
-    void Inventory::printInventory()
+     void Inventory::printInventory()
     {
+        std::cout << "\033[0;34m--------------------------------------------" << std::endl;
+        std::cout << "\t\tINVENTORY: " << std::endl;
         for (const auto& pair : inventory) {
+       
         std::cout << "Key: " << pair.first << ", Value: " << pair.second << std::endl;
         }
+        std::cout << "--------------------------------------------\033[0m" << std::endl;
     }
 
 bool Inventory::removeFromInventory(string item, int count) {

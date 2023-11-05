@@ -8,7 +8,7 @@
 void Waiter::placeOrder(Chefs *Chefs, Command *order, int cookStrategy)
 {
     //std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
-    std::cout << "-Waiter sends order to the kitchen: ";;
+    std::cout << "\033[0;37m-------------------Waiter sends order to the kitchen: ";;
     Chefs->prepareOrder(order, this, cookStrategy);
 }
 
@@ -16,34 +16,35 @@ void Waiter::update(string message)
 {
     if (message=="Arrived")
     {
-        cout << "The Waiter has noticed that the Customer has arrived" << endl;
+        cout << "Waiter notices : Customer arrived. " << endl;
     }
     if (message=="Waiting")
     {
-        cout << "The Waiter has noticed that the Customer is waiting to be seated" << endl;        
+        cout << "Waiter notices : Customer waiting to be seated. " << endl;        
     }
     if (message=="Seated")
     {
-        cout << "The Waiter has now seated the Customer at a table" << endl;   
+        cout << "Waiter has seated customer : ";   
     }
     if (message=="Order")
     {
-        cout << "The Waiter has noted that the Customer is ready to order and the Waiter will now take that order" << endl;   
+        cout << "Waiter notices Customer ready to order : " ;  
     }
     if (message=="Rate")
     {
-        cout << "The Waiter has been informed that the Customer would like to Rate their experience" << endl;   
+        cout << "Waiter notices Customer would like to Rate experience : " ;
     }
     if (message=="Pay")
     {
-        cout << "The Waiter recognizes that the Customer wants to pay their bill and the Waiter brings the bill to the table" << endl;   
+        cout << "Waiter notices Customer would like to pay the Bill. " << endl;   
     }
     if (message=="Leave")
     {
-        cout << "The Waiter sees the Customer wants to leave and they are free to do so since they have paid" << endl;   
+        cout << "Waiter notices Customer ready to leave - allows them to do so." << endl;   
     }
     // cout << "Customer has changed state: " << message << endl;
 }
+
 
 Waiter::Waiter(std::list<Table *> tables) : tables(tables)
 {
@@ -202,7 +203,7 @@ Waiter::~Waiter()
 
 void Waiter::receiveOrder(Command *order)
 {
-    cout << "----------------Waiter received order----------------" << endl << endl;
+    cout << "\033[0;37m---------------------------------------------------Waiter received order---------------------------------------------------\033[0m" << endl << endl;
 }
 
 Waiter::Waiter()

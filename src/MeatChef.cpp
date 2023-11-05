@@ -14,12 +14,12 @@ void MeatChef::prepareOrder(Command* order, Waiter* currWaiter, int cookStrategy
 
     if(cookStrategy == 1)
     {
-        std::cout << "-Meat Chef is grilling the meat. " << std::endl;
+        std::cout << "\t\t\tSELECTED STRATEGY FOR COOKING MEAT : MEAT CHEF IS GRILLING THE MEAT" << std::endl;
     }
 
     else
     {
-        std::cout << "-Meat Chef is frying the meat. " << std::endl;
+        std::cout << "\t\t\tSELECTED STRATEGY FOR COOKING MEAT : MEAT CHEF IS FRYING THE MEAT " << std::endl;
     }
     
     Dish* dish = order->order->getCustomer()->getDish();
