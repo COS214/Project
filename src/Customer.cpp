@@ -1,21 +1,30 @@
 #include <iostream>
+#include <sstream>
 #include "Customer.h"
 #include "Arrived.h"
 
 Customer::Customer()
 {
-    std::cout << "Customer has arrived!" << std::endl;
+    //std::cout << "Customer has arrived!" << std::endl;
     state = new Arrived();
-
-    std::string CID = GenerateCustomerID();
+    std::string CID = generateCustomerID();
     setCustomerID(CID);
+   
 }
 
-Customer::Customer(std::string name)
+Customer::Customer(std::string name, int id)
 {
     this->name = name;
-    std::cout << name << " has arrived!" << std::endl;
+    std::ostringstream idStream;
+    idStream << "CUST" << id;
+    customerID = idStream.str();
+    
+    // std::string CID = generateCustomerID();
+    // customerID=CID;
+    //std::cout << name << " has arrived!" << std::endl;
     state = new Arrived();
+    
+    
 }
 Customer::~Customer()
 {
@@ -26,9 +35,13 @@ Customer::~Customer()
 
 void Customer::setState(State *state_)
 {
-    std::cout << "setState called" << std::endl;
+    //std::cout << "setState called" << std::endl;
     delete state;
     state = state_;
+}
+
+void Customer::setRating(int rating){
+    this->rating = rating;
 }
 
 // ONLY EDITED HERE FOR OBSERVER FUNCTIONALITY
@@ -44,12 +57,12 @@ std::string Customer::getState()
     return state->getState();
 }
 
-void Customer::setCustomerID(std::string CID)
+void Customer::setCustomerID(std::string cID)
 {
-    this->CustomerID = CID;
+    this->CustomerID = cID;
 }
 
-std::string Customer::GenerateCustomerID()
+std::string Customer::generateCustomerID()
 {
     std::hash<std::string> hasher;
     std::srand(std::time(0)); /// seed the random with the customerID
@@ -75,7 +88,10 @@ std::string Customer::getName()
 
 std::string Customer::getCustomerID()
 {
-    return this->customerID;
+    std::string CID = generateCustomerID();
+    setCustomerID(CID);
+    return customerID;
+  
 }
 
 int Customer::getRating()

@@ -22,18 +22,19 @@ private:
 
 public:
 	Customer();
-	Customer(std::string name);
+	Customer(std::string name, int id);
 	~Customer();
 	void change();
 	std::string getState();
 	void setState(State *state);
+	void setRating(int rating);
 	// added for waiter functionality
 	std::string getOrder();
 	std::string getName();
 	std::string getCustomerID();
 	int getRating();
-	std::string GenerateCustomerID();
-	void setCustomerID(std::string CID);
+	std::string generateCustomerID();
+	void setCustomerID(std::string cID);
 	double getTotalAmount();
 
 private:

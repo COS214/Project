@@ -1,7 +1,7 @@
 #include "JuniorChef.h"
 
 void JuniorChef::prepareOrder(Command* order, Waiter* currWaiter) {
-	std::cout << "Junior Chef is preparing order and removing from Inventory: "<< std::endl;
+	std::cout << "Junior Chef is preparing & removing from Inventory. "<< std::endl;
     //inventory.removeFromInventory(item, int);
     order->execute();
     this->mediator->notify(this, "cook");

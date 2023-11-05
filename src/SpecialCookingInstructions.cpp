@@ -7,7 +7,7 @@ SpecialCookingInstructions::SpecialCookingInstructions() {
 
 void SpecialCookingInstructions::addSpecialInstruction(std::string instruction){
 	this->instruction = instruction;
-	std::cout << "Added " << instruction << " for dish preparation." << std::endl;
+	std::cout <<  instruction ;
 	// where does special instruction go to - who handles it?
 };
 
