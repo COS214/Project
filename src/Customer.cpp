@@ -87,3 +87,13 @@ double Customer::getTotalAmount()
 {
     return 0.0;
 }
+
+void Customer::setDish(Dish *d)
+{
+    this->orderedDish = d;
+}
+
+Dish* Customer::getDish()
+{
+    return this->orderedDish;
+}

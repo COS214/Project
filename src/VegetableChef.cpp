@@ -3,13 +3,28 @@
 void VegetableChef::prepareOrder(Command* order, Waiter* currWaiter) {
 	std::cout << "Vegetable Chef is preparing & removing from Inventory. " << std::endl;
     
-    //inventory.removeFromInventory(item, int);
+    Dish* dish = order->order->getCustomer()->getDish();
+    for (const std::string& ingredient : dish->getList()) {
+    // Check if the ingredient is vegetable-related
+    if (isVegetable(ingredient)) {
+        // Call the removeFromInventory function to decrement the quantity
+        inventory->removeFromInventory(ingredient, 1);
+    }
     order->execute();
     this->mediator->notify(this, "cook");
     Chefs::prepareOrder(order, currWaiter);
+    }
 }
 
 void VegetableChef::cook(std::string dish) {
-        std::cout << "Sauce chef is cooking " << dish << std::endl;
-        this->mediator->notify(this, "cook");
+    std::cout << "Sauce chef is cooking " << dish << std::endl;
+    this->mediator->notify(this, "cook");
+}
+
+bool VegetableChef::isVegetable(string item) {
+    // Check if the ingredient is vegetable-related
+    if (item == "LadyFingers" || item == "Vegetable Broth" || item == "Tomatoes" || item == "Beans" || item == "Spaghetti" || item == "Pancetta" || item == "Pizza Dough" || item == "Lasagna Sheets" || item == "Pasta" || item == "Onions") {
+        return true;
+    }
+    return false;
 }
