@@ -42,7 +42,7 @@ void Menu::printMenu()
         const std::string &key = item.first;
         Dish *dish = item.second.first;
         double cost = item.second.second;
-        std::cout << "\033[91m " << key << " - " << dish->getName() << " - Cost: $" << cost << std::endl;
+        std::cout << "\033[91m " << key << " - " << dish->getName() << " - Cost: R" << cost << std::endl;
     }
     std::cout << "\033[0;91m-----------------------------------------\033[0m" << std::endl; // End with dark red
 }
