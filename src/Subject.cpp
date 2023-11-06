@@ -1,3 +1,8 @@
+/**
+ * @file Subject.cpp
+ * @brief Contains the declaration of the Subject class functions.
+ */
+
 #include "Subject.h"
 #include <iostream>
 #include <vector>
@@ -7,6 +12,7 @@
 
 bool Subject::attach(Observer* observer) {
 	ObserverList.push_back(observer);
+	//std::cout << "Waiter attached to customer" << endl;
 	return true;
 }
 

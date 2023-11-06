@@ -1,6 +1,10 @@
+/**
+ * @file BasicDish.cpp
+ * @brief Contains the implementation of the BasicDish class.
+ */
+
 #include <iostream>
 #include "BasicDish.h"
-
 
 BasicDish::BasicDish() {
 	

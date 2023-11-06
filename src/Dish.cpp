@@ -1,3 +1,8 @@
+/**
+ * @file Dish.cpp
+ * @brief Contains the declaration of the Dish class functions.
+ */
+
 #include <list>
 #include <iostream>
 

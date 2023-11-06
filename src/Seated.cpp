@@ -1,3 +1,8 @@
+/**
+ * @file Seated.cpp
+ * @brief Contains the declaration of the Seated class functions.
+ */
+
 #include "Seated.h"
 #include "Order.h"
 

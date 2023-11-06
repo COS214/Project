@@ -1,21 +1,28 @@
+/**
+ * @file BillMemento.cpp
+ * @brief Contains the implementation of the BillMemento class.
+ */
+
 #include "BillMemento.h"
 
-/// @brief This is the MementoBill implementation
-/// @param orderID 
-/// @param customerID 
-/// @param totalAmount 
-/// @param tableNum 
-/// @param rating 
-/// @param tabID 
-/// @param paid 
-
-/// Set the constructor for the BillMemento
-BillMemento::BillMemento(string orderID, string customerID, double totalAmount,int tableNum, int rating, string tabID, bool paid) : 
-orderID(orderID), customerID(customerID), totalAmount(totalAmount), tableNum(tableNum), rating(rating), tabID(tabID), paid(paid) {
+/**
+ * @brief Constructor for the BillMemento class that takes orderID, customerID, totalAmount, tableNum, rating, tabID, and paid as parameters.
+ *
+ * @param orderID String representing the order ID.
+ * @param customerID String representing the customer ID.
+ * @param totalAmount Double representing the total amount.
+ * @param tableNum Integer representing the table number.
+ * @param rating Integer representing the rating.
+ * @param tabID String representing the tab ID.
+ * @param paid Boolean representing whether the bill is paid or not.
+ */
+BillMemento::BillMemento(string orderID, string customerID, double totalAmount, int tableNum, int rating, string tabID, bool paid) : orderID(orderID), customerID(customerID), totalAmount(totalAmount), tableNum(tableNum), rating(rating), tabID(tabID), paid(paid)
+{
 }
-/// @brief Default constructor for the BillMemento class
-BillMemento::BillMemento() {
-    this->orderID = "";
+
+BillMemento::BillMemento()
+{
+	this->orderID = "";
 	this->customerID = "";
 	this->totalAmount = 0;
 	this->tableNum = 0;
@@ -23,33 +30,96 @@ BillMemento::BillMemento() {
 	this->tabID = "";
 	this->paid = 0;
 }
-
-string BillMemento::getOrderID(){
+/**
+ * @brief This method returns the order ID of the bill.
+ *
+ * @return String representing the order ID of the bill.
+ */
+string BillMemento::getOrderID()
+{
 	return this->orderID;
 }
-
-string BillMemento::getCustomerID(){
+/**
+ * @brief This method returns the customer ID of the bill.
+ *
+ * @return String representing the customer ID of the bill.
+ */
+string BillMemento::getCustomerID()
+{
 	return this->customerID;
 }
-
-double BillMemento::getTotalAmount(){
+/**
+ * @brief This method returns the total amount of the bill.
+ *
+ * @return Double representing the total amount of the bill.
+ */
+double BillMemento::getTotalAmount()
+{
 	return this->totalAmount;
 }
-
-int BillMemento::getTableNum(){
+/**
+ * @brief This method returns the table number of the bill.
+ *
+ * @return Integer representing the table number of the bill.
+ */
+int BillMemento::getTableNum()
+{
 	return this->tableNum;
 }
-
-int BillMemento::getRating(){
+/**
+ * @brief This method returns the rating of the bill.
+ *
+ * @return Integer representing the rating of the bill.
+ */
+int BillMemento::getRating()
+{
 	return this->rating;
 }
-
-string BillMemento::getTabID(){
+/**
+ * @brief This method returns the tab ID of the bill.
+ *
+ * @return String representing the tab ID of the bill.
+ */
+string BillMemento::getTabID()
+{
 	return this->tabID;
 }
-
-bool BillMemento::getPaid(){
+/**
+ * @brief This method returns whether the bill is paid or not.
+ *
+ * @return Boolean representing whether the bill is paid or not.
+ */
+bool BillMemento::getPaid()
+{
 	return this->paid;
 }
-
+/**
+ * @brief Destructor for the BillMemento class.
+ */
 BillMemento::~BillMemento() {}
+
+
+double BillMemento::tipWaiter(){
+    double tip=0;
+    if(getRating()<=1){
+        tip = getTotalAmount()*0.025;
+    }
+
+    if(getRating()>1 && getRating()<=2){
+        tip = getTotalAmount()*0.05;
+    }
+
+    if(getRating()>2 && getRating()<=3){
+        tip = getTotalAmount()*0.10;
+    }
+
+    if(getRating()>3 && getRating()<=4){
+        tip = getTotalAmount()*0.15;
+    }
+
+    if(getRating()>4 && getRating()<=5){
+        tip = getTotalAmount()*0.20;
+    }
+
+    return tip;
+}

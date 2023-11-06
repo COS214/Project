@@ -1,3 +1,8 @@
+/**
+ * @file Rate.cpp
+ * @brief Contains the declaration of the Rate class functions.
+ */
+
 #include "Rate.h"
 #include "Pay.h"
 

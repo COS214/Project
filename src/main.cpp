@@ -3,8 +3,11 @@
 #include <iostream>
 #include <algorithm>
 #include <string>
-#include <cstdlib> // for rand() and srand()
-#include <ctime>   // for time()
+#include <cstdlib>
+#include <ctime>
+#include <random>
+#include <sstream>
+#include <chrono>
 
 #include "Bill.h"
 #include "BillMemento.h"
@@ -216,6 +219,7 @@ void CommandChainSingletonTest()
     inventory->initializeInventory(inv);
 
     JuniorChef *junior = new JuniorChef();
+    junior->setInventory(inventory);
     VegetableChef *vegetable = new VegetableChef();
     MeatChef *meat = new MeatChef();
     SauceChef *sauce = new SauceChef();
@@ -237,7 +241,7 @@ void CommandChainSingletonTest()
     Waiter *waiter = new Waiter();
     Order *custorder = new Order();
     Command *order = new KitchenOrder(custorder);
-    waiter->placeOrder(junior, order);
+    waiter->placeOrder(junior, order, 1);
 
     std::cout << "<=============================== Command Chain Singleton Mediator Unit Testing Ends ===============================>" << std::endl;
 
@@ -349,14 +353,16 @@ void FloorTest()
     std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
                            "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
     Floor *floor = new Floor();
+    int customerID = 101;
     for (size_t i = 0; i < count; i++)
     {
         Table *T = new Table(i); // Need to make these table numbers assigned in Floor composite
         for (size_t j = 0; j < count; j++)
         {
             int randomIndex = rand() % count;
-            T->addCustomer(new Customer(names[randomIndex]));
+            T->addCustomer(new Customer(names[randomIndex], customerID));
         }
+        customerID++;
         floor->addTable(T);
     }
 }
@@ -374,7 +380,7 @@ void IteratorTest()
         floor.push_back(new Table(i));
     }
     std::list<Table *>::iterator it = floor.begin();
-
+    int customerID = 101;
     for (int i = 0; i < count; i++)
     {
         srand(0);
@@ -382,9 +388,9 @@ void IteratorTest()
         for (int j = 0; j < count; j++)
         {
             int randomIndex = rand() % count;
-            ithTable->addCustomer(new Customer(names[randomIndex]));
+            ithTable->addCustomer(new Customer(names[randomIndex], customerID));
         }
-
+        customerID++;
         std::advance(it, 1);
     }
 
@@ -424,29 +430,32 @@ void IteratorTest()
 
 void newFloorTest()
 {
-    srand(time(0)); ///make the seed use time
-    int numTables = 5;  /// Number of tables in the restaurant
-    int numCustomersPerTable = 5;  /// Number of customers at each table
+    srand(time(0));               /// make the seed use time
+    int numTables = 5;            /// Number of tables in the restaurant
+    int numCustomersPerTable = 5; /// Number of customers at each table
 
     std::string names[] = {"Siya", "Troy", "Kurt-Lee", "Eben", "Luke", "Olivia", "Daniel", "Ryan", "Hamza", "Luca",
-    "Mapimpi", "Deetlef", "Luke", "Mihir", "Piery", "Jimmy", "Lucas", "Aliyah", "Saeed", "Bongi", "Pieter-Steph","Frans",
-    "Trevor","Vincent","RG","Jean","Franco","Marco","Kwagga","Duane","Jasper","Faf","Handre","Grant","Cobus","Manie","Cheslin", "Willie","Tabraiz",
-    "Keshav","Temba","Marco","Aiden","Reeza","Kagiso", "Lungi", "Lizaad"};
+                           "Mapimpi", "Deetlef", "Luke", "Mihir", "Piery", "Jimmy", "Lucas", "Aliyah", "Saeed", "Bongi", "Pieter-Steph", "Frans",
+                           "Trevor", "Vincent", "RG", "Jean", "Franco", "Marco", "Kwagga", "Duane", "Jasper", "Faf", "Handre", "Grant", "Cobus", "Manie", "Cheslin", "Willie", "Tabraiz",
+                           "Keshav", "Temba", "Marco", "Aiden", "Reeza", "Kagiso", "Lungi", "Lizaad"};
 
-    Floor *floor = new Floor(); ///make a new floor
-
+    Floor *floor = new Floor(); /// make a new floor
+    int customerID = 101;
     /// Create tables and add customers to them
     for (int i = 1; i <= numTables; i++)
     {
-        Table *table = new Table(i); ///make new table
+        Table *table = new Table(i); /// make new table
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 
+        std::default_random_engine generator2(seed);
+        std::uniform_int_distribution<int> dist(1, 10);
         // Add customers to the table
         for (int j = 0; j < numCustomersPerTable; j++)
         {
             int randomIndex = rand() % numCustomersPerTable;
-            table->addCustomer(new Customer(names[randomIndex]));
+            table->addCustomer(new Customer(names[randomIndex], customerID));
         }
-
+        customerID++;
         /// Add the newly created table to the floor
         floor->addTable(table);
     }
@@ -465,10 +474,452 @@ void newFloorTest()
     }
 }
 
+string generateUniqueOrderID(int orders)
+{
+
+    std::ostringstream idStream;
+    idStream << "ORD" << orders;
+    return idStream.str();
+}
+
+void FinalMain()
+{
+    cout << "\033[32m-------------------------------------------STOCKING UP RESTAURANT INVENTORY-----------------------------------------------\n\033[0m" << endl;
+
+    Inventory *inventory = Inventory::getInstance();
+    map<string, int> inv;
+
+    inv["Spaghetti"] = 20;         //
+    inv["Pancetta"] = 10;          //
+    inv["Parmesan Cheese"] = 30;   //
+    inv["Black Pepper"] = 40;      //
+    inv["Pizza Dough"] = 25;       //
+    inv["Tomato Sauce"] = 20;      //
+    inv["Mozzarella Cheese"] = 35; //
+    inv["Fresh Basil"] = 15;       //
+    inv["Lasagna Sheets"] = 10;    //
+    inv["Bolognese Sauce"] = 18;   //
+    inv["Ladyfingers"] = 25;       //
+    inv["Mascarpone Cheese"] = 20; //
+    inv["Espresso"] = 30;          //
+    inv["Cocoa Powder"] = 40;      //
+    inv["Vegetable Broth"] = 20;   //
+    inv["Tomatoes"] = 30;          //
+    inv["Beans"] = 25;
+    inv["Pasta"] = 30;
+
+    inventory->initializeInventory(inv);
+    inventory->printInventory();
+    cout << endl;
+
+    cout << "\033[32m--------------------------------------------------PREPARING KITCHEN STAFF-----------------------------------------------\n\033[0m" << endl;
+
+    JuniorChef *junior = new JuniorChef();
+    Chefs::inventory = inventory;
+    VegetableChef *vegetable = new VegetableChef();
+    MeatChef *meat = new MeatChef();
+    SauceChef *sauce = new SauceChef();
+    HeadChef *head = new HeadChef();
+
+    Mediator *cm = new concreteMediator(head, junior, meat, sauce, vegetable);
+
+    junior->setMediator(cm);
+    vegetable->setMediator(cm);
+    meat->setMediator(cm);
+    sauce->setMediator(cm);
+    head->setMediator(cm);
+
+    junior->setNext(vegetable);
+    vegetable->setNext(meat);
+    meat->setNext(sauce);
+    sauce->setNext(head);
+    cout << endl;
+
+    cout << "\033[32m-------------------------------------------SETTING UP THE RESTAURANT FLOOR-----------------------------------------------\n\033[0m" << endl;
+
+    srand(time(0));
+    int numTables = 5;
+    int numCustomersPerTable = 5;
+    int numCustomers = numTables * numCustomersPerTable;
+    std::string names[] = {
+        "Siya", "Troy", "Kurt-Lee", "Eben", "Luke", "Olivia", "Daniel", "Ryan", "Hamza", "Luca", "Mapimpi", "Deetlef",
+        "Luke", "Mihir", "Piery", "Jimmy", "Lucas", "Aliyah", "Saeed", "Bongi", "Pieter-Steph", "Frans", "Trevor", "Vincent",
+        "RG", "Jean", "Franco", "Marco", "Kwagga", "Duane", "Jasper", "Faf", "Handre", "Grant", "Cobus", "Manie", "Cheslin", "Willie",
+        "Tabraiz", "Keshav", "Temba", "Marco", "Aiden", "Reeza", "Kagiso", "Lungi", "Lizaad"};
+
+    if (numCustomers > sizeof(names) / sizeof(names[0]))
+    {
+        cerr << "\033[1;31mError: Not enough unique names for customers.\n\033[0m";
+        return;
+    }
+
+    Floor *floor = new Floor();
+    Waiter *headWaiter = new Waiter();
+    Waiter *waiter1 = new Waiter();
+    Waiter *waiter2 = new Waiter();
+    Waiter *waiter3 = new Waiter();
+    Waiter *waiter4 = new Waiter();
+    Waiter *waiter5 = new Waiter();
+
+    random_shuffle(&names[0], &names[numCustomers]);
+    int customerIndex = 0;
+
+    int customerID = 101;
+
+    for (int i = 1; i <= numTables; i++)
+    {
+        Table *table = new Table(i);
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+
+        std::default_random_engine generator2(seed);
+        std::uniform_int_distribution<int> dist(1, 10);
+        for (int j = 0; j < dist(generator2); j++)
+        {
+
+            Customer *customer = new Customer(names[customerIndex], customerID); // state = arrived
+            table->addCustomer(customer);
+            if (i == 1)
+            {
+                customer->attach(waiter1);
+            }
+            if (i == 2)
+            {
+                customer->attach(waiter2);
+            }
+            if (i == 3)
+            {
+                customer->attach(waiter3);
+            }
+            if (i == 4)
+            {
+                customer->attach(waiter4);
+            }
+            if (i == 5)
+            {
+                customer->attach(waiter5);
+            }
+            customer->change(); // state = waiting
+            customerIndex++;
+            customerID++;
+        }
+        floor->addTable(table);
+    }
+    cout << endl;
+    cout << "\033[32m--------------------------------------------LAYOUT OF THE RESTAURANT FLOOR:----------------------------------------------------\n\033[0m" << endl;
+    cout << endl;
+    for (auto &table : floor->getTables())
+    {
+        cout << "\033[93mMaitre D shows customers to their table: Table " << table->getTableNumber() << ":\033[0m" << endl;
+        for (auto &customer : table->getCustomers())
+        {
+            customer->change(); // state = seated
+            cout << " Customer " << customer->getCustomerID() << " " << customer->getName() << endl;
+        }
+        cout << endl;
+    }
+
+    cout << "\033[32m-----------------------------------------------PRESENTING MENU TO CUSTOMERS------------------------------------------------------\n\033[0m" << endl;
+    Dish *dish1 = new BasicDish();
+    dish1->setName("Spaghetti Carbonara");
+    dish1->setCost(140.0);
+    list<string> ingredients1 = {"Spaghetti", "Pancetta", "Parmesan Cheese", "Black Pepper"};
+    dish1->setIngredientsList(ingredients1);
+
+    Dish *dish2 = new BasicDish();
+    dish2->setName("Margherita Pizza");
+    dish2->setCost(120.0);
+    list<string> ingredients2 = {"Pizza Dough", "Tomato Sauce", "Mozzarella Cheese", "Basil"};
+    dish2->setIngredientsList(ingredients2);
+
+    Dish *dish3 = new BasicDish();
+    dish3->setName("Lasagna");
+    dish3->setCost(160.0);
+    list<string> ingredients3 = {"Lasagna Sheets", "Bolognese Sauce", "Parmesan Cheese"};
+    dish3->setIngredientsList(ingredients3);
+
+    Dish *dish4 = new BasicDish();
+    dish4->setName("Tiramisu");
+    dish4->setCost(80.0);
+    list<string> ingredients4 = {"Ladyfingers", "Mascarpone Cheese", "Espresso", "Cocoa Powder"};
+    dish4->setIngredientsList(ingredients4);
+
+    Dish *dish5 = new BasicDish();
+    dish5->setName("Minestrone Soup");
+    dish5->setCost(90.0);
+    list<string> ingredients5 = {"Vegetable Broth", "Tomatoes", "Beans", "Pasta"};
+    dish5->setIngredientsList(ingredients5);
+
+    Menu menu;
+    menu.addDish("1", dish1, 140.0);
+    menu.addDish("2", dish2, 120.0);
+    menu.addDish("3", dish3, 160.0);
+    menu.addDish("4", dish4, 80.0);
+    menu.addDish("5", dish5, 90.0);
+    menu.printMenu();
+    cout << endl;
+
+    cout << "\033[32m-------------------------------------------CUSTOMERS READY TO ORDER DISHES-----------------------------------------------\n\033[0m" << endl;
+
+    std::map<int, double> tableTotalCosts;
+    std::map<int, string> tableOrderIDs;
+    int orders = 2034;
+    for (auto &table : floor->getTables())
+    {
+        cout << "\033[93m Table " << table->getTableNumber() << ":\033[0m" << endl;
+        string orderID = generateUniqueOrderID(orders);
+        tableOrderIDs[table->getTableNumber()] = orderID;
+        int count = 0;
+        double tableTotalCost = 0.0;
+
+        for (auto &customer : table->getCustomers())
+        {
+            count++;
+            customer->change(); // state = order
+            cout << "Customer number " << count;
+
+            double customerTotalCost = 0.0;
+
+            int randomDish = (rand() % 5) + 1;
+            if (randomDish == 1)
+            {
+                DishDecorator *decoratedDish1 = new AddToDish();
+                decoratedDish1->setComponent(dish1);
+                decoratedDish1->setCostOfIngredient(15.0);
+                decoratedDish1->addIngredient("Pickles");
+                cout << " chose Spaghetti Carbonara and added Pickles: ";
+                cout << "Dish price changes from R" << dish1->getCost() << " to R" << decoratedDish1->getCost() << endl;
+                customer->setDish(decoratedDish1);
+                customerTotalCost += decoratedDish1->getCost();
+            }
+
+            if (randomDish == 2)
+            {
+                DishDecorator *decoratedDish2 = new RemoveFromDish();
+                decoratedDish2->setComponent(dish2);
+                decoratedDish2->setCostOfIngredient(10.0);
+                decoratedDish2->removeIngredient("Basil");
+                cout << " chose Margherita Pizza and removed Basil: ";
+                cout << "Dish price changes from R" << dish2->getCost() << " to R" << decoratedDish2->getCost() << endl;
+                customer->setDish(decoratedDish2);
+                customerTotalCost += decoratedDish2->getCost();
+            }
+
+            if (randomDish == 3)
+            {
+                DishDecorator *decoratedDish3 = new SpecialCookingInstructions();
+                decoratedDish3->setComponent(dish3);
+                cout << " chose Lasagna and requested Special instructions : ";
+                decoratedDish3->addSpecialInstruction("Make sure cheese does not burn. ");
+                cout << "Dish price remains the same: R" << decoratedDish3->getCost() << endl;
+                customer->setDish(decoratedDish3);
+                customerTotalCost += decoratedDish3->getCost();
+            }
+
+            if (randomDish == 4)
+            {
+                cout << " chose Tiramisu: ";
+                cout << "Dish price remains the same: R" << dish4->getCost() << endl;
+                customer->setDish(dish4);
+                customerTotalCost += dish4->getCost();
+            }
+
+            if (randomDish == 5)
+            {
+                cout << " chose Minestrone Soup: ";
+                cout << "Dish price remains the same: R" << dish5->getCost() << endl;
+                customer->setDish(dish5);
+                customerTotalCost += dish5->getCost();
+            }
+            tableTotalCost += customerTotalCost;
+        }
+        tableTotalCosts[table->getTableNumber()] = tableTotalCost;
+        cout << "Total cost for Table " << table->getTableNumber() << ": R" << tableTotalCost << endl;
+        cout << "Order ID for this table: " << orderID << endl;
+        orders++;
+        cout << endl;
+    }
+
+    cout << "\033[32m------------------------------------------ORDERS ARE SENT TO THE KITCHEN-----------------------------------------------\n\033[0m" << endl;
+    cout << endl;
+    for (auto &table : floor->getTables())
+    {
+        cout << "\033[93m Table " << table->getTableNumber() << ":\033[0m" << endl;
+
+        for (auto &customer : table->getCustomers())
+        {
+            Order *custorder = new Order();
+            custorder->setCustomer(customer);
+            Command *order = new KitchenOrder(custorder);
+            int cookStrategy = (rand() % 2) + 1;
+
+            if (table->getTableNumber() == 1)
+            {
+                waiter1->placeOrder(junior, order, cookStrategy);
+            }
+
+            if (table->getTableNumber() == 2)
+            {
+                waiter2->placeOrder(junior, order, cookStrategy);
+            }
+
+            if (table->getTableNumber() == 3)
+            {
+                waiter3->placeOrder(junior, order, cookStrategy);
+            }
+
+            if (table->getTableNumber() == 4)
+            {
+                waiter4->placeOrder(junior, order, cookStrategy);
+            }
+
+            if (table->getTableNumber() == 5)
+            {
+                waiter5->placeOrder(junior, order, cookStrategy);
+            }
+        }
+    }
+
+    cout << "\033[32m----------------------------FOOD IS SERVED TO CUSTOMERS & MAITRE D CHECKS UP ON THEM----------------------------\n\033[0m" << endl;
+    for (auto &table : floor->getTables())
+    {
+        cout << "\033[93mMaitre D checks up on Table " << table->getTableNumber() << "\033[0m" << endl;
+        for (auto &customer : table->getCustomers())
+        {
+            customer->getName();
+        }
+    }
+    cout << endl;
+
+    cout << "\033[32m-----------------------------------------------UPDATED INVENTORY----------------------------------------------------\n\033[0m" << endl;
+    inventory->printInventory();
+    cout << endl;
+
+    cout << "\033[32m-------------------------------------------CUSTOMERS RATE THEIR MEALS-----------------------------------------------\n\033[0m" << endl;
+
+    std::map<int, double> averageTableRating;
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+
+    std::default_random_engine generator(seed);
+    std::uniform_int_distribution<int> distribution(1, 5);
+    for (auto &table : floor->getTables())
+    {
+        double average = 0;
+        cout << "\033[93m Table " << table->getTableNumber() << ":\033[0m" << endl;
+
+        for (auto &customer : table->getCustomers())
+        {
+            customer->change(); // state = rate
+            int randomRating = distribution(generator);
+            average += randomRating;
+            customer->setRating(randomRating);
+            cout << "Customer " << customer->getCustomerID() << " " << customer->getName() << " rated food " << customer->getRating() << " stars" << endl;
+        }
+        averageTableRating[table->getTableNumber()] = average / table->getCustomers().size();
+        cout << "Overall table rating: " << averageTableRating[table->getTableNumber()] << endl;
+        cout << endl;
+    }
+
+    cout << "\033[32m--------------------------------------CUSTOMERS ARE READY TO PAY THEIR BILLS----------------------------------------\n\033[0m" << endl;
+
+    int order = 881;
+    for (auto &table : floor->getTables())
+    {
+        cout << "\033[93m Table " << table->getTableNumber() << ":\033[0m" << endl;
+
+        int split = (rand() % 3) + 1;
+        string customerIDs[5] = {"", "", "", "", ""};
+        string payingCustomer = "";
+        int i = 0;
+        for (auto &customer : table->getCustomers())
+        {
+            customer->change(); // state = bill
+            customerIDs[i] = customer->getCustomerID();
+            payingCustomer = customer->getCustomerID();
+            i++;
+        }
+
+        if (split == 1)
+        {
+            cout << "Bill will be split: " << endl;
+            Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], bill.generateTabID("CID785K"), false);
+            int splitIntoNBills = i;
+            map<string, Bill> splitBills = bill.splitBill(splitIntoNBills, bill, order, customerIDs);
+            for (auto it = splitBills.begin(); it != splitBills.end(); ++it)
+            {
+                it->second.payBill();
+                cout << "Customer at table tipped waiter : R" << it->second.tipWaiter() << endl;
+            }
+        }
+
+        else if (split == 2)
+        {
+            cout << "Bill will be paid by one customer at the table: ";
+            Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], bill.generateTabID("CID785K"), false);
+            bill.payBill();
+            cout << "Customers at table tipped waiter : R" << bill.tipWaiter() << endl;
+        }
+
+        else if (split == 3)
+        {
+            cout << "Bill will be added to a tab: " << endl;
+            Tab tab;
+            BillMemento memento(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], "TID149L", false);
+            tab.addBill(memento, memento.getOrderID());
+            cout << "Customers at table tipped waiter : R" << memento.tipWaiter() << endl;
+        }
+        order += 5;
+        cout << endl;
+    }
+
+    cout << "\033[32m----------------------------------------------CUSTOMERS ARE READY TO LEAVE-----------------------------------------------\n\033[0m" << endl;
+
+    for (auto &table : floor->getTables())
+    {
+        cout << "\033[93m Table " << table->getTableNumber() << ":\033[0m" << endl;
+
+        for (auto &customer : table->getCustomers())
+        {
+
+            customer->change(); // state = leave
+            if (table->getTableNumber() == 1)
+            {
+                customer->detach(waiter1);
+            }
+            if (table->getTableNumber() == 2)
+            {
+                customer->detach(waiter2);
+            }
+            if (table->getTableNumber() == 3)
+            {
+                customer->detach(waiter3);
+            }
+            if (table->getTableNumber() == 4)
+            {
+                customer->detach(waiter4);
+            }
+            if (table->getTableNumber() == 5)
+            {
+                customer->detach(waiter5);
+            }
+            delete customer;
+        }
+    }
+
+    delete dish1;
+    delete dish2;
+    delete dish3;
+    delete dish4;
+    delete dish5;
+    delete junior;
+    delete vegetable;
+    delete meat;
+    delete sauce;
+    delete head;
+}
 
 int main()
 {
-    /// run the tests
+    //---------------------------------------------------UNIT TESTS-------------------------------------------------------------------
     // testBill();
     // testTab();
     // testCustomer();
@@ -480,8 +931,10 @@ int main()
     // StateTest();
     // TableTest();
     // FloorTest();
-    IteratorTest();
-    newFloorTest();
+    // IteratorTest();
+    // newFloorTest();
+
+    FinalMain();
 
     return 0;
 }
