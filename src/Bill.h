@@ -166,6 +166,10 @@ private:
 		 */
 		bool operator<(const Bill& other) const;
 
+		/**
+		 * @brief Calculates tip based on customer rating
+		 * @return The tip amount
+		 */
 		double tipWaiter();
 };
 

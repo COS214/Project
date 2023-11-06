@@ -93,6 +93,10 @@ public:
 	 */
 	bool getPaid();
 
+	/**
+	 * @brief Calculates the tip for the waiter.
+	 * @return The tip amount.
+	*/
 	double tipWaiter();
 };
 
