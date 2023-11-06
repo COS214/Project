@@ -554,6 +554,7 @@ string generateUniqueOrderID(int orders) {
     }
 
     Floor* floor = new Floor();
+    Waiter* headWaiter = new Waiter();
     Waiter* waiter1 = new Waiter();
     Waiter* waiter2 = new Waiter();
     Waiter* waiter3 = new Waiter();
@@ -597,10 +598,11 @@ string generateUniqueOrderID(int orders) {
     cout << "\033[32m--------------------------------------------LAYOUT OF THE RESTAURANT FLOOR:----------------------------------------------------\n\033[0m" << endl;
     cout << endl;
     for (auto& table : floor->getTables()) {
-         cout << "\033[93m Table " << table->getTableNumber() << ":\033[0m" << endl;
+        cout << "\033[93mMaitre D shows customers to their table: Table " << table->getTableNumber() << ":\033[0m" << endl;
         for (auto& customer : table->getCustomers()) {
             customer->change(); // state = seated
             cout << "  Customer " << customer->getCustomerID() << " " << customer->getName() << endl;
+           
         }
         cout << endl;
     }
@@ -751,9 +753,22 @@ string generateUniqueOrderID(int orders) {
             }
         }
     }
+
+    cout << "\033[32m----------------------------FOOD IS SERVED TO CUSTOMERS & MAITRE D CHECKS UP ON THEM----------------------------\n\033[0m" << endl;
+    for (auto& table : floor->getTables()) {
+        cout << "\033[93mMaitre D checks up on Table " << table->getTableNumber() << ":\033[0m" << endl;
+        for (auto& customer : table->getCustomers()) {
+            customer->getName();
+        }
+    }
+    cout << endl;
+       
+    
     cout << "\033[32m-----------------------------------------------UPDATED INVENTORY----------------------------------------------------\n\033[0m" << endl;
     inventory->printInventory();
     cout << endl;
+
+    
 
     cout << "\033[32m-------------------------------------------CUSTOMERS RATE THEIR MEALS-----------------------------------------------\n\033[0m" << endl;
    
