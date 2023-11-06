@@ -827,7 +827,7 @@ void FinalMain()
         cout << "\033[93m Table " << table->getTableNumber() << ":\033[0m" << endl;
 
         int split = (rand() % 3) + 1;
-        string customerIDs[5] = {"", "", "", "", ""};
+        string customerIDs[table->getCustomers().size()] = {"", "", "", "", ""};
         string payingCustomer = "";
         int i = 0;
         for (auto &customer : table->getCustomers())
