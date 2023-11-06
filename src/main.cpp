@@ -871,6 +871,46 @@ void FinalMain()
         cout << endl;
     }
 
+    cout << "\033[32m----------------------------------------------CUSTOMERS CHANGING THEIR MINDS-----------------------------------------------\n\033[0m" << endl;
+
+    Customer newCustomer;
+    string newCustomerID = newCustomer.getCustomerID();
+
+    Bill originalBill("OID123", newCustomerID, 100.0, 10, 5, "TID987", false);
+
+    cout << "This is the original Bill:" << endl;
+    cout << originalBill.toString() << endl;
+    
+    BillMemento OGMemento(originalBill.getOrderID(), originalBill.getCustomerID(), originalBill.getTotalAmount(), originalBill.getTableNum(), originalBill.getRating(), originalBill.getTabID(), originalBill.isPaid());
+
+    int splitIntoNBills = 3;
+    map<string, Bill> splitBills = originalBill.splitBill(splitIntoNBills, originalBill, 1000, new string[3]{"Customer1", "Customer2", "Customer3"});
+
+    bool setBill = true;
+    cout << "\nCustomers decide to split the bill:" << endl;
+
+    for (auto &entry : splitBills)
+    {
+        cout << entry.second.toString() << endl;
+        if (setBill)
+        {
+            originalBill = entry.second;
+            setBill = false;
+        }
+    }
+
+    cout << "\nThis is the original bill that has been changed to the first split bill:" << endl;
+    cout << originalBill.toString() << endl;
+
+    originalBill.restoreFromMemento(OGMemento);
+
+    cout << "\nRestored Original Bill:" << endl;
+
+    cout << "\nPay the Original Bill:" << endl;
+    originalBill.payBill();
+
+    cout << originalBill.toString() << endl;
+
     cout << "\033[32m----------------------------------------------CUSTOMERS ARE READY TO LEAVE-----------------------------------------------\n\033[0m" << endl;
 
     for (auto &table : floor->getTables())
