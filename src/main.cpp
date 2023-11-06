@@ -842,7 +842,7 @@ void FinalMain()
         {
             cout << "Bill will be split: " << endl;
             Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], bill.generateTabID("CID785K"), false);
-            int splitIntoNBills = 5;
+            int splitIntoNBills = i;
             map<string, Bill> splitBills = bill.splitBill(splitIntoNBills, bill, order, customerIDs);
             for (auto it = splitBills.begin(); it != splitBills.end(); ++it)
             {
