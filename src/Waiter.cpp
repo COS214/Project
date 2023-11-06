@@ -1,16 +1,49 @@
+/**
+ * @file Waiter.cpp
+ * @brief Contains the declaration of the Waiter class functions.
+ */
+
 #include "Waiter.h"
 
-void Waiter::placeOrder(Chefs *Chefs, Command *order)
+void Waiter::placeOrder(Chefs *Chefs, Command *order, int cookStrategy)
 {
-    std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
-    Chefs->prepareOrder(order, this);
+    // std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
+    std::cout << "\033[0;37m-------------------Waiter sends order to the kitchen: ";
+    ;
+    Chefs->prepareOrder(order, this, cookStrategy);
 }
 
 void Waiter::update(string message)
 {
-    // name can be the name given to the waiter object observing a specific customer
-    // can be changed to an id instead
-    cout << "Customer has changed state: " << message << endl;
+    if (message == "Arrived")
+    {
+        cout << "Waiter notices : Customer arrived. " << endl;
+    }
+    if (message == "Waiting")
+    {
+        cout << "Waiter notices : Customer waiting to be seated. " << endl;
+    }
+    if (message == "Seated")
+    {
+        cout << "Waiter has seated customer : ";
+    }
+    if (message == "Order")
+    {
+        cout << "Waiter notices Customer ready to order : ";
+    }
+    if (message == "Rate")
+    {
+        cout << "Waiter notices Customer would like to Rate experience : ";
+    }
+    if (message == "Pay")
+    {
+        cout << "Waiter notices Customer would like to pay the Bill. " << endl;
+    }
+    if (message == "Leave")
+    {
+        cout << "Waiter notices Customer ready to leave - allows them to do so." << endl;
+    }
+    // cout << "Customer has changed state: " << message << endl;
 }
 
 Waiter::Waiter(std::list<Table *> tables) : tables(tables)
@@ -47,7 +80,12 @@ bool Waiter::isDone()
 {
     return currentTable == tables.end();
 }
-
+/**
+ * @brief This method allows the waiter to serve customers based on their current state.
+ *
+ * @param Chefs Pointer to the Chefs object.
+ * @param order Pointer to the Command object representing the customer's order.
+ */
 void Waiter::serveCustomers(Chefs *Chefs, Command *order)
 {
     std::list<Table *> myTables = this->tables;
@@ -63,25 +101,27 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
             if ((*currCustomer)->getState() == "Order")
             {
                 // Forward the order to the kitchen using the placeOrder method.
-                placeOrder(Chefs, order);
+                placeOrder(Chefs, order, 1);
 
                 std::cout << "Waiter takes the order and forwards it to the kitchen." << std::endl;
             }
             else if ((*currCustomer)->getState() == "Pay")
             {
                 // Create a new bill
+                Bill temp = Bill();
                 Bill newBill = Bill(
-                    newBill.generateOrderID(),
+                    temp.generateOrderID(),
                     (*currCustomer)->getCustomerID(),
                     (*currCustomer)->getTotalAmount(),
                     (*currTable)->getTableNumber(),
                     (*currCustomer)->getRating(),
-                    newBill.generateTabID((*currCustomer)->getCustomerID()),
+                    temp.generateTabID((*currCustomer)->getCustomerID()),
                     false);
 
                 // Pay the bill
                 newBill.pay();
-                std::cout << "Bill paid in full" << "\n";
+                std::cout << "Bill paid in full"
+                          << "\n";
 
                 // Create a bill memento
                 BillMemento billMemento(
@@ -163,19 +203,25 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
 
     // go to the next customer
 }
-
+/**
+ * @brief Destructor
+ *
+ */
 Waiter::~Waiter()
 {
 }
 
 void Waiter::receiveOrder(Command *order)
 {
-    cout << "Waiter received order" << endl;
+    (void)order;
+    cout << "\033[0;37m---------------------------------------------------Waiter received order---------------------------------------------------\033[0m" << endl
+         << endl;
 }
-// default constructor
+/**
+ * @brief Default Constructor.
+ *
+ */
 Waiter::Waiter()
 {
-    this->tables;
-    this->currentTable;
-    this->currentCustomer;
+    
 }

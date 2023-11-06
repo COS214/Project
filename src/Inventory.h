@@ -1,3 +1,8 @@
+/**
+ * @file Inventory.h
+ * @brief Contains the declaration of the Inventory class.
+ */
+
 #ifndef INVENTORY_H
 #define INVENTORY_H
 
@@ -20,6 +25,7 @@ public:
 	void initializeInventory(map<string, int> inventory);
 	bool removeFromInventory(string item, int count);
 	bool addToInventory(string item, int count);
+	void printInventory();
 };
 
 #endif
