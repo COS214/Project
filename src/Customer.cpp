@@ -1,3 +1,8 @@
+/**
+ * @file Customer.cpp
+ * @brief Contains the implementation of the Customer class.
+ */
+
 #include <iostream>
 #include <sstream>
 #include "Customer.h"
