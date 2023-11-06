@@ -445,7 +445,10 @@ void newFloorTest()
     for (int i = 1; i <= numTables; i++)
     {
         Table *table = new Table(i); /// make new table
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 
+        std::default_random_engine generator2(seed);
+        std::uniform_int_distribution<int> dist(1, 10);
         // Add customers to the table
         for (int j = 0; j < numCustomersPerTable; j++)
         {
@@ -566,8 +569,11 @@ void FinalMain()
     for (int i = 1; i <= numTables; i++)
     {
         Table *table = new Table(i);
+        unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 
-        for (int j = 0; j < numCustomersPerTable; j++)
+        std::default_random_engine generator2(seed);
+        std::uniform_int_distribution<int> dist(1, 10);
+        for (int j = 0; j < dist(generator2); j++)
         {
 
             Customer *customer = new Customer(names[customerIndex], customerID); // state = arrived
