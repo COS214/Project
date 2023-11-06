@@ -686,7 +686,7 @@ void FinalMain()
                 decoratedDish1->setComponent(dish1);
                 decoratedDish1->setCostOfIngredient(15.0);
                 decoratedDish1->addIngredient("Pickles");
-                cout << " chose Spaghetti Carbonara: ";
+                cout << " chose Spaghetti Carbonara and added Pickles: ";
                 cout << "Dish price changes from R" << dish1->getCost() << " to R" << decoratedDish1->getCost() << endl;
                 customer->setDish(decoratedDish1);
                 customerTotalCost += decoratedDish1->getCost();
@@ -698,7 +698,7 @@ void FinalMain()
                 decoratedDish2->setComponent(dish2);
                 decoratedDish2->setCostOfIngredient(10.0);
                 decoratedDish2->removeIngredient("Basil");
-                cout << " chose Margherita Pizza: ";
+                cout << " chose Margherita Pizza and removed Basil: ";
                 cout << "Dish price changes from R" << dish2->getCost() << " to R" << decoratedDish2->getCost() << endl;
                 customer->setDish(decoratedDish2);
                 customerTotalCost += decoratedDish2->getCost();
@@ -707,10 +707,10 @@ void FinalMain()
             if (randomDish == 3)
             {
                 DishDecorator *decoratedDish3 = new SpecialCookingInstructions();
-                decoratedDish3->setComponent(dish2);
+                decoratedDish3->setComponent(dish3);
                 cout << " chose Lasagna and requested Special instructions : ";
                 decoratedDish3->addSpecialInstruction("Make sure cheese does not burn. ");
-                cout << "Dish price remains the same: " << decoratedDish3->getCost() << endl;
+                cout << "Dish price remains the same: R" << decoratedDish3->getCost() << endl;
                 customer->setDish(decoratedDish3);
                 customerTotalCost += decoratedDish3->getCost();
             }
@@ -718,7 +718,7 @@ void FinalMain()
             if (randomDish == 4)
             {
                 cout << " chose Tiramisu: ";
-                cout << "Dish price remains the same: " << dish4->getCost() << endl;
+                cout << "Dish price remains the same: R" << dish4->getCost() << endl;
                 customer->setDish(dish4);
                 customerTotalCost += dish4->getCost();
             }
@@ -726,7 +726,7 @@ void FinalMain()
             if (randomDish == 5)
             {
                 cout << " chose Minestrone Soup: ";
-                cout << "Dish price remains the same: " << dish5->getCost() << endl;
+                cout << "Dish price remains the same: R" << dish5->getCost() << endl;
                 customer->setDish(dish5);
                 customerTotalCost += dish5->getCost();
             }
