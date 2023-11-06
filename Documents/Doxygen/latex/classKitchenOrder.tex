@@ -1,0 +1,133 @@
+\hypertarget{classKitchenOrder}{}\doxysection{Kitchen\+Order Class Reference}
+\label{classKitchenOrder}\index{KitchenOrder@{KitchenOrder}}
+
+
+The \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} class represents a command to be executed in the kitchen.  
+
+
+
+
+{\ttfamily \#include $<$Kitchen\+Order.\+h$>$}
+
+
+
+Inheritance diagram for Kitchen\+Order\+:
+% FIG 0
+
+
+Collaboration diagram for Kitchen\+Order\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classKitchenOrder_ac7cd56e91753dbc0e1880bf19212176e}{Kitchen\+Order}} (\mbox{\hyperlink{classOrder}{Order}} $\ast$order)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classKitchenOrder_afe050f3cb15f1294a20b7fe498734e4d}{$\sim$\+Kitchen\+Order}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classKitchenOrder_a1532c7e28dd90886a3043d65c6c1c99f}\label{classKitchenOrder_a1532c7e28dd90886a3043d65c6c1c99f}} 
+void \mbox{\hyperlink{classKitchenOrder_a1532c7e28dd90886a3043d65c6c1c99f}{execute}} () override
+\begin{DoxyCompactList}\small\item\em Execute the kitchen order. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classOrder}{Order}} $\ast$ \mbox{\hyperlink{classKitchenOrder_ac1f3194bfdd138912821a81f755e2343}{get\+Order}} () const
+\begin{DoxyCompactList}\small\item\em Get the associated order. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classKitchenOrder_a40d3045f6db7e08a5151d9da77af38c7}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the current state of the kitchen order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKitchenOrder_ad8fadffee59ea576368a8377b82507ad}{set\+State}} (std\+::string str)
+\begin{DoxyCompactList}\small\item\em Set the state of the kitchen order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} class represents a command to be executed in the kitchen. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classKitchenOrder_ac7cd56e91753dbc0e1880bf19212176e}\label{classKitchenOrder_ac7cd56e91753dbc0e1880bf19212176e}} 
+\index{KitchenOrder@{KitchenOrder}!KitchenOrder@{KitchenOrder}}
+\index{KitchenOrder@{KitchenOrder}!KitchenOrder@{KitchenOrder}}
+\doxysubsubsection{\texorpdfstring{KitchenOrder()}{KitchenOrder()}}
+{\footnotesize\ttfamily Kitchen\+Order\+::\+Kitchen\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classOrder}{Order}} $\ast$}]{order }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} class. 
+
+Constructor for the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} class that takes an order as a parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & A pointer to the \mbox{\hyperlink{classOrder}{Order}} representing the customer\textquotesingle{}s order.\\
+\hline
+{\em order} & Pointer to the \mbox{\hyperlink{classOrder}{Order}} object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classKitchenOrder_afe050f3cb15f1294a20b7fe498734e4d}\label{classKitchenOrder_afe050f3cb15f1294a20b7fe498734e4d}} 
+\index{KitchenOrder@{KitchenOrder}!````~KitchenOrder@{$\sim$KitchenOrder}}
+\index{````~KitchenOrder@{$\sim$KitchenOrder}!KitchenOrder@{KitchenOrder}}
+\doxysubsubsection{\texorpdfstring{$\sim$KitchenOrder()}{~KitchenOrder()}}
+{\footnotesize\ttfamily Kitchen\+Order\+::$\sim$\+Kitchen\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} class. 
+
+Destructor for the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} class. Deletes the order and kitchen. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classKitchenOrder_ac1f3194bfdd138912821a81f755e2343}\label{classKitchenOrder_ac1f3194bfdd138912821a81f755e2343}} 
+\index{KitchenOrder@{KitchenOrder}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!KitchenOrder@{KitchenOrder}}
+\doxysubsubsection{\texorpdfstring{getOrder()}{getOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classOrder}{Order}} $\ast$ Kitchen\+Order\+::get\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the associated order. 
+
+This method returns the order of the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} object.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \mbox{\hyperlink{classOrder}{Order}} representing the customer\textquotesingle{}s order.
+
+Pointer to the \mbox{\hyperlink{classOrder}{Order}} object of the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKitchenOrder_a40d3045f6db7e08a5151d9da77af38c7}\label{classKitchenOrder_a40d3045f6db7e08a5151d9da77af38c7}} 
+\index{KitchenOrder@{KitchenOrder}!getState@{getState}}
+\index{getState@{getState}!KitchenOrder@{KitchenOrder}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string Kitchen\+Order\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the current state of the kitchen order. 
+
+This method returns the state of the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} object.
+
+\begin{DoxyReturn}{Returns}
+A string representing the current state of the kitchen order.
+
+String representing the state of the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classKitchenOrder_ad8fadffee59ea576368a8377b82507ad}\label{classKitchenOrder_ad8fadffee59ea576368a8377b82507ad}} 
+\index{KitchenOrder@{KitchenOrder}!setState@{setState}}
+\index{setState@{setState}!KitchenOrder@{KitchenOrder}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Kitchen\+Order\+::set\+State (\begin{DoxyParamCaption}\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+
+
+Set the state of the kitchen order. 
+
+This method sets the state of the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & A string representing the new state of the kitchen order.\\
+\hline
+{\em str} & String representing the state to be set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{KitchenOrder_8h}{Kitchen\+Order.\+h}}\item 
+\mbox{\hyperlink{KitchenOrder_8cpp}{Kitchen\+Order.\+cpp}}\end{DoxyCompactItemize}

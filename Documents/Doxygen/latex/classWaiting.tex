@@ -1,0 +1,74 @@
+\hypertarget{classWaiting}{}\doxysection{Waiting Class Reference}
+\label{classWaiting}\index{Waiting@{Waiting}}
+
+
+The \mbox{\hyperlink{classWaiting}{Waiting}} class represents a specific state of a \mbox{\hyperlink{classCustomer}{Customer}}.  
+
+
+
+
+{\ttfamily \#include $<$Waiting.\+h$>$}
+
+
+
+Inheritance diagram for Waiting\+:
+% FIG 0
+
+
+Collaboration diagram for Waiting\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classWaiting_a30d5e9380cc7830de6e5ceeace93a074}{handle\+Change}} (\mbox{\hyperlink{classCustomer}{Customer}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Handle a state change for a \mbox{\hyperlink{classCustomer}{Customer}}. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classWaiting_aecb55e7b1c630407a5b7ebcf85218d7f}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the current state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classWaiting}{Waiting}} class represents a specific state of a \mbox{\hyperlink{classCustomer}{Customer}}. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWaiting_aecb55e7b1c630407a5b7ebcf85218d7f}\label{classWaiting_aecb55e7b1c630407a5b7ebcf85218d7f}} 
+\index{Waiting@{Waiting}!getState@{getState}}
+\index{getState@{getState}!Waiting@{Waiting}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string Waiting\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the name of the current state. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the name of the state. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classState_a07098d546380bd57c4800eff914f28e8}{State}}.
+
+\mbox{\Hypertarget{classWaiting_a30d5e9380cc7830de6e5ceeace93a074}\label{classWaiting_a30d5e9380cc7830de6e5ceeace93a074}} 
+\index{Waiting@{Waiting}!handleChange@{handleChange}}
+\index{handleChange@{handleChange}!Waiting@{Waiting}}
+\doxysubsubsection{\texorpdfstring{handleChange()}{handleChange()}}
+{\footnotesize\ttfamily void Waiting\+::handle\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCustomer}{Customer}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handle a state change for a \mbox{\hyperlink{classCustomer}{Customer}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Pointer to the \mbox{\hyperlink{classCustomer}{Customer}} whose state is changing. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classState_a9d68efd646898d8d26d422d5da9f081f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Waiting.\+h\item 
+\mbox{\hyperlink{Waiting_8cpp}{Waiting.\+cpp}}\end{DoxyCompactItemize}

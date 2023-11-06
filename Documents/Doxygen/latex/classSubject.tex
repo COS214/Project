@@ -1,0 +1,87 @@
+\hypertarget{classSubject}{}\doxysection{Subject Class Reference}
+\label{classSubject}\index{Subject@{Subject}}
+
+
+The \mbox{\hyperlink{classSubject}{Subject}} class represents the subject of the observer pattern.  
+
+
+
+
+{\ttfamily \#include $<$Subject.\+h$>$}
+
+
+
+Inheritance diagram for Subject\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classSubject_a6d479186a1b7eae79e374f7f2ea1021e}{attach}} (\mbox{\hyperlink{classObserver}{Observer}} $\ast$observer)
+\begin{DoxyCompactList}\small\item\em Attach an observer to the subject. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classSubject_ac9d3cb852fd2137404f7649ce3fc6c98}{detach}} (\mbox{\hyperlink{classObserver}{Observer}} $\ast$observer)
+\begin{DoxyCompactList}\small\item\em Detach an observer from the subject. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classSubject_aff28d5d67b548edf30691358f56b88b4}{notify}} (std\+::string message)
+\begin{DoxyCompactList}\small\item\em Notify all observers with a message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classSubject}{Subject}} class represents the subject of the observer pattern. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSubject_a6d479186a1b7eae79e374f7f2ea1021e}\label{classSubject_a6d479186a1b7eae79e374f7f2ea1021e}} 
+\index{Subject@{Subject}!attach@{attach}}
+\index{attach@{attach}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily bool Subject\+::attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObserver}{Observer}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Attach an observer to the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & A pointer to the \mbox{\hyperlink{classObserver}{Observer}} to be attached. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the attachment is successful, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSubject_ac9d3cb852fd2137404f7649ce3fc6c98}\label{classSubject_ac9d3cb852fd2137404f7649ce3fc6c98}} 
+\index{Subject@{Subject}!detach@{detach}}
+\index{detach@{detach}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily bool Subject\+::detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObserver}{Observer}} $\ast$}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Detach an observer from the subject. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & A pointer to the \mbox{\hyperlink{classObserver}{Observer}} to be detached. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the detachment is successful, otherwise false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSubject_aff28d5d67b548edf30691358f56b88b4}\label{classSubject_aff28d5d67b548edf30691358f56b88b4}} 
+\index{Subject@{Subject}!notify@{notify}}
+\index{notify@{notify}!Subject@{Subject}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily void Subject\+::notify (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notify all observers with a message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & A string representing the notification message. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Subject_8h}{Subject.\+h}}\item 
+\mbox{\hyperlink{Subject_8cpp}{Subject.\+cpp}}\end{DoxyCompactItemize}

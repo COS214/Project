@@ -1,0 +1,149 @@
+\hypertarget{classSauceChef}{}\doxysection{Sauce\+Chef Class Reference}
+\label{classSauceChef}\index{SauceChef@{SauceChef}}
+
+
+The \mbox{\hyperlink{classSauceChef}{Sauce\+Chef}} class represents a chef specialized in sauce-\/based dishes.  
+
+
+
+
+{\ttfamily \#include $<$Sauce\+Chef.\+h$>$}
+
+
+
+Inheritance diagram for Sauce\+Chef\+:
+% FIG 0
+
+
+Collaboration diagram for Sauce\+Chef\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSauceChef_a230edf9c2764230e39f94bd24700ee3b}\label{classSauceChef_a230edf9c2764230e39f94bd24700ee3b}} 
+\mbox{\hyperlink{classSauceChef_a230edf9c2764230e39f94bd24700ee3b}{Sauce\+Chef}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classSauceChef}{Sauce\+Chef}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSauceChef_ad877eb5e63d68b97c9f12e7a07b6e503}{Sauce\+Chef}} (\mbox{\hyperlink{classMediator}{Mediator}} $\ast$mediator)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classSauceChef}{Sauce\+Chef}} class with a specified mediator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSauceChef_a540450fa8252f1afdc13713e90d4879a}{cook}} (std\+::string dish)
+\begin{DoxyCompactList}\small\item\em Cook a dish. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSauceChef_a636ac187a0a97c8f2742ae04874cb79c}{prepare\+Order}} (\mbox{\hyperlink{classCommand}{Command}} $\ast$order, \mbox{\hyperlink{classWaiter}{Waiter}} $\ast$curr\+Waiter, int cook\+Strategy) override
+\begin{DoxyCompactList}\small\item\em Prepare an order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classSauceChef_a620a6c1e4a040309a5bd368a60a08c56}\label{classSauceChef_a620a6c1e4a040309a5bd368a60a08c56}} 
+virtual \mbox{\hyperlink{classSauceChef_a620a6c1e4a040309a5bd368a60a08c56}{$\sim$\+Sauce\+Chef}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classSauceChef}{Sauce\+Chef}} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSauceChef_a9cbfeaa0a8c1f07a37c5ee5d969f219a}{is\+Sauce}} (string item)
+\begin{DoxyCompactList}\small\item\em Check if an item is a sauce. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classSauceChef}{Sauce\+Chef}} class represents a chef specialized in sauce-\/based dishes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSauceChef_ad877eb5e63d68b97c9f12e7a07b6e503}\label{classSauceChef_ad877eb5e63d68b97c9f12e7a07b6e503}} 
+\index{SauceChef@{SauceChef}!SauceChef@{SauceChef}}
+\index{SauceChef@{SauceChef}!SauceChef@{SauceChef}}
+\doxysubsubsection{\texorpdfstring{SauceChef()}{SauceChef()}}
+{\footnotesize\ttfamily Sauce\+Chef\+::\+Sauce\+Chef (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMediator}{Mediator}} $\ast$}]{mediator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{classSauceChef}{Sauce\+Chef}} class with a specified mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mediator} & A pointer to the \mbox{\hyperlink{classMediator}{Mediator}} used for communication. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSauceChef_a540450fa8252f1afdc13713e90d4879a}\label{classSauceChef_a540450fa8252f1afdc13713e90d4879a}} 
+\index{SauceChef@{SauceChef}!cook@{cook}}
+\index{cook@{cook}!SauceChef@{SauceChef}}
+\doxysubsubsection{\texorpdfstring{cook()}{cook()}}
+{\footnotesize\ttfamily void Sauce\+Chef\+::cook (\begin{DoxyParamCaption}\item[{std\+::string}]{dish }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Cook a dish. 
+
+This method allows the \mbox{\hyperlink{classSauceChef}{Sauce\+Chef}} to cook a specific dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dish} & A string representing the dish to be cooked.\\
+\hline
+{\em dish} & String representing the name of the dish to be cooked. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classChefs_a8df116ea0441d2a2c4f6fba82cbf9742}{Chefs}}.
+
+\mbox{\Hypertarget{classSauceChef_a9cbfeaa0a8c1f07a37c5ee5d969f219a}\label{classSauceChef_a9cbfeaa0a8c1f07a37c5ee5d969f219a}} 
+\index{SauceChef@{SauceChef}!isSauce@{isSauce}}
+\index{isSauce@{isSauce}!SauceChef@{SauceChef}}
+\doxysubsubsection{\texorpdfstring{isSauce()}{isSauce()}}
+{\footnotesize\ttfamily bool Sauce\+Chef\+::is\+Sauce (\begin{DoxyParamCaption}\item[{string}]{item }\end{DoxyParamCaption})}
+
+
+
+Check if an item is a sauce. 
+
+This method checks if a given item is a sauce.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A string representing the item to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item is a sauce, otherwise false.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em item} & String representing the name of the item to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the item is a sauce, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSauceChef_a636ac187a0a97c8f2742ae04874cb79c}\label{classSauceChef_a636ac187a0a97c8f2742ae04874cb79c}} 
+\index{SauceChef@{SauceChef}!prepareOrder@{prepareOrder}}
+\index{prepareOrder@{prepareOrder}!SauceChef@{SauceChef}}
+\doxysubsubsection{\texorpdfstring{prepareOrder()}{prepareOrder()}}
+{\footnotesize\ttfamily void Sauce\+Chef\+::prepare\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommand}{Command}} $\ast$}]{order,  }\item[{\mbox{\hyperlink{classWaiter}{Waiter}} $\ast$}]{curr\+Waiter,  }\item[{int}]{cook\+Strategy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Prepare an order. 
+
+This method allows the \mbox{\hyperlink{classSauceChef}{Sauce\+Chef}} to prepare an order and remove the necessary ingredients from the inventory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & A pointer to the \mbox{\hyperlink{classCommand}{Command}} representing the order. \\
+\hline
+{\em curr\+Waiter} & A pointer to the \mbox{\hyperlink{classWaiter}{Waiter}} who placed the order. \\
+\hline
+{\em cook\+Strategy} & An integer representing the cooking strategy.\\
+\hline
+{\em order} & Pointer to the \mbox{\hyperlink{classCommand}{Command}} object representing the customer\textquotesingle{}s order. \\
+\hline
+{\em curr\+Waiter} & Pointer to the \mbox{\hyperlink{classWaiter}{Waiter}} object who is currently serving. \\
+\hline
+{\em cook\+Strategy} & Integer representing the cooking strategy to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classChefs_ab54d5e8d9fa45ed4f164845d1e1cef08}{Chefs}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{SauceChef_8h}{Sauce\+Chef.\+h}}\item 
+\mbox{\hyperlink{SauceChef_8cpp}{Sauce\+Chef.\+cpp}}\end{DoxyCompactItemize}

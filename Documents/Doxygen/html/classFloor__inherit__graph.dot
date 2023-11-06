@@ -1,0 +1,13 @@
+digraph "Floor"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Floor",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="The Floor class represents a floor in a restaurant with multiple tables."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Table",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classTable.html",tooltip="The Table class represents a dining table in the restaurant."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Customer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classCustomer.html",tooltip="The Customer class is a concrete subject in the observer pattern."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Subject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSubject.html",tooltip="The Subject class represents the subject of the observer pattern."];
+}

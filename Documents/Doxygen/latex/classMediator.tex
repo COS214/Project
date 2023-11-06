@@ -1,0 +1,56 @@
+\hypertarget{classMediator}{}\doxysection{Mediator Class Reference}
+\label{classMediator}\index{Mediator@{Mediator}}
+
+
+Abstract base class for a mediator that handles communication between chefs.  
+
+
+
+
+{\ttfamily \#include $<$Mediator.\+h$>$}
+
+
+
+Inheritance diagram for Mediator\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classMediator_a062a70885b40e5171a5affac4ad53433}{notify}} (\mbox{\hyperlink{classChefs}{Chefs}} $\ast$sender, std\+::string event)=0
+\begin{DoxyCompactList}\small\item\em Notify the mediator of an event. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classMediator_a50bae430a78a37c56c604206c5d7f302}\label{classMediator_a50bae430a78a37c56c604206c5d7f302}} 
+virtual \mbox{\hyperlink{classMediator_a50bae430a78a37c56c604206c5d7f302}{$\sim$\+Mediator}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for a mediator that handles communication between chefs. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMediator_a062a70885b40e5171a5affac4ad53433}\label{classMediator_a062a70885b40e5171a5affac4ad53433}} 
+\index{Mediator@{Mediator}!notify@{notify}}
+\index{notify@{notify}!Mediator@{Mediator}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily void Mediator\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChefs}{Chefs}} $\ast$}]{sender,  }\item[{std\+::string}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notify the mediator of an event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The chef sending the notification. \\
+\hline
+{\em event} & The event that occurred. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classconcreteMediator_a505ab64f2514ed1b05d20e45d8297e13}{concrete\+Mediator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Mediator_8h}{Mediator.\+h}}\item 
+\mbox{\hyperlink{Mediator_8cpp}{Mediator.\+cpp}}\end{DoxyCompactItemize}

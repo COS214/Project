@@ -1,0 +1,73 @@
+\hypertarget{classState}{}\doxysection{State Class Reference}
+\label{classState}\index{State@{State}}
+
+
+The \mbox{\hyperlink{classState}{State}} class represents the base class for customer states in a restaurant.  
+
+
+
+
+{\ttfamily \#include $<$State.\+h$>$}
+
+
+
+Inheritance diagram for State\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classState_a9d68efd646898d8d26d422d5da9f081f}{handle\+Change}} (\mbox{\hyperlink{classCustomer}{Customer}} $\ast$c)=0
+\begin{DoxyCompactList}\small\item\em Handle a state change for a customer. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classState_a07098d546380bd57c4800eff914f28e8}{get\+State}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the current state as a string. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classState_afab438d92b90dc18d194dbd9c9c8bab3}\label{classState_afab438d92b90dc18d194dbd9c9c8bab3}} 
+virtual \mbox{\hyperlink{classState_afab438d92b90dc18d194dbd9c9c8bab3}{$\sim$\+State}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classState}{State}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classState}{State}} class represents the base class for customer states in a restaurant. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classState_a07098d546380bd57c4800eff914f28e8}\label{classState_a07098d546380bd57c4800eff914f28e8}} 
+\index{State@{State}!getState@{getState}}
+\index{getState@{getState}!State@{State}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily virtual std\+::string State\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the current state as a string. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the current state. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWaiting_aecb55e7b1c630407a5b7ebcf85218d7f}{Waiting}}, \mbox{\hyperlink{classSeated_a1564620c62ccc82237f94678f7668dc7}{Seated}}, \mbox{\hyperlink{classRate_a15304a9f9ce1193c67e5a58ceadfffa6}{Rate}}, \mbox{\hyperlink{classPay_ac9f3ab7719d458a2bf041301f2dd6195}{Pay}}, \mbox{\hyperlink{classOrder_a6eedd8d6530d66175ab7d4d6668b98f3}{Order}}, \mbox{\hyperlink{classLeave_ae3c4906f57acc6cbfc43152e2c96f1df}{Leave}}, and \mbox{\hyperlink{classArrived_af1bdc12b59a4f2814f24d9f8f170484c}{Arrived}}.
+
+\mbox{\Hypertarget{classState_a9d68efd646898d8d26d422d5da9f081f}\label{classState_a9d68efd646898d8d26d422d5da9f081f}} 
+\index{State@{State}!handleChange@{handleChange}}
+\index{handleChange@{handleChange}!State@{State}}
+\doxysubsubsection{\texorpdfstring{handleChange()}{handleChange()}}
+{\footnotesize\ttfamily virtual void State\+::handle\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCustomer}{Customer}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Handle a state change for a customer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & A pointer to the \mbox{\hyperlink{classCustomer}{Customer}} whose state is being changed. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classWaiting_a30d5e9380cc7830de6e5ceeace93a074}{Waiting}}, \mbox{\hyperlink{classSeated_ad4de58beacc29aa99d735e61fa36f59e}{Seated}}, \mbox{\hyperlink{classRate_a02c9ccf5bf99d85034f29efc15032a3c}{Rate}}, \mbox{\hyperlink{classPay_ae0fa5b8e6a67579a5b85e10820a30a7e}{Pay}}, \mbox{\hyperlink{classOrder_a90c0cc38ac3762fcc23544a40d6def83}{Order}}, \mbox{\hyperlink{classLeave_a14da205e5c36132976a962f423e7e6ee}{Leave}}, and \mbox{\hyperlink{classArrived_ae3278443135c7ec97ea8548f59554d75}{Arrived}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{State_8h}{State.\+h}}\item 
+\mbox{\hyperlink{State_8cpp}{State.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+\hypertarget{classOrder}{}\doxysection{Order Class Reference}
+\label{classOrder}\index{Order@{Order}}
+
+
+The \mbox{\hyperlink{classOrder}{Order}} class represents the state when a customer is ready to place an order.  
+
+
+
+
+{\ttfamily \#include $<$Order.\+h$>$}
+
+
+
+Inheritance diagram for Order\+:
+% FIG 0
+
+
+Collaboration diagram for Order\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classOrder_a90c0cc38ac3762fcc23544a40d6def83}{handle\+Change}} (\mbox{\hyperlink{classCustomer}{Customer}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Handle a state change for a customer. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classOrder_a6eedd8d6530d66175ab7d4d6668b98f3}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the current state as a string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classOrder_a733e870aca3947a7fb6b0b7f996f6224}{set\+Customer}} (\mbox{\hyperlink{classCustomer}{Customer}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Set the customer associated with the order state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCustomer}{Customer}} $\ast$ \mbox{\hyperlink{classOrder_a0737a18ca8ba9430adaa474e29dd1350}{get\+Customer}} ()
+\begin{DoxyCompactList}\small\item\em Get the customer associated with the order state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classOrder}{Order}} class represents the state when a customer is ready to place an order. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classOrder_a0737a18ca8ba9430adaa474e29dd1350}\label{classOrder_a0737a18ca8ba9430adaa474e29dd1350}} 
+\index{Order@{Order}!getCustomer@{getCustomer}}
+\index{getCustomer@{getCustomer}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{getCustomer()}{getCustomer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCustomer}{Customer}} $\ast$ Order\+::get\+Customer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the customer associated with the order state. 
+
+This method returns the customer of the \mbox{\hyperlink{classOrder}{Order}} object.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the \mbox{\hyperlink{classCustomer}{Customer}} who is ready to place an order.
+
+Pointer to the \mbox{\hyperlink{classCustomer}{Customer}} object of the \mbox{\hyperlink{classOrder}{Order}}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classOrder_a6eedd8d6530d66175ab7d4d6668b98f3}\label{classOrder_a6eedd8d6530d66175ab7d4d6668b98f3}} 
+\index{Order@{Order}!getState@{getState}}
+\index{getState@{getState}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string Order\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the current state as a string. 
+
+This method returns the state of the \mbox{\hyperlink{classOrder}{Order}} object.
+
+\begin{DoxyReturn}{Returns}
+A string representing the current state, which is \char`\"{}\+Order\char`\"{}.
+
+String representing the state of the \mbox{\hyperlink{classOrder}{Order}} object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classState_a07098d546380bd57c4800eff914f28e8}{State}}.
+
+\mbox{\Hypertarget{classOrder_a90c0cc38ac3762fcc23544a40d6def83}\label{classOrder_a90c0cc38ac3762fcc23544a40d6def83}} 
+\index{Order@{Order}!handleChange@{handleChange}}
+\index{handleChange@{handleChange}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{handleChange()}{handleChange()}}
+{\footnotesize\ttfamily void Order\+::handle\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCustomer}{Customer}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handle a state change for a customer. 
+
+This method changes the state of the customer to \char`\"{}\+Rate\char`\"{}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & A pointer to the \mbox{\hyperlink{classCustomer}{Customer}} whose state is being changed.\\
+\hline
+{\em c} & Pointer to the \mbox{\hyperlink{classCustomer}{Customer}} object whose state is to be changed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classState_a9d68efd646898d8d26d422d5da9f081f}{State}}.
+
+\mbox{\Hypertarget{classOrder_a733e870aca3947a7fb6b0b7f996f6224}\label{classOrder_a733e870aca3947a7fb6b0b7f996f6224}} 
+\index{Order@{Order}!setCustomer@{setCustomer}}
+\index{setCustomer@{setCustomer}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{setCustomer()}{setCustomer()}}
+{\footnotesize\ttfamily void Order\+::set\+Customer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCustomer}{Customer}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Set the customer associated with the order state. 
+
+This method sets the customer for the \mbox{\hyperlink{classOrder}{Order}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & A pointer to the \mbox{\hyperlink{classCustomer}{Customer}} who is ready to place an order.\\
+\hline
+{\em c} & Pointer to the \mbox{\hyperlink{classCustomer}{Customer}} object to be set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Order_8h}{Order.\+h}}\item 
+\mbox{\hyperlink{Order_8cpp}{Order.\+cpp}}\end{DoxyCompactItemize}

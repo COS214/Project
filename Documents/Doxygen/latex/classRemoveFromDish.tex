@@ -1,0 +1,159 @@
+\hypertarget{classRemoveFromDish}{}\doxysection{Remove\+From\+Dish Class Reference}
+\label{classRemoveFromDish}\index{RemoveFromDish@{RemoveFromDish}}
+
+
+The \mbox{\hyperlink{classRemoveFromDish}{Remove\+From\+Dish}} class represents a decorator for removing ingredients from a dish.  
+
+
+
+
+{\ttfamily \#include $<$Remove\+From\+Dish.\+h$>$}
+
+
+
+Inheritance diagram for Remove\+From\+Dish\+:
+% FIG 0
+
+
+Collaboration diagram for Remove\+From\+Dish\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRemoveFromDish_ae0717e6783ba128259a874774dbde41f}\label{classRemoveFromDish_ae0717e6783ba128259a874774dbde41f}} 
+\mbox{\hyperlink{classRemoveFromDish_ae0717e6783ba128259a874774dbde41f}{Remove\+From\+Dish}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classRemoveFromDish}{Remove\+From\+Dish}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveFromDish_ad5f1b700213de4cc2d65c7d0469c7394}{set\+Ingredient}} (std\+::string ingredient)
+\begin{DoxyCompactList}\small\item\em Set the ingredient to be removed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveFromDish_a52ed074d06922325b360ba80254dbe5f}{set\+Cost\+Of\+Ingredient}} (double cost\+Of\+Ingredient)
+\begin{DoxyCompactList}\small\item\em Set the cost of the removed ingredient. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRemoveFromDish_aba2b2754721c7401d1e970f233d7ddc5}{remove\+Ingredient}} (std\+::string ingredient)
+\begin{DoxyCompactList}\small\item\em Remove the specified ingredient from the dish. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classRemoveFromDish_a03304f19f36e0b865c40b3b023b1efd4}{total\+Cost}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the total cost of the dish after ingredient removal. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classRemoveFromDish_ac2f525a420294242a59014aa5ae4c691}{get\+Ingredients\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of ingredients to be removed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classRemoveFromDish}{Remove\+From\+Dish}} class represents a decorator for removing ingredients from a dish. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classRemoveFromDish_ac2f525a420294242a59014aa5ae4c691}\label{classRemoveFromDish_ac2f525a420294242a59014aa5ae4c691}} 
+\index{RemoveFromDish@{RemoveFromDish}!getIngredientsList@{getIngredientsList}}
+\index{getIngredientsList@{getIngredientsList}!RemoveFromDish@{RemoveFromDish}}
+\doxysubsubsection{\texorpdfstring{getIngredientsList()}{getIngredientsList()}}
+{\footnotesize\ttfamily std\+::string Remove\+From\+Dish\+::get\+Ingredients\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the list of ingredients to be removed. 
+
+This method returns a list of ingredients in the dish.
+
+\begin{DoxyReturn}{Returns}
+A string representing the list of removed ingredients.
+
+String representing the list of ingredients in the dish. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDishDecorator_ab78846fd1f00daa6d70a7e6a6da3c749}{Dish\+Decorator}}.
+
+\mbox{\Hypertarget{classRemoveFromDish_aba2b2754721c7401d1e970f233d7ddc5}\label{classRemoveFromDish_aba2b2754721c7401d1e970f233d7ddc5}} 
+\index{RemoveFromDish@{RemoveFromDish}!removeIngredient@{removeIngredient}}
+\index{removeIngredient@{removeIngredient}!RemoveFromDish@{RemoveFromDish}}
+\doxysubsubsection{\texorpdfstring{removeIngredient()}{removeIngredient()}}
+{\footnotesize\ttfamily void Remove\+From\+Dish\+::remove\+Ingredient (\begin{DoxyParamCaption}\item[{std\+::string}]{ingredient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove the specified ingredient from the dish. 
+
+This method removes a specific ingredient from the dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & A string representing the ingredient to be removed.\\
+\hline
+{\em ingredient} & String representing the name of the ingredient to be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDishDecorator_a60cfd41922c018146f0ff148ed535240}{Dish\+Decorator}}.
+
+\mbox{\Hypertarget{classRemoveFromDish_a52ed074d06922325b360ba80254dbe5f}\label{classRemoveFromDish_a52ed074d06922325b360ba80254dbe5f}} 
+\index{RemoveFromDish@{RemoveFromDish}!setCostOfIngredient@{setCostOfIngredient}}
+\index{setCostOfIngredient@{setCostOfIngredient}!RemoveFromDish@{RemoveFromDish}}
+\doxysubsubsection{\texorpdfstring{setCostOfIngredient()}{setCostOfIngredient()}}
+{\footnotesize\ttfamily void Remove\+From\+Dish\+::set\+Cost\+Of\+Ingredient (\begin{DoxyParamCaption}\item[{double}]{cost\+Of\+Ingredient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the cost of the removed ingredient. 
+
+This method sets the cost of the ingredient to be removed from the dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cost\+Of\+Ingredient} & A double representing the cost of the removed ingredient.\\
+\hline
+{\em cost\+Of\+Ingredient} & Double representing the cost of the ingredient to be set. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDishDecorator_a55cf5ea1073ca1a8a04960e884b9f43d}{Dish\+Decorator}}.
+
+\mbox{\Hypertarget{classRemoveFromDish_ad5f1b700213de4cc2d65c7d0469c7394}\label{classRemoveFromDish_ad5f1b700213de4cc2d65c7d0469c7394}} 
+\index{RemoveFromDish@{RemoveFromDish}!setIngredient@{setIngredient}}
+\index{setIngredient@{setIngredient}!RemoveFromDish@{RemoveFromDish}}
+\doxysubsubsection{\texorpdfstring{setIngredient()}{setIngredient()}}
+{\footnotesize\ttfamily void Remove\+From\+Dish\+::set\+Ingredient (\begin{DoxyParamCaption}\item[{std\+::string}]{ingredient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the ingredient to be removed. 
+
+This method sets the ingredient to be removed from the dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & A string representing the ingredient to be removed.\\
+\hline
+{\em ingredient} & String representing the name of the ingredient to be set. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDishDecorator_a48b4f5d9055ea9809264d7feb8cda1c4}{Dish\+Decorator}}.
+
+\mbox{\Hypertarget{classRemoveFromDish_a03304f19f36e0b865c40b3b023b1efd4}\label{classRemoveFromDish_a03304f19f36e0b865c40b3b023b1efd4}} 
+\index{RemoveFromDish@{RemoveFromDish}!totalCost@{totalCost}}
+\index{totalCost@{totalCost}!RemoveFromDish@{RemoveFromDish}}
+\doxysubsubsection{\texorpdfstring{totalCost()}{totalCost()}}
+{\footnotesize\ttfamily double Remove\+From\+Dish\+::total\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculate the total cost of the dish after ingredient removal. 
+
+This method returns the total cost of the dish after removing the ingredient.
+
+\begin{DoxyReturn}{Returns}
+The total cost of the modified dish.
+
+Double representing the total cost of the dish. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDishDecorator_aacce80d672d44ad97c7920449f0d2a7d}{Dish\+Decorator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{RemoveFromDish_8h}{Remove\+From\+Dish.\+h}}\item 
+\mbox{\hyperlink{RemoveFromDish_8cpp}{Remove\+From\+Dish.\+cpp}}\end{DoxyCompactItemize}

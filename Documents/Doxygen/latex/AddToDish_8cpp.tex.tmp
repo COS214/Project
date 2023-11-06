@@ -1,0 +1,17 @@
+\hypertarget{AddToDish_8cpp}{}\doxysection{Add\+To\+Dish.\+cpp File Reference}
+\label{AddToDish_8cpp}\index{AddToDish.cpp@{AddToDish.cpp}}
+
+
+Contains the implementation of the \mbox{\hyperlink{classAddToDish}{Add\+To\+Dish}} class.  
+
+
+{\ttfamily \#include \char`\"{}Add\+To\+Dish.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$list$>$}\newline
+Include dependency graph for Add\+To\+Dish.\+cpp\+:
+% FIG 0
+
+
+\doxysubsection{Detailed Description}
+Contains the implementation of the \mbox{\hyperlink{classAddToDish}{Add\+To\+Dish}} class. 
+

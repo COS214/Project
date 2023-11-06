@@ -1,0 +1,119 @@
+\hypertarget{classHeadChef}{}\doxysection{Head\+Chef Class Reference}
+\label{classHeadChef}\index{HeadChef@{HeadChef}}
+
+
+The \mbox{\hyperlink{classHeadChef}{Head\+Chef}} class represents the main chef responsible for preparing dishes.  
+
+
+
+
+{\ttfamily \#include $<$Head\+Chef.\+h$>$}
+
+
+
+Inheritance diagram for Head\+Chef\+:
+% FIG 0
+
+
+Collaboration diagram for Head\+Chef\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classHeadChef_ac95033bbe3361915ef93af66d162579b}\label{classHeadChef_ac95033bbe3361915ef93af66d162579b}} 
+\mbox{\hyperlink{classHeadChef_ac95033bbe3361915ef93af66d162579b}{Head\+Chef}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classHeadChef}{Head\+Chef}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHeadChef_afae37274fedbb79b8eeb0e55c5814ca1}{Head\+Chef}} (\mbox{\hyperlink{classMediator}{Mediator}} $\ast$mediator)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classHeadChef}{Head\+Chef}} class with a mediator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeadChef_a020a058358c6e6bdfcb5b700b2d6c163}{cook}} (std\+::string dish)
+\begin{DoxyCompactList}\small\item\em Cook a specified dish. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHeadChef_a880efd9027305f592f6182739ada76ae}{prepare\+Order}} (\mbox{\hyperlink{classCommand}{Command}} $\ast$order, \mbox{\hyperlink{classWaiter}{Waiter}} $\ast$curr\+Waiter, int cook\+Strategy) override
+\begin{DoxyCompactList}\small\item\em Prepare an order and send it to the kitchen. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHeadChef_a95ede648f4417075ee85aebfd4f4ac3a}\label{classHeadChef_a95ede648f4417075ee85aebfd4f4ac3a}} 
+virtual \mbox{\hyperlink{classHeadChef_a95ede648f4417075ee85aebfd4f4ac3a}{$\sim$\+Head\+Chef}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classHeadChef}{Head\+Chef}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classHeadChef}{Head\+Chef}} class represents the main chef responsible for preparing dishes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHeadChef_afae37274fedbb79b8eeb0e55c5814ca1}\label{classHeadChef_afae37274fedbb79b8eeb0e55c5814ca1}} 
+\index{HeadChef@{HeadChef}!HeadChef@{HeadChef}}
+\index{HeadChef@{HeadChef}!HeadChef@{HeadChef}}
+\doxysubsubsection{\texorpdfstring{HeadChef()}{HeadChef()}}
+{\footnotesize\ttfamily Head\+Chef\+::\+Head\+Chef (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMediator}{Mediator}} $\ast$}]{mediator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{classHeadChef}{Head\+Chef}} class with a mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mediator} & The mediator used for communication with other components. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHeadChef_a020a058358c6e6bdfcb5b700b2d6c163}\label{classHeadChef_a020a058358c6e6bdfcb5b700b2d6c163}} 
+\index{HeadChef@{HeadChef}!cook@{cook}}
+\index{cook@{cook}!HeadChef@{HeadChef}}
+\doxysubsubsection{\texorpdfstring{cook()}{cook()}}
+{\footnotesize\ttfamily void Head\+Chef\+::cook (\begin{DoxyParamCaption}\item[{std\+::string}]{dish }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Cook a specified dish. 
+
+This method allows the \mbox{\hyperlink{classHeadChef}{Head\+Chef}} to cook a specific dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dish} & The name of the dish to be cooked.\\
+\hline
+{\em dish} & String representing the name of the dish to be cooked. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classChefs_a8df116ea0441d2a2c4f6fba82cbf9742}{Chefs}}.
+
+\mbox{\Hypertarget{classHeadChef_a880efd9027305f592f6182739ada76ae}\label{classHeadChef_a880efd9027305f592f6182739ada76ae}} 
+\index{HeadChef@{HeadChef}!prepareOrder@{prepareOrder}}
+\index{prepareOrder@{prepareOrder}!HeadChef@{HeadChef}}
+\doxysubsubsection{\texorpdfstring{prepareOrder()}{prepareOrder()}}
+{\footnotesize\ttfamily void Head\+Chef\+::prepare\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommand}{Command}} $\ast$}]{order,  }\item[{\mbox{\hyperlink{classWaiter}{Waiter}} $\ast$}]{curr\+Waiter,  }\item[{int}]{cook\+Strategy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Prepare an order and send it to the kitchen. 
+
+This method allows the \mbox{\hyperlink{classHeadChef}{Head\+Chef}} to prepare an order and send it to the waiter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & The order to be prepared. \\
+\hline
+{\em curr\+Waiter} & The current waiter handling the order. \\
+\hline
+{\em cook\+Strategy} & The strategy for cooking the order.\\
+\hline
+{\em order} & Pointer to the \mbox{\hyperlink{classCommand}{Command}} object representing the customer\textquotesingle{}s order. \\
+\hline
+{\em curr\+Waiter} & Pointer to the \mbox{\hyperlink{classWaiter}{Waiter}} object who is currently serving. \\
+\hline
+{\em cook\+Strategy} & Integer representing the cooking strategy to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classChefs_ab54d5e8d9fa45ed4f164845d1e1cef08}{Chefs}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{HeadChef_8h}{Head\+Chef.\+h}}\item 
+\mbox{\hyperlink{HeadChef_8cpp}{Head\+Chef.\+cpp}}\end{DoxyCompactItemize}
