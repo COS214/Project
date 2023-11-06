@@ -607,7 +607,7 @@ void FinalMain()
         for (auto &customer : table->getCustomers())
         {
             customer->change(); // state = seated
-            cout << "  Customer " << customer->getCustomerID() << " " << customer->getName() << endl;
+            cout << " Customer " << customer->getCustomerID() << " " << customer->getName() << endl;
         }
         cout << endl;
     }
@@ -669,7 +669,7 @@ void FinalMain()
         {
             count++;
             customer->change(); // state = order
-            cout << "Customer number" << count << " ";
+            cout << "Customer number " << count ;
 
             double customerTotalCost = 0.0;
 
@@ -776,7 +776,7 @@ void FinalMain()
     cout << "\033[32m----------------------------FOOD IS SERVED TO CUSTOMERS & MAITRE D CHECKS UP ON THEM----------------------------\n\033[0m" << endl;
     for (auto &table : floor->getTables())
     {
-        cout << "\033[93mMaitre D checks up on Table " << table->getTableNumber() << ":\033[0m" << endl;
+        cout << "\033[93mMaitre D checks up on Table " << table->getTableNumber() << "\033[0m" << endl;
         for (auto &customer : table->getCustomers())
         {
             customer->getName();
