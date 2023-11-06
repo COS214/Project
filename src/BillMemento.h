@@ -92,6 +92,8 @@ public:
 	 * @return A boolean indicating whether the bill is paid.
 	 */
 	bool getPaid();
+
+	double tipWaiter();
 };
 
 #endif

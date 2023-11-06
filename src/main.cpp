@@ -840,8 +840,8 @@ void FinalMain()
             map<string, Bill> splitBills = bill.splitBill(splitIntoNBills, bill, order, customerIDs);
             for (auto it = splitBills.begin(); it != splitBills.end(); ++it)
             {
-
                 it->second.payBill();
+                 cout << "Customer at table tipped waiter : R" << it->second.tipWaiter() << endl;
             }
         }
 
@@ -850,6 +850,7 @@ void FinalMain()
             cout << "Bill will be paid by one customer at the table: ";
             Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], bill.generateTabID("CID785K"), false);
             bill.payBill();
+            cout << "Customers at table tipped waiter : R" << bill.tipWaiter() <<endl;
         }
 
         else if (split == 3)
@@ -858,6 +859,7 @@ void FinalMain()
             Tab tab;
             BillMemento memento(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], "TID149L", false);
             tab.addBill(memento, memento.getOrderID());
+            cout << "Customers at table tipped waiter : R" << memento.tipWaiter() << endl;
         }
         order += 5;
         cout << endl;

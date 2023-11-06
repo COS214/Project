@@ -97,3 +97,29 @@ bool BillMemento::getPaid()
  * @brief Destructor for the BillMemento class.
  */
 BillMemento::~BillMemento() {}
+
+
+double BillMemento::tipWaiter(){
+    double tip=0;
+    if(getRating()<=1){
+        tip = getTotalAmount()*0.025;
+    }
+
+    if(getRating()>1 && getRating()<=2){
+        tip = getTotalAmount()*0.05;
+    }
+
+    if(getRating()>2 && getRating()<=3){
+        tip = getTotalAmount()*0.10;
+    }
+
+    if(getRating()>3 && getRating()<=4){
+        tip = getTotalAmount()*0.15;
+    }
+
+    if(getRating()>4 && getRating()<=5){
+        tip = getTotalAmount()*0.20;
+    }
+
+    return tip;
+}

@@ -165,6 +165,8 @@ private:
 		 * @return `true` if this bill is less than the other, `false` otherwise.
 		 */
 		bool operator<(const Bill& other) const;
+
+		double tipWaiter();
 };
 
 #endif
