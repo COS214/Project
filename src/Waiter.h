@@ -92,7 +92,7 @@ public:
 	/**
 	 * @brief Destructor for the Waiter class.
 	 */
-	~Waiter(); // Destructor
+	virtual ~Waiter(); // Destructor
 };
 
 #endif

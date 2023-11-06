@@ -119,7 +119,6 @@ double Bill::getTotalAmount()
  */
 string Bill::generateOrderID()
 {
-    hash<string> hasher;
     srand(time(0)); /// seed the random with the customerID
 
     int randomDigits = rand() % 1000; /// generates random digits

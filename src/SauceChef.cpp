@@ -49,6 +49,7 @@ bool SauceChef::isSauce(string item)
     {
         return true;
     }
+    return false;
 }
 /**
  * @brief This method allows the SauceChef to cook a specific dish.

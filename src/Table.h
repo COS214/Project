@@ -34,7 +34,7 @@ public:
     /**
      * @brief Destructor for the Table class.
      */
-    ~Table();
+    virtual ~Table();
 
     /**
      * @brief Get the table number.

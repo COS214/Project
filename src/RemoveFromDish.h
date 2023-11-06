@@ -23,6 +23,7 @@ public:
      * @brief Default constructor for the RemoveFromDish class.
      */
 	RemoveFromDish();
+     ~RemoveFromDish()=default;
 
 	/**
      * @brief Set the ingredient to be removed.

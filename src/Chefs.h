@@ -44,7 +44,10 @@ class Chefs {
 		 * @brief Default Constructor for Chefs class.
 		 */
 		Chefs();
-
+		/**
+		 * @brief Default Destructor for Chefs class.
+		 */
+		virtual ~Chefs()=default;
 		/**
 		 * @brief Prepares an order for a waiter to deliver to a customer.
 		 * @param order The order to be prepared.

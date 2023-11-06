@@ -348,7 +348,7 @@ void DecoratorTest()
 void FloorTest()
 {
     srand(time(0));
-    int count = 10;
+    size_t count = 10;
 
     std::string names[] = {"John", "Sarah", "Mike", "Emma", "Jake", "Olivia", "Daniel", "Sophia", "David", "Ava",
                            "Joseph", "Emily", "Samuel", "Isabella", "Matthew", "Mia", "Lucas", "Charlotte", "Ethan", "Amelia"};
@@ -540,7 +540,7 @@ void FinalMain()
     srand(time(0));
     int numTables = 5;
     int numCustomersPerTable = 5;
-    int numCustomers = numTables * numCustomersPerTable;
+    size_t numCustomers = numTables * numCustomersPerTable;
     std::string names[] = {
         "Siya", "Troy", "Kurt-Lee", "Eben", "Luke", "Olivia", "Daniel", "Ryan", "Hamza", "Luca", "Mapimpi", "Deetlef",
         "Luke", "Mihir", "Piery", "Jimmy", "Lucas", "Aliyah", "Saeed", "Bongi", "Pieter-Steph", "Frans", "Trevor", "Vincent",
@@ -553,8 +553,7 @@ void FinalMain()
         return;
     }
 
-    Floor *floor = new Floor();
-    Waiter *headWaiter = new Waiter();
+    Floor *floor = new Floor(); 
     Waiter *waiter1 = new Waiter();
     Waiter *waiter2 = new Waiter();
     Waiter *waiter3 = new Waiter();
@@ -776,6 +775,8 @@ void FinalMain()
             {
                 waiter5->placeOrder(junior, order, cookStrategy);
             }
+            delete custorder;
+            delete order;
         }
     }
 
@@ -904,7 +905,7 @@ void FinalMain()
             delete customer;
         }
     }
-
+    
     delete dish1;
     delete dish2;
     delete dish3;

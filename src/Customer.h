@@ -47,7 +47,7 @@ public:
 	/**
  	 * @brief Destructor for the Customer class.
  	 */
-	~Customer();
+	virtual ~Customer();
 
 	void change();
 

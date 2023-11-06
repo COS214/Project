@@ -23,6 +23,7 @@ public:
      * @brief Default constructor for the SpecialCookingInstructions class.
      */
 	SpecialCookingInstructions();
+     ~SpecialCookingInstructions()=default;
 
 	/**
      * @brief Add a special cooking instruction to the dish.

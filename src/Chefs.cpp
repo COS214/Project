@@ -39,9 +39,6 @@ void Chefs::setNext(Chefs *next)
  *
  * @param dish String representing the name of the dish to be cooked.
  */
-void Chefs::cook(std::string dish){
-
-};
 /**
  * @brief This method sets the mediator for the Chefs object.
  *

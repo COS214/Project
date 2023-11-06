@@ -25,6 +25,7 @@ public:
      * @brief Default constructor for AddToDish.
      */
 	AddToDish();
+    ~AddToDish()=default;
 
     /**
      * @brief Set the ingredient to be added.

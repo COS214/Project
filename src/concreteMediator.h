@@ -45,7 +45,7 @@ public:
     /**
      * @brief Destructor.
      */
-    ~concreteMediator();
+    virtual ~concreteMediator();
 
 private:
     Chefs* headChef_;

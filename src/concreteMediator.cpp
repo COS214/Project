@@ -44,4 +44,4 @@ concreteMediator::~concreteMediator()
     delete meatChef_;
     delete sauceChef_;
     delete vegChef_;
-};
+}

@@ -59,6 +59,7 @@ bool MeatChef::isMeat(string item)
     {
         return true;
     }
+    return false;
 }
 /**
  * @brief This method allows the MeatChef to cook a specific dish.

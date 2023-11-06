@@ -16,7 +16,7 @@ class Command {
 	private:
 	public:
 		Order* order;
-
+		virtual ~Command()=default;
 		/**
 		 * @brief Execute the command to process the associated order.
 		 */

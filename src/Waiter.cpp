@@ -212,6 +212,7 @@ Waiter::~Waiter()
 
 void Waiter::receiveOrder(Command *order)
 {
+    (void)order;
     cout << "\033[0;37m---------------------------------------------------Waiter received order---------------------------------------------------\033[0m" << endl
          << endl;
 }
@@ -221,7 +222,5 @@ void Waiter::receiveOrder(Command *order)
  */
 Waiter::Waiter()
 {
-    this->tables;
-    this->currentTable;
-    this->currentCustomer;
+    
 }

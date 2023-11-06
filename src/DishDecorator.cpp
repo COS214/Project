@@ -84,5 +84,4 @@ void DishDecorator::setComponent(Dish *newComponent)
 };
 
 DishDecorator::~DishDecorator(){
-
 };

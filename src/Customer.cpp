@@ -95,7 +95,6 @@ void Customer::setCustomerID(std::string cID)
  */
 std::string Customer::generateCustomerID()
 {
-    std::hash<std::string> hasher;
     std::srand(std::time(0)); /// seed the random with the customerID
 
     int randomDigits = std::rand() % 1000; /// generates random digits

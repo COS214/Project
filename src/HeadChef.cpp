@@ -34,7 +34,7 @@ void HeadChef::prepareOrder(Command *order, Waiter *currWaiter, int cookStrategy
     order->execute();
     // After the head chef prepares the order, send it to the waiter
     this->mediator->notify(this, "cook");
-
+    (void)cookStrategy;
     std::cout << "Order prepared by Head Chef. Sending it to the waiter.\033[0m" << std::endl;
     currWaiter->receiveOrder(order);
 }
