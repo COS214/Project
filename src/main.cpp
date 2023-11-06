@@ -675,7 +675,7 @@ void FinalMain()
         {
             count++;
             customer->change(); // state = order
-            cout << "Customer number " << count ;
+            cout << "Customer number " << count;
 
             double customerTotalCost = 0.0;
 
@@ -814,7 +814,7 @@ void FinalMain()
             customer->setRating(randomRating);
             cout << "Customer " << customer->getCustomerID() << " " << customer->getName() << " rated food " << customer->getRating() << " stars" << endl;
         }
-        averageTableRating[table->getTableNumber()] = average / 5;
+        averageTableRating[table->getTableNumber()] = average / table->getCustomers().size();
         cout << "Overall table rating: " << averageTableRating[table->getTableNumber()] << endl;
         cout << endl;
     }
@@ -847,7 +847,7 @@ void FinalMain()
             for (auto it = splitBills.begin(); it != splitBills.end(); ++it)
             {
                 it->second.payBill();
-                 cout << "Customer at table tipped waiter : R" << it->second.tipWaiter() << endl;
+                cout << "Customer at table tipped waiter : R" << it->second.tipWaiter() << endl;
             }
         }
 
@@ -856,7 +856,7 @@ void FinalMain()
             cout << "Bill will be paid by one customer at the table: ";
             Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], bill.generateTabID("CID785K"), false);
             bill.payBill();
-            cout << "Customers at table tipped waiter : R" << bill.tipWaiter() <<endl;
+            cout << "Customers at table tipped waiter : R" << bill.tipWaiter() << endl;
         }
 
         else if (split == 3)
