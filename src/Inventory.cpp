@@ -41,7 +41,7 @@ Inventory::Inventory()
  */
 Inventory::~Inventory()
 {
-    delete instance;
+    
 }
 /**
  * @brief This method allows an item to be added to the inventory.

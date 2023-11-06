@@ -55,7 +55,8 @@ void testBill()
 
     cout << "Billtest =============================================" << endl;
     /// create a new bill
-    Bill bill("OID234H", "CID785K", 50.0, 15, 2, bill.generateTabID("CID785K"), false);
+    Bill temp = Bill();
+    Bill bill("OID234H", "CID785K", 50.0, 15, 2, temp.generateTabID("CID785K"), false);
 
     /// expect a certain amount
     double expectedTotalAmount = 50.0;
@@ -140,7 +141,8 @@ void testCustomerAndTab()
     string customerID = customer.getCustomerID();
 
     /// make a new bill using the customerID
-    Bill bill1(bill1.generateOrderID(), customerID, 402.4, 24, 3, bill1.generateTabID(customerID), false);
+    Bill temp = Bill();
+    Bill bill1(temp.generateOrderID(), customerID, 402.4, 24, 3, temp.generateTabID(customerID), false);
 
     /// Split the bill into 5 bills
     int splitIntoNBills = 5;
@@ -160,7 +162,7 @@ void testCustomerAndTab()
     /// make a new customer
     Customer customer2;
     /// Add another bill to the same tab
-    Bill bill2(bill2.generateOrderID(), customer2.getCustomerID(), 40.0, 2, 5, bill2.generateTabID(customerID), false);
+    Bill bill2(temp.generateOrderID(), customer2.getCustomerID(), 40.0, 2, 5, temp.generateTabID(customerID), false);
     tab.addBill(bill2.createBillMemento(bill2.getOrderID(), bill2.getCustomerID(), bill2.getTotalAmount(), bill2.getTableNum(), bill2.getRating(), bill2.getTabID(), bill2.isPaid()), bill2.getOrderID());
 
     /// Fetch the tab
@@ -841,8 +843,9 @@ void FinalMain()
 
         if (split == 1)
         {
+            Bill temp = Bill();
             cout << "Bill will be split: " << endl;
-            Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], bill.generateTabID("CID785K"), false);
+            Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], temp.generateTabID("CID785K"), false);
             int splitIntoNBills = i;
             map<string, Bill> splitBills = bill.splitBill(splitIntoNBills, bill, order, customerIDs);
             for (auto it = splitBills.begin(); it != splitBills.end(); ++it)
@@ -855,7 +858,8 @@ void FinalMain()
         else if (split == 2)
         {
             cout << "Bill will be paid by one customer at the table: ";
-            Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], bill.generateTabID("CID785K"), false);
+            Bill temp = Bill();
+            Bill bill(tableOrderIDs[table->getTableNumber()], payingCustomer, tableTotalCosts[table->getTableNumber()], table->getTableNumber(), averageTableRating[table->getTableNumber()], temp.generateTabID("CID785K"), false);
             bill.payBill();
             cout << "Customers at table tipped waiter : R" << bill.tipWaiter() << endl;
         }

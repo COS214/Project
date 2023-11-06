@@ -39,7 +39,6 @@ Table::~Table()
     {
         delete customer;
     }
-    delete this;
     std::cout << "Deleted Table" << std::endl;
 }
 /**

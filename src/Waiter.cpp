@@ -108,13 +108,14 @@ void Waiter::serveCustomers(Chefs *Chefs, Command *order)
             else if ((*currCustomer)->getState() == "Pay")
             {
                 // Create a new bill
+                Bill temp = Bill();
                 Bill newBill = Bill(
-                    newBill.generateOrderID(),
+                    temp.generateOrderID(),
                     (*currCustomer)->getCustomerID(),
                     (*currCustomer)->getTotalAmount(),
                     (*currTable)->getTableNumber(),
                     (*currCustomer)->getRating(),
-                    newBill.generateTabID((*currCustomer)->getCustomerID()),
+                    temp.generateTabID((*currCustomer)->getCustomerID()),
                     false);
 
                 // Pay the bill

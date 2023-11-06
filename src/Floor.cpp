@@ -28,7 +28,6 @@ Floor::~Floor()
     {
         delete table;
     }
-    delete this;
     std::cout << "Deleted Floor" << std::endl;
 }
 /**

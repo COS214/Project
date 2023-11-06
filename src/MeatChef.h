@@ -34,7 +34,7 @@ public:
      * @brief Cook a dish.
      * @param dish A string representing the meat dish to be cooked.
      */
-	void cook(std::string dish);
+	void cook(std::string dish) override;
 
 	/**
      * @brief Prepare an order for cooking.
