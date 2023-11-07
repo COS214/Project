@@ -1,0 +1,96 @@
+\hypertarget{classInventory}{}\doxysection{Inventory Class Reference}
+\label{classInventory}\index{Inventory@{Inventory}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classInventory_a944cbf5597b85083241f2571342ce398}{initialize\+Inventory}} (map$<$ string, int $>$ inventory)
+\begin{DoxyCompactList}\small\item\em This method initializes the inventory with a given map. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInventory_a7cf7a9838288ce7b7fa7882864dd324b}{remove\+From\+Inventory}} (string item, int count)
+\begin{DoxyCompactList}\small\item\em This method allows an item to be removed from the inventory. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classInventory_aca44f4605df44619799caeff973bff64}{add\+To\+Inventory}} (string item, int count)
+\begin{DoxyCompactList}\small\item\em This method allows an item to be added to the inventory. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classInventory_a5cb1aef60080e1835c90a66c3e4b29fe}\label{classInventory_a5cb1aef60080e1835c90a66c3e4b29fe}} 
+void \mbox{\hyperlink{classInventory_a5cb1aef60080e1835c90a66c3e4b29fe}{print\+Inventory}} ()
+\begin{DoxyCompactList}\small\item\em This method prints the inventory to the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classInventory}{Inventory}} $\ast$ \mbox{\hyperlink{classInventory_a51c37d5186032847fd81da7246b3f71d}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em This method returns the singleton instance of the \mbox{\hyperlink{classInventory}{Inventory}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classInventory_aca44f4605df44619799caeff973bff64}\label{classInventory_aca44f4605df44619799caeff973bff64}} 
+\index{Inventory@{Inventory}!addToInventory@{addToInventory}}
+\index{addToInventory@{addToInventory}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{addToInventory()}{addToInventory()}}
+{\footnotesize\ttfamily bool Inventory\+::add\+To\+Inventory (\begin{DoxyParamCaption}\item[{string}]{item,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+This method allows an item to be added to the inventory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & String representing the name of the item to be added. \\
+\hline
+{\em count} & Integer representing the count of the item to be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the item is successfully added, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInventory_a51c37d5186032847fd81da7246b3f71d}\label{classInventory_a51c37d5186032847fd81da7246b3f71d}} 
+\index{Inventory@{Inventory}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classInventory}{Inventory}} $\ast$ Inventory\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This method returns the singleton instance of the \mbox{\hyperlink{classInventory}{Inventory}} class. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the singleton instance of the \mbox{\hyperlink{classInventory}{Inventory}} class. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classInventory_a944cbf5597b85083241f2571342ce398}\label{classInventory_a944cbf5597b85083241f2571342ce398}} 
+\index{Inventory@{Inventory}!initializeInventory@{initializeInventory}}
+\index{initializeInventory@{initializeInventory}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{initializeInventory()}{initializeInventory()}}
+{\footnotesize\ttfamily void Inventory\+::initialize\+Inventory (\begin{DoxyParamCaption}\item[{map$<$ string, int $>$}]{inventory }\end{DoxyParamCaption})}
+
+
+
+This method initializes the inventory with a given map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em inventory} & Map representing the inventory to be initialized. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classInventory_a7cf7a9838288ce7b7fa7882864dd324b}\label{classInventory_a7cf7a9838288ce7b7fa7882864dd324b}} 
+\index{Inventory@{Inventory}!removeFromInventory@{removeFromInventory}}
+\index{removeFromInventory@{removeFromInventory}!Inventory@{Inventory}}
+\doxysubsubsection{\texorpdfstring{removeFromInventory()}{removeFromInventory()}}
+{\footnotesize\ttfamily bool Inventory\+::remove\+From\+Inventory (\begin{DoxyParamCaption}\item[{string}]{item,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+This method allows an item to be removed from the inventory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & String representing the name of the item to be removed. \\
+\hline
+{\em count} & Integer representing the count of the item to be removed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the item is successfully removed, false otherwise. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Inventory_8h}{Inventory.\+h}}\item 
+\mbox{\hyperlink{Inventory_8cpp}{Inventory.\+cpp}}\end{DoxyCompactItemize}

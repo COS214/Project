@@ -1,0 +1,149 @@
+\hypertarget{classVegetableChef}{}\doxysection{Vegetable\+Chef Class Reference}
+\label{classVegetableChef}\index{VegetableChef@{VegetableChef}}
+
+
+The \mbox{\hyperlink{classVegetableChef}{Vegetable\+Chef}} class represents a chef specialized in vegetable dishes.  
+
+
+
+
+{\ttfamily \#include $<$Vegetable\+Chef.\+h$>$}
+
+
+
+Inheritance diagram for Vegetable\+Chef\+:
+% FIG 0
+
+
+Collaboration diagram for Vegetable\+Chef\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classVegetableChef_ad997d84fbba452edfa43e18d96458be5}\label{classVegetableChef_ad997d84fbba452edfa43e18d96458be5}} 
+\mbox{\hyperlink{classVegetableChef_ad997d84fbba452edfa43e18d96458be5}{Vegetable\+Chef}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classVegetableChef}{Vegetable\+Chef}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVegetableChef_adb65c92240324a7ff736b24f105c6571}{Vegetable\+Chef}} (\mbox{\hyperlink{classMediator}{Mediator}} $\ast$mediator)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classVegetableChef}{Vegetable\+Chef}} class with a specified mediator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVegetableChef_a9cd9bdefb14887806ce36fb7516e0615}{cook}} (std\+::string dish)
+\begin{DoxyCompactList}\small\item\em Cook a dish. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classVegetableChef_aab06190fe3c321af0f6598dfee752345}{prepare\+Order}} (\mbox{\hyperlink{classCommand}{Command}} $\ast$order, \mbox{\hyperlink{classWaiter}{Waiter}} $\ast$curr\+Waiter, int cook\+Strategy) override
+\begin{DoxyCompactList}\small\item\em Prepare an order. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classVegetableChef_ac86c09274961a687cadc0832a725f168}\label{classVegetableChef_ac86c09274961a687cadc0832a725f168}} 
+virtual \mbox{\hyperlink{classVegetableChef_ac86c09274961a687cadc0832a725f168}{$\sim$\+Vegetable\+Chef}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classVegetableChef}{Vegetable\+Chef}} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classVegetableChef_af5d9eda776b1a4e8c3fa66e90b9b4c66}{is\+Vegetable}} (string item)
+\begin{DoxyCompactList}\small\item\em Check if an item is a vegetable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classVegetableChef}{Vegetable\+Chef}} class represents a chef specialized in vegetable dishes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classVegetableChef_adb65c92240324a7ff736b24f105c6571}\label{classVegetableChef_adb65c92240324a7ff736b24f105c6571}} 
+\index{VegetableChef@{VegetableChef}!VegetableChef@{VegetableChef}}
+\index{VegetableChef@{VegetableChef}!VegetableChef@{VegetableChef}}
+\doxysubsubsection{\texorpdfstring{VegetableChef()}{VegetableChef()}}
+{\footnotesize\ttfamily Vegetable\+Chef\+::\+Vegetable\+Chef (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMediator}{Mediator}} $\ast$}]{mediator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor for the \mbox{\hyperlink{classVegetableChef}{Vegetable\+Chef}} class with a specified mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mediator} & A pointer to the \mbox{\hyperlink{classMediator}{Mediator}} used for communication. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classVegetableChef_a9cd9bdefb14887806ce36fb7516e0615}\label{classVegetableChef_a9cd9bdefb14887806ce36fb7516e0615}} 
+\index{VegetableChef@{VegetableChef}!cook@{cook}}
+\index{cook@{cook}!VegetableChef@{VegetableChef}}
+\doxysubsubsection{\texorpdfstring{cook()}{cook()}}
+{\footnotesize\ttfamily void Vegetable\+Chef\+::cook (\begin{DoxyParamCaption}\item[{std\+::string}]{dish }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Cook a dish. 
+
+This method allows the \mbox{\hyperlink{classVegetableChef}{Vegetable\+Chef}} to cook a specific dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dish} & A string representing the dish to be cooked.\\
+\hline
+{\em dish} & String representing the name of the dish to be cooked. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classChefs_a8df116ea0441d2a2c4f6fba82cbf9742}{Chefs}}.
+
+\mbox{\Hypertarget{classVegetableChef_af5d9eda776b1a4e8c3fa66e90b9b4c66}\label{classVegetableChef_af5d9eda776b1a4e8c3fa66e90b9b4c66}} 
+\index{VegetableChef@{VegetableChef}!isVegetable@{isVegetable}}
+\index{isVegetable@{isVegetable}!VegetableChef@{VegetableChef}}
+\doxysubsubsection{\texorpdfstring{isVegetable()}{isVegetable()}}
+{\footnotesize\ttfamily bool Vegetable\+Chef\+::is\+Vegetable (\begin{DoxyParamCaption}\item[{string}]{item }\end{DoxyParamCaption})}
+
+
+
+Check if an item is a vegetable. 
+
+This method checks if a given item is a vegetable.
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & A string representing the item to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the item is a vegetable, otherwise false.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em item} & String representing the name of the item to be checked. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the item is a vegetable, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classVegetableChef_aab06190fe3c321af0f6598dfee752345}\label{classVegetableChef_aab06190fe3c321af0f6598dfee752345}} 
+\index{VegetableChef@{VegetableChef}!prepareOrder@{prepareOrder}}
+\index{prepareOrder@{prepareOrder}!VegetableChef@{VegetableChef}}
+\doxysubsubsection{\texorpdfstring{prepareOrder()}{prepareOrder()}}
+{\footnotesize\ttfamily void Vegetable\+Chef\+::prepare\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommand}{Command}} $\ast$}]{order,  }\item[{\mbox{\hyperlink{classWaiter}{Waiter}} $\ast$}]{curr\+Waiter,  }\item[{int}]{cook\+Strategy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Prepare an order. 
+
+This method allows the \mbox{\hyperlink{classVegetableChef}{Vegetable\+Chef}} to prepare an order and remove the necessary ingredients from the inventory.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & A pointer to the \mbox{\hyperlink{classCommand}{Command}} representing the order. \\
+\hline
+{\em curr\+Waiter} & A pointer to the \mbox{\hyperlink{classWaiter}{Waiter}} who placed the order. \\
+\hline
+{\em cook\+Strategy} & An integer representing the cooking strategy.\\
+\hline
+{\em order} & Pointer to the \mbox{\hyperlink{classCommand}{Command}} object representing the customer\textquotesingle{}s order. \\
+\hline
+{\em curr\+Waiter} & Pointer to the \mbox{\hyperlink{classWaiter}{Waiter}} object who is currently serving. \\
+\hline
+{\em cook\+Strategy} & Integer representing the cooking strategy to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classChefs_ab54d5e8d9fa45ed4f164845d1e1cef08}{Chefs}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{VegetableChef_8h}{Vegetable\+Chef.\+h}}\item 
+\mbox{\hyperlink{VegetableChef_8cpp}{Vegetable\+Chef.\+cpp}}\end{DoxyCompactItemize}

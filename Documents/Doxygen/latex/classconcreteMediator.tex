@@ -1,0 +1,94 @@
+\hypertarget{classconcreteMediator}{}\doxysection{concrete\+Mediator Class Reference}
+\label{classconcreteMediator}\index{concreteMediator@{concreteMediator}}
+
+
+Concrete mediator that handles communication between specific types of chefs.  
+
+
+
+
+{\ttfamily \#include $<$concrete\+Mediator.\+h$>$}
+
+
+
+Inheritance diagram for concrete\+Mediator\+:
+% FIG 0
+
+
+Collaboration diagram for concrete\+Mediator\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classconcreteMediator_ab09a161299719d3052f4c6d592829af3}{concrete\+Mediator}} (\mbox{\hyperlink{classChefs}{Chefs}} $\ast$head\+Chef, \mbox{\hyperlink{classChefs}{Chefs}} $\ast$junior, \mbox{\hyperlink{classChefs}{Chefs}} $\ast$meat, \mbox{\hyperlink{classChefs}{Chefs}} $\ast$sauce, \mbox{\hyperlink{classChefs}{Chefs}} $\ast$veg)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classconcreteMediator_a505ab64f2514ed1b05d20e45d8297e13}{notify}} (\mbox{\hyperlink{classChefs}{Chefs}} $\ast$sender, std\+::string event) override
+\begin{DoxyCompactList}\small\item\em Notify the mediator of an event. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classconcreteMediator_a6f8bc798059629facefd495fe610eee9}\label{classconcreteMediator_a6f8bc798059629facefd495fe610eee9}} 
+\mbox{\hyperlink{classconcreteMediator_a6f8bc798059629facefd495fe610eee9}{$\sim$concrete\+Mediator}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete mediator that handles communication between specific types of chefs. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classconcreteMediator_ab09a161299719d3052f4c6d592829af3}\label{classconcreteMediator_ab09a161299719d3052f4c6d592829af3}} 
+\index{concreteMediator@{concreteMediator}!concreteMediator@{concreteMediator}}
+\index{concreteMediator@{concreteMediator}!concreteMediator@{concreteMediator}}
+\doxysubsubsection{\texorpdfstring{concreteMediator()}{concreteMediator()}}
+{\footnotesize\ttfamily concrete\+Mediator\+::concrete\+Mediator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChefs}{Chefs}} $\ast$}]{head\+Chef,  }\item[{\mbox{\hyperlink{classChefs}{Chefs}} $\ast$}]{junior,  }\item[{\mbox{\hyperlink{classChefs}{Chefs}} $\ast$}]{meat,  }\item[{\mbox{\hyperlink{classChefs}{Chefs}} $\ast$}]{sauce,  }\item[{\mbox{\hyperlink{classChefs}{Chefs}} $\ast$}]{veg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em head\+Chef} & Pointer to the head chef. \\
+\hline
+{\em junior} & Pointer to the junior chef. \\
+\hline
+{\em meat} & Pointer to the meat chef. \\
+\hline
+{\em sauce} & Pointer to the sauce chef. \\
+\hline
+{\em veg} & Pointer to the vegetable chef. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classconcreteMediator_a505ab64f2514ed1b05d20e45d8297e13}\label{classconcreteMediator_a505ab64f2514ed1b05d20e45d8297e13}} 
+\index{concreteMediator@{concreteMediator}!notify@{notify}}
+\index{notify@{notify}!concreteMediator@{concreteMediator}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}}
+{\footnotesize\ttfamily void concrete\+Mediator\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChefs}{Chefs}} $\ast$}]{sender,  }\item[{std\+::string}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Notify the mediator of an event. 
+
+This method allows the mediator to notify chefs about a specific event.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & The chef sending the notification. \\
+\hline
+{\em event} & The event that occurred.\\
+\hline
+{\em sender} & Pointer to the \mbox{\hyperlink{classChefs}{Chefs}} object who is sending the notification. \\
+\hline
+{\em event} & String representing the event that occurred. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classMediator_a062a70885b40e5171a5affac4ad53433}{Mediator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{concreteMediator_8h}{concrete\+Mediator.\+h}}\item 
+\mbox{\hyperlink{concreteMediator_8cpp}{concrete\+Mediator.\+cpp}}\end{DoxyCompactItemize}

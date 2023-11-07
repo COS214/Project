@@ -1,0 +1,86 @@
+\hypertarget{classIterator}{}\doxysection{Iterator Class Reference}
+\label{classIterator}\index{Iterator@{Iterator}}
+
+
+The \mbox{\hyperlink{classIterator}{Iterator}} class defines an abstract interface for iterating over a collection of objects.  
+
+
+
+
+{\ttfamily \#include $<$Iterator.\+h$>$}
+
+
+
+Inheritance diagram for Iterator\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classCustomer}{Customer}} $\ast$ \mbox{\hyperlink{classIterator_aad3f95cb0a93abdab8f6c0cd3adb4293}{first}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the first element in the collection. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCustomer}{Customer}} $\ast$ \mbox{\hyperlink{classIterator_a572c70703ebfc68dfeb30a6d7f23c11c}{next}} ()=0
+\begin{DoxyCompactList}\small\item\em Get the next element in the collection. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classIterator_ac3f6409895d4701123a91ca528d61565}{is\+Done}} ()=0
+\begin{DoxyCompactList}\small\item\em Check if the iteration is complete. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classIterator}{Iterator}} class defines an abstract interface for iterating over a collection of objects. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIterator_aad3f95cb0a93abdab8f6c0cd3adb4293}\label{classIterator_aad3f95cb0a93abdab8f6c0cd3adb4293}} 
+\index{Iterator@{Iterator}!first@{first}}
+\index{first@{first}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classCustomer}{Customer}}$\ast$ Iterator\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the first element in the collection. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the first element in the collection. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWaiter_a09ad1e9d2fa58a882d0b67b21fe37de5}{Waiter}}.
+
+\mbox{\Hypertarget{classIterator_ac3f6409895d4701123a91ca528d61565}\label{classIterator_ac3f6409895d4701123a91ca528d61565}} 
+\index{Iterator@{Iterator}!isDone@{isDone}}
+\index{isDone@{isDone}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily virtual bool Iterator\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if the iteration is complete. 
+
+\begin{DoxyReturn}{Returns}
+True if the iteration is complete, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWaiter_a8d5ad275c591ee42f316b300cb36cb86}{Waiter}}.
+
+\mbox{\Hypertarget{classIterator_a572c70703ebfc68dfeb30a6d7f23c11c}\label{classIterator_a572c70703ebfc68dfeb30a6d7f23c11c}} 
+\index{Iterator@{Iterator}!next@{next}}
+\index{next@{next}!Iterator@{Iterator}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classCustomer}{Customer}}$\ast$ Iterator\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the next element in the collection. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the next element in the collection. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classWaiter_a6d17704a23430d7e1bb6c0f339ccd35f}{Waiter}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Iterator_8h}{Iterator.\+h}}\end{DoxyCompactItemize}

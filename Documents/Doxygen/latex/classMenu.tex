@@ -1,0 +1,97 @@
+\hypertarget{classMenu}{}\doxysection{Menu Class Reference}
+\label{classMenu}\index{Menu@{Menu}}
+
+
+The \mbox{\hyperlink{classMenu}{Menu}} class represents a menu that contains various dishes.  
+
+
+
+
+{\ttfamily \#include $<$Menu.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMenu_a075487930e8e95b1f2f9ce47735257c8}{add\+Dish}} (const std\+::string \&key, \mbox{\hyperlink{classDish}{Dish}} $\ast$dish, double cost)
+\begin{DoxyCompactList}\small\item\em Add a dish to the menu with its name and cost. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{classDish}{Dish}} $\ast$, double $>$ \mbox{\hyperlink{classMenu_a62e48a4f74fac94e75add3129fc1d30f}{get\+Dish}} (const std\+::string \&key)
+\begin{DoxyCompactList}\small\item\em Get a dish from the menu by its name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMenu_ab8f1521d0dec16eeabad713861968cad}{print\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Print the contents of the menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classMenu}{Menu}} class represents a menu that contains various dishes. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classMenu_a075487930e8e95b1f2f9ce47735257c8}\label{classMenu_a075487930e8e95b1f2f9ce47735257c8}} 
+\index{Menu@{Menu}!addDish@{addDish}}
+\index{addDish@{addDish}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{addDish()}{addDish()}}
+{\footnotesize\ttfamily void Menu\+::add\+Dish (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key,  }\item[{\mbox{\hyperlink{classDish}{Dish}} $\ast$}]{dish,  }\item[{double}]{cost }\end{DoxyParamCaption})}
+
+
+
+Add a dish to the menu with its name and cost. 
+
+This method allows a dish to be added to the menu.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & A string representing the name of the dish. \\
+\hline
+{\em dish} & A pointer to the \mbox{\hyperlink{classDish}{Dish}} object to be added to the menu. \\
+\hline
+{\em cost} & A double representing the cost of the dish.\\
+\hline
+{\em key} & String representing the key of the dish to be added. \\
+\hline
+{\em dish} & Pointer to the \mbox{\hyperlink{classDish}{Dish}} object to be added. \\
+\hline
+{\em cost} & Double representing the cost of the dish to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classMenu_a62e48a4f74fac94e75add3129fc1d30f}\label{classMenu_a62e48a4f74fac94e75add3129fc1d30f}} 
+\index{Menu@{Menu}!getDish@{getDish}}
+\index{getDish@{getDish}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{getDish()}{getDish()}}
+{\footnotesize\ttfamily std\+::pair$<$ \mbox{\hyperlink{classDish}{Dish}} $\ast$, double $>$ Menu\+::get\+Dish (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Get a dish from the menu by its name. 
+
+This method returns a dish from the menu based on a given key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & A string representing the name of the dish to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pair containing a pointer to the \mbox{\hyperlink{classDish}{Dish}} and its cost, or nullptr if not found.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & String representing the key of the dish to be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pair consisting of a pointer to the \mbox{\hyperlink{classDish}{Dish}} object and its cost. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classMenu_ab8f1521d0dec16eeabad713861968cad}\label{classMenu_ab8f1521d0dec16eeabad713861968cad}} 
+\index{Menu@{Menu}!printMenu@{printMenu}}
+\index{printMenu@{printMenu}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{printMenu()}{printMenu()}}
+{\footnotesize\ttfamily void Menu\+::print\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print the contents of the menu. 
+
+This method prints the menu to the console. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Menu_8h}{Menu.\+h}}\item 
+\mbox{\hyperlink{Menu_8cpp}{Menu.\+cpp}}\end{DoxyCompactItemize}

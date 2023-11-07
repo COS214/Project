@@ -1,0 +1,83 @@
+\hypertarget{classGrilledStrategy}{}\doxysection{Grilled\+Strategy Class Reference}
+\label{classGrilledStrategy}\index{GrilledStrategy@{GrilledStrategy}}
+
+
+The \mbox{\hyperlink{classGrilledStrategy}{Grilled\+Strategy}} class represents a cooking strategy for grilling dishes.  
+
+
+
+
+{\ttfamily \#include $<$Grilled\+Strategy.\+h$>$}
+
+
+
+Inheritance diagram for Grilled\+Strategy\+:
+% FIG 0
+
+
+Collaboration diagram for Grilled\+Strategy\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGrilledStrategy_a578338850fbf962b54356ca003627f18}{Grilled\+Strategy}} (\mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} $\ast$order)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classGrilledStrategy}{Grilled\+Strategy}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGrilledStrategy_a46884d24830a0cf305247604c7c0a9a0}{cook\+Dish}} (\mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} $\ast$order)
+\begin{DoxyCompactList}\small\item\em Cook the dish using the grilling method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classGrilledStrategy}{Grilled\+Strategy}} class represents a cooking strategy for grilling dishes. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGrilledStrategy_a578338850fbf962b54356ca003627f18}\label{classGrilledStrategy_a578338850fbf962b54356ca003627f18}} 
+\index{GrilledStrategy@{GrilledStrategy}!GrilledStrategy@{GrilledStrategy}}
+\index{GrilledStrategy@{GrilledStrategy}!GrilledStrategy@{GrilledStrategy}}
+\doxysubsubsection{\texorpdfstring{GrilledStrategy()}{GrilledStrategy()}}
+{\footnotesize\ttfamily Grilled\+Strategy\+::\+Grilled\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} $\ast$}]{order }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classGrilledStrategy}{Grilled\+Strategy}} class. 
+
+Constructor for the \mbox{\hyperlink{classGrilledStrategy}{Grilled\+Strategy}} class that takes an order as a parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & The kitchen order associated with this cooking strategy.\\
+\hline
+{\em order} & Pointer to the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGrilledStrategy_a46884d24830a0cf305247604c7c0a9a0}\label{classGrilledStrategy_a46884d24830a0cf305247604c7c0a9a0}} 
+\index{GrilledStrategy@{GrilledStrategy}!cookDish@{cookDish}}
+\index{cookDish@{cookDish}!GrilledStrategy@{GrilledStrategy}}
+\doxysubsubsection{\texorpdfstring{cookDish()}{cookDish()}}
+{\footnotesize\ttfamily void Grilled\+Strategy\+::cook\+Dish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} $\ast$}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Cook the dish using the grilling method. 
+
+This method allows the \mbox{\hyperlink{classGrilledStrategy}{Grilled\+Strategy}} to cook a dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & The kitchen order to be cooked.\\
+\hline
+{\em order} & Pointer to the \mbox{\hyperlink{classKitchenOrder}{Kitchen\+Order}} object representing the dish to be cooked. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCookStrategy_a8c12453375110616bb7e33d3a4ba3d5b}{Cook\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{GrilledStrategy_8h}{Grilled\+Strategy.\+h}}\item 
+\mbox{\hyperlink{GrilledStrategy_8cpp}{Grilled\+Strategy.\+cpp}}\end{DoxyCompactItemize}

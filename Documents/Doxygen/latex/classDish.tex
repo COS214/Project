@@ -1,0 +1,290 @@
+\hypertarget{classDish}{}\doxysection{Dish Class Reference}
+\label{classDish}\index{Dish@{Dish}}
+
+
+The \mbox{\hyperlink{classDish}{Dish}} class represents a dish with a name, cost, and ingredients.  
+
+
+
+
+{\ttfamily \#include $<$Dish.\+h$>$}
+
+
+
+Inheritance diagram for Dish\+:
+% FIG 0
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDish_ad5e0a97dc1bf5ec1967ca92d63f3f5f9}\label{classDish_ad5e0a97dc1bf5ec1967ca92d63f3f5f9}} 
+\mbox{\hyperlink{classDish_ad5e0a97dc1bf5ec1967ca92d63f3f5f9}{Dish}} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classDish}{Dish}} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDish_aa16607e4b8925f50a638fcdf312fa5c3}{add\+Ingredient}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Add an ingredient to the dish. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDish_a0b8203b8ff320c93c699f9de0672f5cd}{remove\+Ingredient}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Remove an ingredient from the dish. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDish_a2dc3ebe1c6a722ad5a26922bee41c03b}{add\+Special\+Instruction}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Add a special instruction to the dish. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDish_aa653601fbf10560708c2e9b5cdcbd241}{set\+Cost\+Of\+Ingredient}} (double)
+\begin{DoxyCompactList}\small\item\em Set the cost of a specific ingredient in the dish. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDish_a0bcf97d2a0c5fda10e422a8b613f68fb}{set\+Ingredient}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em Set a specific ingredient in the dish. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classDish_a0214975f9724bbee21780f46c9da4a86}{get\+Ingredients\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get a list of ingredients in the dish. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classDish_a9794879b6ed58ea33d12fb1852d57ba1}{total\+Cost}} ()=0
+\begin{DoxyCompactList}\small\item\em Calculate the total cost of the dish. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classDish_aee8c5203038018fd14b5c98c2ad68835}{get\+Cost}} ()
+\begin{DoxyCompactList}\small\item\em Get the cost of the dish. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classDish_a4e7eb8954fadba2295b8ca2cd8e6b8b9}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the dish. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classDish_a425bcbb0096aa3b7a35eb90cb05a540d}{set\+Cost}} (double cost)
+\begin{DoxyCompactList}\small\item\em Set the cost of the dish. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDish_abde26b1282c876b98de9601fc86f9b02}{set\+Name}} (std\+::string name)
+\begin{DoxyCompactList}\small\item\em Set the name of the dish. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classDish_a3dd1e68b6472f8c748870761b1d77be1}{set\+Ingredients\+List}} (const std\+::list$<$ std\+::string $>$ \&ingredients)
+\begin{DoxyCompactList}\small\item\em Set the list of ingredients for the dish. \end{DoxyCompactList}\item 
+std\+::list$<$ std\+::string $>$ \mbox{\hyperlink{classDish_a405477cfc2f66bbb9c30bb79b11efe48}{get\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of ingredients in the dish. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classDish_a6ea34b164531bdf29a57e3b4060af111}\label{classDish_a6ea34b164531bdf29a57e3b4060af111}} 
+virtual \mbox{\hyperlink{classDish_a6ea34b164531bdf29a57e3b4060af111}{$\sim$\+Dish}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classDish}{Dish}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classDish_a249d6a1be91a150ac833e09c06bdab7e}\label{classDish_a249d6a1be91a150ac833e09c06bdab7e}} 
+std\+::string {\bfseries name}
+\item 
+\mbox{\Hypertarget{classDish_a1ab4f06675c4c26139a8e25482d0777e}\label{classDish_a1ab4f06675c4c26139a8e25482d0777e}} 
+int {\bfseries id}
+\item 
+\mbox{\Hypertarget{classDish_a1029e153c237c2c1801f1d145b103b42}\label{classDish_a1029e153c237c2c1801f1d145b103b42}} 
+double {\bfseries cost}
+\item 
+\mbox{\Hypertarget{classDish_a6079e564489845abfb38cfab13625093}\label{classDish_a6079e564489845abfb38cfab13625093}} 
+std\+::list$<$ std\+::string $>$ {\bfseries ingredients\+For\+Dish}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classDish}{Dish}} class represents a dish with a name, cost, and ingredients. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDish_aa16607e4b8925f50a638fcdf312fa5c3}\label{classDish_aa16607e4b8925f50a638fcdf312fa5c3}} 
+\index{Dish@{Dish}!addIngredient@{addIngredient}}
+\index{addIngredient@{addIngredient}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{addIngredient()}{addIngredient()}}
+{\footnotesize\ttfamily void Dish\+::add\+Ingredient (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add an ingredient to the dish. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The ingredient to add. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDishDecorator_a2bede2e5ab3c06cc94c633059318b5d9}{Dish\+Decorator}}, and \mbox{\hyperlink{classAddToDish_ab815bbf1226449d9851857359850b1a2}{Add\+To\+Dish}}.
+
+\mbox{\Hypertarget{classDish_a2dc3ebe1c6a722ad5a26922bee41c03b}\label{classDish_a2dc3ebe1c6a722ad5a26922bee41c03b}} 
+\index{Dish@{Dish}!addSpecialInstruction@{addSpecialInstruction}}
+\index{addSpecialInstruction@{addSpecialInstruction}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{addSpecialInstruction()}{addSpecialInstruction()}}
+{\footnotesize\ttfamily void Dish\+::add\+Special\+Instruction (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add a special instruction to the dish. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em instruction} & The special instruction to add. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDishDecorator_a35627314bdb0f7b86c5ea0c70603be18}{Dish\+Decorator}}, and \mbox{\hyperlink{classSpecialCookingInstructions_aba4daec0e9d6cc25dd01bfab13b2c1d4}{Special\+Cooking\+Instructions}}.
+
+\mbox{\Hypertarget{classDish_aee8c5203038018fd14b5c98c2ad68835}\label{classDish_aee8c5203038018fd14b5c98c2ad68835}} 
+\index{Dish@{Dish}!getCost@{getCost}}
+\index{getCost@{getCost}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{getCost()}{getCost()}}
+{\footnotesize\ttfamily double Dish\+::get\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the cost of the dish. 
+
+\begin{DoxyReturn}{Returns}
+The cost of the dish. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDish_a0214975f9724bbee21780f46c9da4a86}\label{classDish_a0214975f9724bbee21780f46c9da4a86}} 
+\index{Dish@{Dish}!getIngredientsList@{getIngredientsList}}
+\index{getIngredientsList@{getIngredientsList}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{getIngredientsList()}{getIngredientsList()}}
+{\footnotesize\ttfamily std\+::string Dish\+::get\+Ingredients\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get a list of ingredients in the dish. 
+
+\begin{DoxyReturn}{Returns}
+A list of ingredients in the dish. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classRemoveFromDish_ac2f525a420294242a59014aa5ae4c691}{Remove\+From\+Dish}}, \mbox{\hyperlink{classDishDecorator_ab78846fd1f00daa6d70a7e6a6da3c749}{Dish\+Decorator}}, and \mbox{\hyperlink{classAddToDish_a657ad42a6aefe7f12cbff66b529d04a7}{Add\+To\+Dish}}.
+
+\mbox{\Hypertarget{classDish_a405477cfc2f66bbb9c30bb79b11efe48}\label{classDish_a405477cfc2f66bbb9c30bb79b11efe48}} 
+\index{Dish@{Dish}!getList@{getList}}
+\index{getList@{getList}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{getList()}{getList()}}
+{\footnotesize\ttfamily std\+::list$<$ std\+::string $>$ Dish\+::get\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the list of ingredients in the dish. 
+
+\begin{DoxyReturn}{Returns}
+A list of ingredients in the dish. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDish_a4e7eb8954fadba2295b8ca2cd8e6b8b9}\label{classDish_a4e7eb8954fadba2295b8ca2cd8e6b8b9}} 
+\index{Dish@{Dish}!getName@{getName}}
+\index{getName@{getName}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Dish\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the name of the dish. 
+
+\begin{DoxyReturn}{Returns}
+The name of the dish. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDish_a0b8203b8ff320c93c699f9de0672f5cd}\label{classDish_a0b8203b8ff320c93c699f9de0672f5cd}} 
+\index{Dish@{Dish}!removeIngredient@{removeIngredient}}
+\index{removeIngredient@{removeIngredient}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{removeIngredient()}{removeIngredient()}}
+{\footnotesize\ttfamily void Dish\+::remove\+Ingredient (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove an ingredient from the dish. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The ingredient to remove. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDishDecorator_a60cfd41922c018146f0ff148ed535240}{Dish\+Decorator}}, and \mbox{\hyperlink{classRemoveFromDish_aba2b2754721c7401d1e970f233d7ddc5}{Remove\+From\+Dish}}.
+
+\mbox{\Hypertarget{classDish_a425bcbb0096aa3b7a35eb90cb05a540d}\label{classDish_a425bcbb0096aa3b7a35eb90cb05a540d}} 
+\index{Dish@{Dish}!setCost@{setCost}}
+\index{setCost@{setCost}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{setCost()}{setCost()}}
+{\footnotesize\ttfamily void Dish\+::set\+Cost (\begin{DoxyParamCaption}\item[{double}]{cost }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the cost of the dish. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cost} & The cost to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDish_aa653601fbf10560708c2e9b5cdcbd241}\label{classDish_aa653601fbf10560708c2e9b5cdcbd241}} 
+\index{Dish@{Dish}!setCostOfIngredient@{setCostOfIngredient}}
+\index{setCostOfIngredient@{setCostOfIngredient}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{setCostOfIngredient()}{setCostOfIngredient()}}
+{\footnotesize\ttfamily void Dish\+::set\+Cost\+Of\+Ingredient (\begin{DoxyParamCaption}\item[{double}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the cost of a specific ingredient in the dish. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cost} & The cost of the ingredient. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDishDecorator_a55cf5ea1073ca1a8a04960e884b9f43d}{Dish\+Decorator}}, \mbox{\hyperlink{classRemoveFromDish_a52ed074d06922325b360ba80254dbe5f}{Remove\+From\+Dish}}, and \mbox{\hyperlink{classAddToDish_a51a86725fa9af56836b27fadc69a7a85}{Add\+To\+Dish}}.
+
+\mbox{\Hypertarget{classDish_a0bcf97d2a0c5fda10e422a8b613f68fb}\label{classDish_a0bcf97d2a0c5fda10e422a8b613f68fb}} 
+\index{Dish@{Dish}!setIngredient@{setIngredient}}
+\index{setIngredient@{setIngredient}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{setIngredient()}{setIngredient()}}
+{\footnotesize\ttfamily void Dish\+::set\+Ingredient (\begin{DoxyParamCaption}\item[{std\+::string}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set a specific ingredient in the dish. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The ingredient to set. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classDishDecorator_a48b4f5d9055ea9809264d7feb8cda1c4}{Dish\+Decorator}}, \mbox{\hyperlink{classRemoveFromDish_ad5f1b700213de4cc2d65c7d0469c7394}{Remove\+From\+Dish}}, and \mbox{\hyperlink{classAddToDish_ad0900110b84d3f6d8fd953c99c347cc6}{Add\+To\+Dish}}.
+
+\mbox{\Hypertarget{classDish_a3dd1e68b6472f8c748870761b1d77be1}\label{classDish_a3dd1e68b6472f8c748870761b1d77be1}} 
+\index{Dish@{Dish}!setIngredientsList@{setIngredientsList}}
+\index{setIngredientsList@{setIngredientsList}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{setIngredientsList()}{setIngredientsList()}}
+{\footnotesize\ttfamily void Dish\+::set\+Ingredients\+List (\begin{DoxyParamCaption}\item[{const std\+::list$<$ std\+::string $>$ \&}]{ingredients }\end{DoxyParamCaption})}
+
+
+
+Set the list of ingredients for the dish. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredients} & The list of ingredients to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDish_abde26b1282c876b98de9601fc86f9b02}\label{classDish_abde26b1282c876b98de9601fc86f9b02}} 
+\index{Dish@{Dish}!setName@{setName}}
+\index{setName@{setName}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Dish\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Set the name of the dish. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classDish_a9794879b6ed58ea33d12fb1852d57ba1}\label{classDish_a9794879b6ed58ea33d12fb1852d57ba1}} 
+\index{Dish@{Dish}!totalCost@{totalCost}}
+\index{totalCost@{totalCost}!Dish@{Dish}}
+\doxysubsubsection{\texorpdfstring{totalCost()}{totalCost()}}
+{\footnotesize\ttfamily virtual double Dish\+::total\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculate the total cost of the dish. 
+
+\begin{DoxyReturn}{Returns}
+The total cost of the dish. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classSpecialCookingInstructions_a575fd65d64b3681c1063423ebf254bb1}{Special\+Cooking\+Instructions}}, \mbox{\hyperlink{classRemoveFromDish_a03304f19f36e0b865c40b3b023b1efd4}{Remove\+From\+Dish}}, \mbox{\hyperlink{classDishDecorator_aacce80d672d44ad97c7920449f0d2a7d}{Dish\+Decorator}}, \mbox{\hyperlink{classBasicDish_a06db2219a051eac2d6c75ef6e267f2c3}{Basic\+Dish}}, and \mbox{\hyperlink{classAddToDish_a5104a55f93c6f41f7b9ff21785070b34}{Add\+To\+Dish}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Dish_8h}{Dish.\+h}}\item 
+\mbox{\hyperlink{Dish_8cpp}{Dish.\+cpp}}\end{DoxyCompactItemize}

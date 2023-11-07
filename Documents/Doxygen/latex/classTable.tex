@@ -1,0 +1,128 @@
+\hypertarget{classTable}{}\doxysection{Table Class Reference}
+\label{classTable}\index{Table@{Table}}
+
+
+The \mbox{\hyperlink{classTable}{Table}} class represents a dining table in the restaurant.  
+
+
+
+
+{\ttfamily \#include $<$Table.\+h$>$}
+
+
+
+Inheritance diagram for Table\+:
+% FIG 0
+
+
+Collaboration diagram for Table\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTable_a049f2e06391781ae255c6698869c4ad1}\label{classTable_a049f2e06391781ae255c6698869c4ad1}} 
+\mbox{\hyperlink{classTable_a049f2e06391781ae255c6698869c4ad1}{Table}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classTable}{Table}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTable_a07432d2834b49dc83486d3d26a6af649}{Table}} (int table\+Number)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classTable}{Table}} class with a specified table number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTable_a9a559f2e7beb37b511ee9f88873164f8}{$\sim$\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classTable}{Table}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classTable_a16300a294b7a845688eb99af5671b1c1}{get\+Table\+Number}} ()
+\begin{DoxyCompactList}\small\item\em Get the table number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTable_a6a6d8db281737c992009dfb91d53f5f5}{add\+Customer}} (\mbox{\hyperlink{classCustomer}{Customer}} $\ast$new\+Customer)
+\begin{DoxyCompactList}\small\item\em Add a customer to the table. \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{classCustomer}{Customer}} $\ast$ $>$ \mbox{\hyperlink{classTable_ae991c1bc992dc7052e4dd3fe6893fb04}{get\+Customers}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of customers seated at the table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classTable}{Table}} class represents a dining table in the restaurant. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTable_a07432d2834b49dc83486d3d26a6af649}\label{classTable_a07432d2834b49dc83486d3d26a6af649}} 
+\index{Table@{Table}!Table@{Table}}
+\index{Table@{Table}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{Table()}{Table()}}
+{\footnotesize\ttfamily Table\+::\+Table (\begin{DoxyParamCaption}\item[{int}]{table\+Number }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classTable}{Table}} class with a specified table number. 
+
+Constructor for the \mbox{\hyperlink{classTable}{Table}} class that takes a table number as a parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Number} & An integer representing the table number.\\
+\hline
+{\em table\+Number} & Integer representing the number of the table. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTable_a9a559f2e7beb37b511ee9f88873164f8}\label{classTable_a9a559f2e7beb37b511ee9f88873164f8}} 
+\index{Table@{Table}!````~Table@{$\sim$Table}}
+\index{````~Table@{$\sim$Table}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{$\sim$Table()}{~Table()}}
+{\footnotesize\ttfamily Table\+::$\sim$\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classTable}{Table}} class. 
+
+Destructor for the \mbox{\hyperlink{classTable}{Table}} class. Deletes all customers and the table itself. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTable_a6a6d8db281737c992009dfb91d53f5f5}\label{classTable_a6a6d8db281737c992009dfb91d53f5f5}} 
+\index{Table@{Table}!addCustomer@{addCustomer}}
+\index{addCustomer@{addCustomer}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{addCustomer()}{addCustomer()}}
+{\footnotesize\ttfamily void Table\+::add\+Customer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCustomer}{Customer}} $\ast$}]{new\+Customer }\end{DoxyParamCaption})}
+
+
+
+Add a customer to the table. 
+
+This method allows a new customer to be added to the table.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Customer} & A pointer to the \mbox{\hyperlink{classCustomer}{Customer}} to be added to the table.\\
+\hline
+{\em new\+Customer} & Pointer to the \mbox{\hyperlink{classCustomer}{Customer}} object to be added. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classTable_ae991c1bc992dc7052e4dd3fe6893fb04}\label{classTable_ae991c1bc992dc7052e4dd3fe6893fb04}} 
+\index{Table@{Table}!getCustomers@{getCustomers}}
+\index{getCustomers@{getCustomers}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{getCustomers()}{getCustomers()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{classCustomer}{Customer}} $\ast$ $>$ Table\+::get\+Customers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the list of customers seated at the table. 
+
+This method returns a list of customers at the table.
+
+\begin{DoxyReturn}{Returns}
+A list of \mbox{\hyperlink{classCustomer}{Customer}} pointers representing the customers at the table.
+
+A list of pointers to \mbox{\hyperlink{classCustomer}{Customer}} objects. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTable_a16300a294b7a845688eb99af5671b1c1}\label{classTable_a16300a294b7a845688eb99af5671b1c1}} 
+\index{Table@{Table}!getTableNumber@{getTableNumber}}
+\index{getTableNumber@{getTableNumber}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{getTableNumber()}{getTableNumber()}}
+{\footnotesize\ttfamily int Table\+::get\+Table\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the table number. 
+
+\begin{DoxyReturn}{Returns}
+An integer representing the table number. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Table_8h}{Table.\+h}}\item 
+\mbox{\hyperlink{Table_8cpp}{Table.\+cpp}}\end{DoxyCompactItemize}
