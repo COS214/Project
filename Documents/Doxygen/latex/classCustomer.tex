@@ -1,0 +1,286 @@
+\hypertarget{classCustomer}{}\doxysection{Customer Class Reference}
+\label{classCustomer}\index{Customer@{Customer}}
+
+
+The \mbox{\hyperlink{classCustomer}{Customer}} class is a concrete subject in the observer pattern.  
+
+
+
+
+{\ttfamily \#include $<$Customer.\+h$>$}
+
+
+
+Inheritance diagram for Customer\+:
+% FIG 0
+
+
+Collaboration diagram for Customer\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCustomer_abcc8fae9701e5ba9d7d6fe44498b34e3}\label{classCustomer_abcc8fae9701e5ba9d7d6fe44498b34e3}} 
+\mbox{\hyperlink{classCustomer_abcc8fae9701e5ba9d7d6fe44498b34e3}{Customer}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classCustomer}{Customer}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCustomer_af8588de52a4b4adf808ea8e96da0063a}{Customer}} (std\+::string name, int id)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classCustomer}{Customer}} class that takes a name and id as parameters. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCustomer_ab93fb14683b0393b9c900109f77c2629}\label{classCustomer_ab93fb14683b0393b9c900109f77c2629}} 
+\mbox{\hyperlink{classCustomer_ab93fb14683b0393b9c900109f77c2629}{$\sim$\+Customer}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classCustomer}{Customer}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classCustomer_a9061012ab155bacb5231d1fc1663ba04}\label{classCustomer_a9061012ab155bacb5231d1fc1663ba04}} 
+void {\bfseries change} ()
+\item 
+std\+::string \mbox{\hyperlink{classCustomer_a4dfa6cee444c1b0168b5f642be4c7a83}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em This method returns the current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCustomer_a9b6017c48cf3c76f1e0247b7097cad32}{set\+State}} (\mbox{\hyperlink{classState}{State}} $\ast$state)
+\begin{DoxyCompactList}\small\item\em This method sets the state of the customer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCustomer_aca774bc978cbce737ea6499bd8175ee3}{set\+Rating}} (int rating)
+\begin{DoxyCompactList}\small\item\em This method sets the rating of the customer. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCustomer_a8cca462088b1675b867a009b47a4da8e}{get\+Order}} ()
+\begin{DoxyCompactList}\small\item\em This method returns the order of the customer. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCustomer_a4564927e17d6cea720272b83e1108f90}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em This method return the name of the customer. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCustomer_a7693dcffe1bc6ca276952f7cade820c8}{get\+Customer\+ID}} ()
+\begin{DoxyCompactList}\small\item\em This method return the id of the customer. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCustomer_acc31083acc5daad4d1466fd5e46ab0df}{get\+Rating}} ()
+\begin{DoxyCompactList}\small\item\em This method return the rating of the customer. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classCustomer_a40b3083b07965830398cc031f7a7276c}{generate\+Customer\+ID}} ()
+\begin{DoxyCompactList}\small\item\em This method generates a customer ID for the customer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCustomer_ae8dded7d73ccec4ca8d09c7892384a52}{set\+Customer\+ID}} (std\+::string c\+ID)
+\begin{DoxyCompactList}\small\item\em This method sets the customer ID of the customer. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCustomer_a144ae1ec6077a0aeb611b2cd4a228c50}{get\+Total\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em This method returns the total amount of the customer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCustomer_aa401b504aaf77377520f7e3030de7b54}{set\+Dish}} (\mbox{\hyperlink{classDish}{Dish}} $\ast$d)
+\begin{DoxyCompactList}\small\item\em This method sets the dish of the customer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDish}{Dish}} $\ast$ \mbox{\hyperlink{classCustomer_ab7babaf98a8c879df28951013cab8b4d}{get\+Dish}} ()
+\begin{DoxyCompactList}\small\item\em This method returns the dish of the customer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classCustomer}{Customer}} class is a concrete subject in the observer pattern. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCustomer_af8588de52a4b4adf808ea8e96da0063a}\label{classCustomer_af8588de52a4b4adf808ea8e96da0063a}} 
+\index{Customer@{Customer}!Customer@{Customer}}
+\index{Customer@{Customer}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{Customer()}{Customer()}}
+{\footnotesize\ttfamily Customer\+::\+Customer (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classCustomer}{Customer}} class that takes a name and id as parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & String representing the name of the customer. \\
+\hline
+{\em id} & Integer representing the id of the customer. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCustomer_a40b3083b07965830398cc031f7a7276c}\label{classCustomer_a40b3083b07965830398cc031f7a7276c}} 
+\index{Customer@{Customer}!generateCustomerID@{generateCustomerID}}
+\index{generateCustomerID@{generateCustomerID}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{generateCustomerID()}{generateCustomerID()}}
+{\footnotesize\ttfamily std\+::string Customer\+::generate\+Customer\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method generates a customer ID for the customer. 
+
+\begin{DoxyReturn}{Returns}
+String representing the generated customer ID. 
+\end{DoxyReturn}
+seed the random with the customer\+ID
+
+generates random digits
+
+here we generate a random capital letter
+
+put the string together
+
+return the newly created Customer\+ID\mbox{\Hypertarget{classCustomer_a7693dcffe1bc6ca276952f7cade820c8}\label{classCustomer_a7693dcffe1bc6ca276952f7cade820c8}} 
+\index{Customer@{Customer}!getCustomerID@{getCustomerID}}
+\index{getCustomerID@{getCustomerID}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getCustomerID()}{getCustomerID()}}
+{\footnotesize\ttfamily std\+::string Customer\+::get\+Customer\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method return the id of the customer. 
+
+This method returns the customer ID of the customer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & String representing the id of the customer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representing the customer ID of the customer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCustomer_ab7babaf98a8c879df28951013cab8b4d}\label{classCustomer_ab7babaf98a8c879df28951013cab8b4d}} 
+\index{Customer@{Customer}!getDish@{getDish}}
+\index{getDish@{getDish}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getDish()}{getDish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDish}{Dish}} $\ast$ Customer\+::get\+Dish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method returns the dish of the customer. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the \mbox{\hyperlink{classDish}{Dish}} object of the customer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCustomer_a4564927e17d6cea720272b83e1108f90}\label{classCustomer_a4564927e17d6cea720272b83e1108f90}} 
+\index{Customer@{Customer}!getName@{getName}}
+\index{getName@{getName}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Customer\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method return the name of the customer. 
+
+This method returns the name of the customer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & String representing the name of the customer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representing the name of the customer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCustomer_a8cca462088b1675b867a009b47a4da8e}\label{classCustomer_a8cca462088b1675b867a009b47a4da8e}} 
+\index{Customer@{Customer}!getOrder@{getOrder}}
+\index{getOrder@{getOrder}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getOrder()}{getOrder()}}
+{\footnotesize\ttfamily std\+::string Customer\+::get\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method returns the order of the customer. 
+
+\begin{DoxyReturn}{Returns}
+String representing the order of the customer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCustomer_acc31083acc5daad4d1466fd5e46ab0df}\label{classCustomer_acc31083acc5daad4d1466fd5e46ab0df}} 
+\index{Customer@{Customer}!getRating@{getRating}}
+\index{getRating@{getRating}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getRating()}{getRating()}}
+{\footnotesize\ttfamily int Customer\+::get\+Rating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method return the rating of the customer. 
+
+This method returns the rating of the customer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & String representing the rating of the customer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Integer representing the rating of the customer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCustomer_a4dfa6cee444c1b0168b5f642be4c7a83}\label{classCustomer_a4dfa6cee444c1b0168b5f642be4c7a83}} 
+\index{Customer@{Customer}!getState@{getState}}
+\index{getState@{getState}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string Customer\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method returns the current state. 
+
+This method returns the state of the customer.
+
+\begin{DoxyReturn}{Returns}
+String representing the current state
+
+String representing the state of the customer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCustomer_a144ae1ec6077a0aeb611b2cd4a228c50}\label{classCustomer_a144ae1ec6077a0aeb611b2cd4a228c50}} 
+\index{Customer@{Customer}!getTotalAmount@{getTotalAmount}}
+\index{getTotalAmount@{getTotalAmount}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getTotalAmount()}{getTotalAmount()}}
+{\footnotesize\ttfamily double Customer\+::get\+Total\+Amount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method returns the total amount of the customer. 
+
+\begin{DoxyReturn}{Returns}
+Double representing the total amount of the customer. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCustomer_ae8dded7d73ccec4ca8d09c7892384a52}\label{classCustomer_ae8dded7d73ccec4ca8d09c7892384a52}} 
+\index{Customer@{Customer}!setCustomerID@{setCustomerID}}
+\index{setCustomerID@{setCustomerID}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{setCustomerID()}{setCustomerID()}}
+{\footnotesize\ttfamily void Customer\+::set\+Customer\+ID (\begin{DoxyParamCaption}\item[{std\+::string}]{c\+ID }\end{DoxyParamCaption})}
+
+
+
+This method sets the customer ID of the customer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c\+ID} & String representing the customer ID to be set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCustomer_aa401b504aaf77377520f7e3030de7b54}\label{classCustomer_aa401b504aaf77377520f7e3030de7b54}} 
+\index{Customer@{Customer}!setDish@{setDish}}
+\index{setDish@{setDish}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{setDish()}{setDish()}}
+{\footnotesize\ttfamily void Customer\+::set\+Dish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDish}{Dish}} $\ast$}]{d }\end{DoxyParamCaption})}
+
+
+
+This method sets the dish of the customer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & Pointer to the \mbox{\hyperlink{classDish}{Dish}} object to be set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCustomer_aca774bc978cbce737ea6499bd8175ee3}\label{classCustomer_aca774bc978cbce737ea6499bd8175ee3}} 
+\index{Customer@{Customer}!setRating@{setRating}}
+\index{setRating@{setRating}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{setRating()}{setRating()}}
+{\footnotesize\ttfamily void Customer\+::set\+Rating (\begin{DoxyParamCaption}\item[{int}]{rating }\end{DoxyParamCaption})}
+
+
+
+This method sets the rating of the customer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rating} & Integer representing the rating to be set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classCustomer_a9b6017c48cf3c76f1e0247b7097cad32}\label{classCustomer_a9b6017c48cf3c76f1e0247b7097cad32}} 
+\index{Customer@{Customer}!setState@{setState}}
+\index{setState@{setState}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void Customer\+::set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classState}{State}} $\ast$}]{state\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+This method sets the state of the customer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state\+\_\+} & Pointer to the \mbox{\hyperlink{classState}{State}} object to be set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Customer_8h}{Customer.\+h}}\item 
+\mbox{\hyperlink{Customer_8cpp}{Customer.\+cpp}}\end{DoxyCompactItemize}

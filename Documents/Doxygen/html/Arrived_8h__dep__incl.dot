@@ -1,0 +1,11 @@
+digraph "Arrived.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Arrived.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Contains the declaration of the Arrived class."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Arrived.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Arrived_8cpp.html",tooltip="Contains the implementation of the Arrived class."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Customer.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Customer_8cpp.html",tooltip="Contains the implementation of the Customer class."];
+}

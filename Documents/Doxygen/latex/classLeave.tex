@@ -1,0 +1,74 @@
+\hypertarget{classLeave}{}\doxysection{Leave Class Reference}
+\label{classLeave}\index{Leave@{Leave}}
+
+
+The \mbox{\hyperlink{classLeave}{Leave}} class represents the state when a customer is ready to leave the restaurant.  
+
+
+
+
+{\ttfamily \#include $<$Leave.\+h$>$}
+
+
+
+Inheritance diagram for Leave\+:
+% FIG 0
+
+
+Collaboration diagram for Leave\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classLeave_a14da205e5c36132976a962f423e7e6ee}{handle\+Change}} (\mbox{\hyperlink{classCustomer}{Customer}} $\ast$c)
+\begin{DoxyCompactList}\small\item\em Handle a state change for a customer. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classLeave_ae3c4906f57acc6cbfc43152e2c96f1df}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Get the current state as a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classLeave}{Leave}} class represents the state when a customer is ready to leave the restaurant. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classLeave_ae3c4906f57acc6cbfc43152e2c96f1df}\label{classLeave_ae3c4906f57acc6cbfc43152e2c96f1df}} 
+\index{Leave@{Leave}!getState@{getState}}
+\index{getState@{getState}!Leave@{Leave}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string Leave\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the current state as a string. 
+
+\begin{DoxyReturn}{Returns}
+A string representing the current state, which is \char`\"{}\+Leave\char`\"{}. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classState_a07098d546380bd57c4800eff914f28e8}{State}}.
+
+\mbox{\Hypertarget{classLeave_a14da205e5c36132976a962f423e7e6ee}\label{classLeave_a14da205e5c36132976a962f423e7e6ee}} 
+\index{Leave@{Leave}!handleChange@{handleChange}}
+\index{handleChange@{handleChange}!Leave@{Leave}}
+\doxysubsubsection{\texorpdfstring{handleChange()}{handleChange()}}
+{\footnotesize\ttfamily void Leave\+::handle\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCustomer}{Customer}} $\ast$}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Handle a state change for a customer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & A pointer to the \mbox{\hyperlink{classCustomer}{Customer}} whose state is being changed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classState_a9d68efd646898d8d26d422d5da9f081f}{State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Leave_8h}{Leave.\+h}}\item 
+\mbox{\hyperlink{Leave_8cpp}{Leave.\+cpp}}\end{DoxyCompactItemize}

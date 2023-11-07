@@ -1,0 +1,215 @@
+\hypertarget{classWaiter}{}\doxysection{Waiter Class Reference}
+\label{classWaiter}\index{Waiter@{Waiter}}
+
+
+The \mbox{\hyperlink{classWaiter}{Waiter}} class represents a waiter responsible for taking orders and serving customers.  
+
+
+
+
+{\ttfamily \#include $<$Waiter.\+h$>$}
+
+
+
+Inheritance diagram for Waiter\+:
+% FIG 0
+
+
+Collaboration diagram for Waiter\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classWaiter_ab2de094297c57ac00eb4359cc4dd9ad8}{Waiter}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{classWaiter}{Waiter}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_a375dcf95b383aef62461d4daddfe89c4}{place\+Order}} (\mbox{\hyperlink{classChefs}{Chefs}} $\ast$\mbox{\hyperlink{classChefs}{Chefs}}, \mbox{\hyperlink{classCommand}{Command}} $\ast$order, int cook\+Strategy)
+\begin{DoxyCompactList}\small\item\em Place an order with the chefs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_a1f112118936a0ac3109ef1d04cdad66c}{update}} (string message)
+\begin{DoxyCompactList}\small\item\em Update the waiter with a message. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_aa79faf35a427d5e851c00197e551d351}{receive\+Order}} (\mbox{\hyperlink{classCommand}{Command}} $\ast$order)
+\begin{DoxyCompactList}\small\item\em Receive an order. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWaiter_a03251e4390ab47e0ee2a125bd27f9851}{Waiter}} (std\+::list$<$ \mbox{\hyperlink{classTable}{Table}} $\ast$ $>$ tables)
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{classWaiter}{Waiter}} class with a list of tables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCustomer}{Customer}} $\ast$ \mbox{\hyperlink{classWaiter_a09ad1e9d2fa58a882d0b67b21fe37de5}{first}} ()
+\begin{DoxyCompactList}\small\item\em Get the first customer in the list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCustomer}{Customer}} $\ast$ \mbox{\hyperlink{classWaiter_a6d17704a23430d7e1bb6c0f339ccd35f}{next}} ()
+\begin{DoxyCompactList}\small\item\em Get the next customer in the list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWaiter_a8d5ad275c591ee42f316b300cb36cb86}{is\+Done}} ()
+\begin{DoxyCompactList}\small\item\em Check if the iteration is done. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWaiter_af3bb94cb7d0083141bb1e21972971bfc}{serve\+Customers}} (\mbox{\hyperlink{classChefs}{Chefs}} $\ast$\mbox{\hyperlink{classChefs}{Chefs}}, \mbox{\hyperlink{classCommand}{Command}} $\ast$order)
+\begin{DoxyCompactList}\small\item\em Serve customers by delivering their orders to the chefs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classWaiter_aa3eac8a78439feb99b0bb50380f8597d}{$\sim$\+Waiter}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{classWaiter}{Waiter}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classWaiter}{Waiter}} class represents a waiter responsible for taking orders and serving customers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWaiter_ab2de094297c57ac00eb4359cc4dd9ad8}\label{classWaiter_ab2de094297c57ac00eb4359cc4dd9ad8}} 
+\index{Waiter@{Waiter}!Waiter@{Waiter}}
+\index{Waiter@{Waiter}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{Waiter()}{Waiter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Waiter\+::\+Waiter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \mbox{\hyperlink{classWaiter}{Waiter}} class. 
+
+Default Constructor. \mbox{\Hypertarget{classWaiter_a03251e4390ab47e0ee2a125bd27f9851}\label{classWaiter_a03251e4390ab47e0ee2a125bd27f9851}} 
+\index{Waiter@{Waiter}!Waiter@{Waiter}}
+\index{Waiter@{Waiter}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{Waiter()}{Waiter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Waiter\+::\+Waiter (\begin{DoxyParamCaption}\item[{std\+::list$<$ \mbox{\hyperlink{classTable}{Table}} $\ast$ $>$}]{tables }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \mbox{\hyperlink{classWaiter}{Waiter}} class with a list of tables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tables} & A list of tables to associate with the waiter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWaiter_aa3eac8a78439feb99b0bb50380f8597d}\label{classWaiter_aa3eac8a78439feb99b0bb50380f8597d}} 
+\index{Waiter@{Waiter}!````~Waiter@{$\sim$Waiter}}
+\index{````~Waiter@{$\sim$Waiter}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{$\sim$Waiter()}{~Waiter()}}
+{\footnotesize\ttfamily Waiter\+::$\sim$\+Waiter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{classWaiter}{Waiter}} class. 
+
+Destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWaiter_a09ad1e9d2fa58a882d0b67b21fe37de5}\label{classWaiter_a09ad1e9d2fa58a882d0b67b21fe37de5}} 
+\index{Waiter@{Waiter}!first@{first}}
+\index{first@{first}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{first()}{first()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCustomer}{Customer}} $\ast$ Waiter\+::first (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the first customer in the list. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the first customer in the list. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_aad3f95cb0a93abdab8f6c0cd3adb4293}{Iterator}}.
+
+\mbox{\Hypertarget{classWaiter_a8d5ad275c591ee42f316b300cb36cb86}\label{classWaiter_a8d5ad275c591ee42f316b300cb36cb86}} 
+\index{Waiter@{Waiter}!isDone@{isDone}}
+\index{isDone@{isDone}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily bool Waiter\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if the iteration is done. 
+
+\begin{DoxyReturn}{Returns}
+True if the iteration is done, otherwise false. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_ac3f6409895d4701123a91ca528d61565}{Iterator}}.
+
+\mbox{\Hypertarget{classWaiter_a6d17704a23430d7e1bb6c0f339ccd35f}\label{classWaiter_a6d17704a23430d7e1bb6c0f339ccd35f}} 
+\index{Waiter@{Waiter}!next@{next}}
+\index{next@{next}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{next()}{next()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCustomer}{Customer}} $\ast$ Waiter\+::next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the next customer in the list. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to the next customer in the list. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIterator_a572c70703ebfc68dfeb30a6d7f23c11c}{Iterator}}.
+
+\mbox{\Hypertarget{classWaiter_a375dcf95b383aef62461d4daddfe89c4}\label{classWaiter_a375dcf95b383aef62461d4daddfe89c4}} 
+\index{Waiter@{Waiter}!placeOrder@{placeOrder}}
+\index{placeOrder@{placeOrder}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{placeOrder()}{placeOrder()}}
+{\footnotesize\ttfamily void Waiter\+::place\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChefs}{Chefs}} $\ast$}]{Chefs,  }\item[{\mbox{\hyperlink{classCommand}{Command}} $\ast$}]{order,  }\item[{int}]{cook\+Strategy }\end{DoxyParamCaption})}
+
+
+
+Place an order with the chefs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classChefs}{Chefs}}} & A pointer to the \mbox{\hyperlink{classChefs}{Chefs}} class. \\
+\hline
+{\em order} & A pointer to the \mbox{\hyperlink{classCommand}{Command}} representing the order. \\
+\hline
+{\em cook\+Strategy} & An integer representing the chosen cooking strategy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWaiter_aa79faf35a427d5e851c00197e551d351}\label{classWaiter_aa79faf35a427d5e851c00197e551d351}} 
+\index{Waiter@{Waiter}!receiveOrder@{receiveOrder}}
+\index{receiveOrder@{receiveOrder}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{receiveOrder()}{receiveOrder()}}
+{\footnotesize\ttfamily void Waiter\+::receive\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommand}{Command}} $\ast$}]{order }\end{DoxyParamCaption})}
+
+
+
+Receive an order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & A pointer to the \mbox{\hyperlink{classCommand}{Command}} representing the order. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWaiter_af3bb94cb7d0083141bb1e21972971bfc}\label{classWaiter_af3bb94cb7d0083141bb1e21972971bfc}} 
+\index{Waiter@{Waiter}!serveCustomers@{serveCustomers}}
+\index{serveCustomers@{serveCustomers}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{serveCustomers()}{serveCustomers()}}
+{\footnotesize\ttfamily void Waiter\+::serve\+Customers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChefs}{Chefs}} $\ast$}]{Chefs,  }\item[{\mbox{\hyperlink{classCommand}{Command}} $\ast$}]{order }\end{DoxyParamCaption})}
+
+
+
+Serve customers by delivering their orders to the chefs. 
+
+This method allows the waiter to serve customers based on their current state.
+
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{\hyperlink{classChefs}{Chefs}}} & A pointer to the \mbox{\hyperlink{classChefs}{Chefs}} class. \\
+\hline
+{\em order} & A pointer to the \mbox{\hyperlink{classCommand}{Command}} representing the order to be served.\\
+\hline
+{\em \mbox{\hyperlink{classChefs}{Chefs}}} & Pointer to the \mbox{\hyperlink{classChefs}{Chefs}} object. \\
+\hline
+{\em order} & Pointer to the \mbox{\hyperlink{classCommand}{Command}} object representing the customer\textquotesingle{}s order. \\
+\hline
+\end{DoxyParams}
+Remove the customer from the table\mbox{\Hypertarget{classWaiter_a1f112118936a0ac3109ef1d04cdad66c}\label{classWaiter_a1f112118936a0ac3109ef1d04cdad66c}} 
+\index{Waiter@{Waiter}!update@{update}}
+\index{update@{update}!Waiter@{Waiter}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Waiter\+::update (\begin{DoxyParamCaption}\item[{string}]{message }\end{DoxyParamCaption})}
+
+
+
+Update the waiter with a message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The message to update the waiter. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Waiter_8h}{Waiter.\+h}}\item 
+\mbox{\hyperlink{Waiter_8cpp}{Waiter.\+cpp}}\end{DoxyCompactItemize}

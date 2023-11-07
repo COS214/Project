@@ -59,8 +59,12 @@ void Bill::setBillMemento(BillMemento memento)
  */
 map<string, Bill> Bill::splitBill(int splitIntoNBills, Bill bill, int order, std::string customerIDs[])
 {
+    if (splitIntoNBills <= 0) {
+       splitIntoNBills = 1;
+    }
+
     // Calculate the new total amount for each split bill
-    double newTotalAmount = bill.getTotalAmount(); // splitIntoNBills;
+    double newTotalAmount = bill.getTotalAmount() / splitIntoNBills; // splitIntoNBills;
 
     // Create a map to store the split bills
     map<string, Bill> splitBills;

@@ -1,0 +1,157 @@
+\hypertarget{classAddToDish}{}\doxysection{Add\+To\+Dish Class Reference}
+\label{classAddToDish}\index{AddToDish@{AddToDish}}
+
+
+The \mbox{\hyperlink{classAddToDish}{Add\+To\+Dish}} class represents a decorator that adds an ingredient to a dish.  
+
+
+
+
+{\ttfamily \#include $<$Add\+To\+Dish.\+h$>$}
+
+
+
+Inheritance diagram for Add\+To\+Dish\+:
+% FIG 0
+
+
+Collaboration diagram for Add\+To\+Dish\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classAddToDish_a7483c3c4f721459c5b6c31cfb40696ac}\label{classAddToDish_a7483c3c4f721459c5b6c31cfb40696ac}} 
+\mbox{\hyperlink{classAddToDish_a7483c3c4f721459c5b6c31cfb40696ac}{Add\+To\+Dish}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \mbox{\hyperlink{classAddToDish}{Add\+To\+Dish}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddToDish_ad0900110b84d3f6d8fd953c99c347cc6}{set\+Ingredient}} (std\+::string ingredient)
+\begin{DoxyCompactList}\small\item\em Set the ingredient to be added. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddToDish_a51a86725fa9af56836b27fadc69a7a85}{set\+Cost\+Of\+Ingredient}} (double cost\+Of\+Ingredient)
+\begin{DoxyCompactList}\small\item\em Set the cost of the added ingredient. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAddToDish_ab815bbf1226449d9851857359850b1a2}{add\+Ingredient}} (std\+::string ingredient)
+\begin{DoxyCompactList}\small\item\em Add an ingredient to the dish. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAddToDish_a5104a55f93c6f41f7b9ff21785070b34}{total\+Cost}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the total cost of the dish. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAddToDish_a657ad42a6aefe7f12cbff66b529d04a7}{get\+Ingredients\+List}} ()
+\begin{DoxyCompactList}\small\item\em Get the list of ingredients in the dish. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classAddToDish}{Add\+To\+Dish}} class represents a decorator that adds an ingredient to a dish. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAddToDish_ab815bbf1226449d9851857359850b1a2}\label{classAddToDish_ab815bbf1226449d9851857359850b1a2}} 
+\index{AddToDish@{AddToDish}!addIngredient@{addIngredient}}
+\index{addIngredient@{addIngredient}!AddToDish@{AddToDish}}
+\doxysubsubsection{\texorpdfstring{addIngredient()}{addIngredient()}}
+{\footnotesize\ttfamily void Add\+To\+Dish\+::add\+Ingredient (\begin{DoxyParamCaption}\item[{std\+::string}]{ingredient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Add an ingredient to the dish. 
+
+Adds an ingredient to the dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The ingredient to add to the dish.\\
+\hline
+{\em ingredient} & The ingredient to be added. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDishDecorator_a2bede2e5ab3c06cc94c633059318b5d9}{Dish\+Decorator}}.
+
+\mbox{\Hypertarget{classAddToDish_a657ad42a6aefe7f12cbff66b529d04a7}\label{classAddToDish_a657ad42a6aefe7f12cbff66b529d04a7}} 
+\index{AddToDish@{AddToDish}!getIngredientsList@{getIngredientsList}}
+\index{getIngredientsList@{getIngredientsList}!AddToDish@{AddToDish}}
+\doxysubsubsection{\texorpdfstring{getIngredientsList()}{getIngredientsList()}}
+{\footnotesize\ttfamily std\+::string Add\+To\+Dish\+::get\+Ingredients\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the list of ingredients in the dish. 
+
+Gets the list of ingredients for the dish.
+
+\begin{DoxyReturn}{Returns}
+A string containing the list of ingredients in the dish.
+
+The list of ingredients. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDishDecorator_ab78846fd1f00daa6d70a7e6a6da3c749}{Dish\+Decorator}}.
+
+\mbox{\Hypertarget{classAddToDish_a51a86725fa9af56836b27fadc69a7a85}\label{classAddToDish_a51a86725fa9af56836b27fadc69a7a85}} 
+\index{AddToDish@{AddToDish}!setCostOfIngredient@{setCostOfIngredient}}
+\index{setCostOfIngredient@{setCostOfIngredient}!AddToDish@{AddToDish}}
+\doxysubsubsection{\texorpdfstring{setCostOfIngredient()}{setCostOfIngredient()}}
+{\footnotesize\ttfamily void Add\+To\+Dish\+::set\+Cost\+Of\+Ingredient (\begin{DoxyParamCaption}\item[{double}]{cost\+Of\+Ingredient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the cost of the added ingredient. 
+
+Sets the cost of the ingredient.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cost\+Of\+Ingredient} & The cost associated with the added ingredient.\\
+\hline
+{\em cost\+Of\+Ingredient} & The cost of the ingredient. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDishDecorator_a55cf5ea1073ca1a8a04960e884b9f43d}{Dish\+Decorator}}.
+
+\mbox{\Hypertarget{classAddToDish_ad0900110b84d3f6d8fd953c99c347cc6}\label{classAddToDish_ad0900110b84d3f6d8fd953c99c347cc6}} 
+\index{AddToDish@{AddToDish}!setIngredient@{setIngredient}}
+\index{setIngredient@{setIngredient}!AddToDish@{AddToDish}}
+\doxysubsubsection{\texorpdfstring{setIngredient()}{setIngredient()}}
+{\footnotesize\ttfamily void Add\+To\+Dish\+::set\+Ingredient (\begin{DoxyParamCaption}\item[{std\+::string}]{ingredient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Set the ingredient to be added. 
+
+Sets the ingredient for the dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ingredient} & The ingredient to be added to the dish.\\
+\hline
+{\em ingredient} & The ingredient to be set. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classDishDecorator_a48b4f5d9055ea9809264d7feb8cda1c4}{Dish\+Decorator}}.
+
+\mbox{\Hypertarget{classAddToDish_a5104a55f93c6f41f7b9ff21785070b34}\label{classAddToDish_a5104a55f93c6f41f7b9ff21785070b34}} 
+\index{AddToDish@{AddToDish}!totalCost@{totalCost}}
+\index{totalCost@{totalCost}!AddToDish@{AddToDish}}
+\doxysubsubsection{\texorpdfstring{totalCost()}{totalCost()}}
+{\footnotesize\ttfamily double Add\+To\+Dish\+::total\+Cost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculate the total cost of the dish. 
+
+Gets the total cost of the dish.
+
+\begin{DoxyReturn}{Returns}
+The total cost of the dish. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classDishDecorator_aacce80d672d44ad97c7920449f0d2a7d}{Dish\+Decorator}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{AddToDish_8h}{Add\+To\+Dish.\+h}}\item 
+\mbox{\hyperlink{AddToDish_8cpp}{Add\+To\+Dish.\+cpp}}\end{DoxyCompactItemize}

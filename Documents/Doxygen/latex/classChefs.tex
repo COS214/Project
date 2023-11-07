@@ -1,0 +1,175 @@
+\hypertarget{classChefs}{}\doxysection{Chefs Class Reference}
+\label{classChefs}\index{Chefs@{Chefs}}
+
+
+The \mbox{\hyperlink{classChefs}{Chefs}} class represents the base class for different chef types in the restaurant.  
+
+
+
+
+{\ttfamily \#include $<$Chefs.\+h$>$}
+
+
+
+Inheritance diagram for Chefs\+:
+% FIG 0
+
+
+Collaboration diagram for Chefs\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChefs_ac29840f9cff613e1713e42b72bbe26db}{Chefs}} (\mbox{\hyperlink{classMediator}{Mediator}} $\ast$mediator)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classChefs}{Chefs}} instance with a mediator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classChefs_a8df116ea0441d2a2c4f6fba82cbf9742}{cook}} (std\+::string dish)=0
+\begin{DoxyCompactList}\small\item\em Cooks a specific dish based on the provided dish name. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classChefs_ae05b3559705e22971b92b66121d7c1b4}\label{classChefs_ae05b3559705e22971b92b66121d7c1b4}} 
+\mbox{\hyperlink{classChefs_ae05b3559705e22971b92b66121d7c1b4}{Chefs}} ()
+\begin{DoxyCompactList}\small\item\em Default Constructor for \mbox{\hyperlink{classChefs}{Chefs}} class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classChefs_ab54d5e8d9fa45ed4f164845d1e1cef08}{prepare\+Order}} (\mbox{\hyperlink{classCommand}{Command}} $\ast$order, \mbox{\hyperlink{classWaiter}{Waiter}} $\ast$curr\+Waiter, int cook\+Strategy)
+\begin{DoxyCompactList}\small\item\em Prepares an order for a waiter to deliver to a customer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChefs_a2aa13552a6cc3aefda7b7e254dba047c}{set\+Next}} (\mbox{\hyperlink{classChefs}{Chefs}} $\ast$next)
+\begin{DoxyCompactList}\small\item\em Sets the next chef in the chain of responsibility. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChefs_aafcf9c7b38c7b8a53b1931078cf4dfd5}{set\+Mediator}} (\mbox{\hyperlink{classMediator}{Mediator}} $\ast$mediator)
+\begin{DoxyCompactList}\small\item\em Sets the mediator for communication with waiters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classChefs_a22fac0206015525b8645c2acdb708015}\label{classChefs_a22fac0206015525b8645c2acdb708015}} 
+\mbox{\hyperlink{classMediator}{Mediator}} $\ast$ {\bfseries mediator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classChefs_ad3741a77f8342fde438f2ce9455e675b}\label{classChefs_ad3741a77f8342fde438f2ce9455e675b}} 
+static \mbox{\hyperlink{classInventory}{Inventory}} $\ast$ {\bfseries inventory} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classChefs_a4ba687a64f1f832f37a2271f98648835}\label{classChefs_a4ba687a64f1f832f37a2271f98648835}} 
+\mbox{\hyperlink{classChefs}{Chefs}} $\ast$ {\bfseries next\+Handler}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classChefs}{Chefs}} class represents the base class for different chef types in the restaurant. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classChefs_ac29840f9cff613e1713e42b72bbe26db}\label{classChefs_ac29840f9cff613e1713e42b72bbe26db}} 
+\index{Chefs@{Chefs}!Chefs@{Chefs}}
+\index{Chefs@{Chefs}!Chefs@{Chefs}}
+\doxysubsubsection{\texorpdfstring{Chefs()}{Chefs()}}
+{\footnotesize\ttfamily Chefs\+::\+Chefs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMediator}{Mediator}} $\ast$}]{mediator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \mbox{\hyperlink{classChefs}{Chefs}} instance with a mediator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mediator} & A pointer to the mediator for communication. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classChefs_a8df116ea0441d2a2c4f6fba82cbf9742}\label{classChefs_a8df116ea0441d2a2c4f6fba82cbf9742}} 
+\index{Chefs@{Chefs}!cook@{cook}}
+\index{cook@{cook}!Chefs@{Chefs}}
+\doxysubsubsection{\texorpdfstring{cook()}{cook()}}
+{\footnotesize\ttfamily void Chefs\+::cook (\begin{DoxyParamCaption}\item[{std\+::string}]{dish }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Cooks a specific dish based on the provided dish name. 
+
+This method allows the \mbox{\hyperlink{classChefs}{Chefs}} to cook a specific dish.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dish} & The name of the dish to be cooked.\\
+\hline
+{\em dish} & String representing the name of the dish to be cooked. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classVegetableChef_a9cd9bdefb14887806ce36fb7516e0615}{Vegetable\+Chef}}, \mbox{\hyperlink{classSauceChef_a540450fa8252f1afdc13713e90d4879a}{Sauce\+Chef}}, \mbox{\hyperlink{classMeatChef_a3a994fa80763a35c925d23e1f2b03e99}{Meat\+Chef}}, \mbox{\hyperlink{classJuniorChef_a470468b0c63ef6b6833c47a2335343c5}{Junior\+Chef}}, and \mbox{\hyperlink{classHeadChef_a020a058358c6e6bdfcb5b700b2d6c163}{Head\+Chef}}.
+
+\mbox{\Hypertarget{classChefs_ab54d5e8d9fa45ed4f164845d1e1cef08}\label{classChefs_ab54d5e8d9fa45ed4f164845d1e1cef08}} 
+\index{Chefs@{Chefs}!prepareOrder@{prepareOrder}}
+\index{prepareOrder@{prepareOrder}!Chefs@{Chefs}}
+\doxysubsubsection{\texorpdfstring{prepareOrder()}{prepareOrder()}}
+{\footnotesize\ttfamily void Chefs\+::prepare\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommand}{Command}} $\ast$}]{order,  }\item[{\mbox{\hyperlink{classWaiter}{Waiter}} $\ast$}]{curr\+Waiter,  }\item[{int}]{cook\+Strategy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Prepares an order for a waiter to deliver to a customer. 
+
+This method allows the \mbox{\hyperlink{classChefs}{Chefs}} to prepare an order.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & The order to be prepared. \\
+\hline
+{\em curr\+Waiter} & A pointer to the current waiter handling the order. \\
+\hline
+{\em cook\+Strategy} & An integer indicating the cooking strategy to use.\\
+\hline
+{\em order} & Pointer to the \mbox{\hyperlink{classCommand}{Command}} object representing the customer\textquotesingle{}s order. \\
+\hline
+{\em curr\+Waiter} & Pointer to the \mbox{\hyperlink{classWaiter}{Waiter}} object who is currently serving. \\
+\hline
+{\em cook\+Strategy} & Integer representing the cooking strategy to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classVegetableChef_aab06190fe3c321af0f6598dfee752345}{Vegetable\+Chef}}, \mbox{\hyperlink{classSauceChef_a636ac187a0a97c8f2742ae04874cb79c}{Sauce\+Chef}}, \mbox{\hyperlink{classMeatChef_a233adbff66aafa6ea9c7301a29a55815}{Meat\+Chef}}, \mbox{\hyperlink{classJuniorChef_a2c6f4dfabf3d7a6390e2001ea02a5c25}{Junior\+Chef}}, and \mbox{\hyperlink{classHeadChef_a880efd9027305f592f6182739ada76ae}{Head\+Chef}}.
+
+\mbox{\Hypertarget{classChefs_aafcf9c7b38c7b8a53b1931078cf4dfd5}\label{classChefs_aafcf9c7b38c7b8a53b1931078cf4dfd5}} 
+\index{Chefs@{Chefs}!setMediator@{setMediator}}
+\index{setMediator@{setMediator}!Chefs@{Chefs}}
+\doxysubsubsection{\texorpdfstring{setMediator()}{setMediator()}}
+{\footnotesize\ttfamily void Chefs\+::set\+Mediator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMediator}{Mediator}} $\ast$}]{mediator }\end{DoxyParamCaption})}
+
+
+
+Sets the mediator for communication with waiters. 
+
+This method sets the mediator for the \mbox{\hyperlink{classChefs}{Chefs}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em mediator} & A pointer to the mediator for communication.\\
+\hline
+{\em mediator} & Pointer to the \mbox{\hyperlink{classMediator}{Mediator}} object to be set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classChefs_a2aa13552a6cc3aefda7b7e254dba047c}\label{classChefs_a2aa13552a6cc3aefda7b7e254dba047c}} 
+\index{Chefs@{Chefs}!setNext@{setNext}}
+\index{setNext@{setNext}!Chefs@{Chefs}}
+\doxysubsubsection{\texorpdfstring{setNext()}{setNext()}}
+{\footnotesize\ttfamily void Chefs\+::set\+Next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classChefs}{Chefs}} $\ast$}]{next }\end{DoxyParamCaption})}
+
+
+
+Sets the next chef in the chain of responsibility. 
+
+This method sets the next handler for the \mbox{\hyperlink{classChefs}{Chefs}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em next} & A pointer to the next chef to handle the request.\\
+\hline
+{\em next} & Pointer to the \mbox{\hyperlink{classChefs}{Chefs}} object to be set as the next handler. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Chefs_8h}{Chefs.\+h}}\item 
+\mbox{\hyperlink{Chefs_8cpp}{Chefs.\+cpp}}\end{DoxyCompactItemize}

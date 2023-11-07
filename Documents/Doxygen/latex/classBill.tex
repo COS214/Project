@@ -1,0 +1,468 @@
+\hypertarget{classBill}{}\doxysection{Bill Class Reference}
+\label{classBill}\index{Bill@{Bill}}
+
+
+The \mbox{\hyperlink{classBill}{Bill}} class represents a bill for a customer\textquotesingle{}s order in a restaurant.  
+
+
+
+
+{\ttfamily \#include $<$Bill.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBill_ad8851c492bc12aab0d1ffa5d8605b783}\label{classBill_ad8851c492bc12aab0d1ffa5d8605b783}} 
+\mbox{\hyperlink{classBill_ad8851c492bc12aab0d1ffa5d8605b783}{Bill}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classBill}{Bill}} instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBill_a5cdef51b316e6ab8712be47817d5f987}{Bill}} (string order\+ID, string customer\+ID, double total\+Amount, int table\+Num, int rating, string tab\+ID, bool paid)
+\begin{DoxyCompactList}\small\item\em Constructs a \mbox{\hyperlink{classBill}{Bill}} instance with the specified details. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBillMemento}{Bill\+Memento}} \mbox{\hyperlink{classBill_a641e5d2fde60490655b724de6cf48485}{create\+Bill\+Memento}} (string order\+ID, string customer\+ID, double total\+Amount, int table\+Num, int rating, string tab\+ID, bool paid)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object based on the bill\textquotesingle{}s current state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBill_a2ba96686a841701ef69519691f69108b}{set\+Bill\+Memento}} (\mbox{\hyperlink{classBillMemento}{Bill\+Memento}} memento)
+\begin{DoxyCompactList}\small\item\em Sets the bill\textquotesingle{}s state based on a \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object. \end{DoxyCompactList}\item 
+map$<$ string, \mbox{\hyperlink{classBill}{Bill}} $>$ \mbox{\hyperlink{classBill_a15a8695e302b3309abd43a2811ed2ed8}{split\+Bill}} (int split\+Into\+NBills, \mbox{\hyperlink{classBill}{Bill}} bill, int order, std\+::string customer\+IDs\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Splits the bill into a specified number of bills. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classBill_a5707a493b398d9ce0cabc0ecdcd75e91}{get\+Total\+Amount}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total amount of the bill. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classBill_ac032b534c4909456195fe2e6cb12fda6}{get\+Customer\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Gets the customer ID associated with the bill. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classBill_a016162ea9e6d29f605fe175385713dcd}{get\+Order\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Gets the order ID associated with the bill. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBill_ab57003d9a4e6159508398136cc910820}{get\+Table\+Num}} ()
+\begin{DoxyCompactList}\small\item\em Gets the table number associated with the bill. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classBill_aaa7882c509a32b6cbe0d8fb2592d083b}{get\+Rating}} ()
+\begin{DoxyCompactList}\small\item\em Gets the rating given by the customer. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBill_a6c60fd311a37365aece6a733fdb26803}{is\+Paid}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the bill has been paid. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classBill_ad9b5536e3b34dc8660040c4b14cf4cce}{get\+Tab\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Gets the tab ID associated with the bill. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classBill_a5b49d9170dd345fa07459bc40f285ec8}{generate\+Tab\+ID}} (string customer\+ID)
+\begin{DoxyCompactList}\small\item\em Generates a unique tab ID for the bill based on the customer ID. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classBill_a395deff869b17741cc4a817bfc02e4cc}{generate\+Order\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Generates a unique order ID for the bill. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBill_a335f475cf5cd32a374a98acb864478f4}\label{classBill_a335f475cf5cd32a374a98acb864478f4}} 
+void \mbox{\hyperlink{classBill_a335f475cf5cd32a374a98acb864478f4}{pay}} ()
+\begin{DoxyCompactList}\small\item\em Marks the bill as paid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBill_ad3f92f5ff3d0f6acae97317102433af5}{pay\+Bill}} ()
+\begin{DoxyCompactList}\small\item\em Marks the bill as paid. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBill_a9169e7018785bb2ba2c204d078bffc65}{restore\+From\+Memento}} (\mbox{\hyperlink{classBillMemento}{Bill\+Memento}} memento)
+\begin{DoxyCompactList}\small\item\em Restores the bill\textquotesingle{}s state from a \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classBill_af290ab42bbeb6c9d8cf86d3fb9a8f9d4}{to\+String}} ()
+\begin{DoxyCompactList}\small\item\em Gets a string representation of the bill. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBill_a654ae1604c5709b699c5607f309322c8}{operator$<$}} (const \mbox{\hyperlink{classBill}{Bill}} \&other) const
+\begin{DoxyCompactList}\small\item\em Compares two bills to determine their order for sorting. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classBill_a70038c963ba701877fb5d9f6601b4f7a}{tip\+Waiter}} ()
+\begin{DoxyCompactList}\small\item\em Calculates tip based on customer rating. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classBill}{Bill}} class represents a bill for a customer\textquotesingle{}s order in a restaurant. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBill_a5cdef51b316e6ab8712be47817d5f987}\label{classBill_a5cdef51b316e6ab8712be47817d5f987}} 
+\index{Bill@{Bill}!Bill@{Bill}}
+\index{Bill@{Bill}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{Bill()}{Bill()}}
+{\footnotesize\ttfamily Bill\+::\+Bill (\begin{DoxyParamCaption}\item[{string}]{order\+ID,  }\item[{string}]{customer\+ID,  }\item[{double}]{total\+Amount,  }\item[{int}]{table\+Num,  }\item[{int}]{rating,  }\item[{string}]{tab\+ID,  }\item[{bool}]{paid }\end{DoxyParamCaption})}
+
+
+
+Constructs a \mbox{\hyperlink{classBill}{Bill}} instance with the specified details. 
+
+Constructor for the \mbox{\hyperlink{classBill}{Bill}} class that takes order\+ID, customer\+ID, total\+Amount, table\+Num, rating, tab\+ID, and paid as parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+ID} & The order ID associated with the bill. \\
+\hline
+{\em customer\+ID} & The customer ID associated with the bill. \\
+\hline
+{\em total\+Amount} & The total amount of the bill. \\
+\hline
+{\em table\+Num} & The table number associated with the bill. \\
+\hline
+{\em rating} & The rating given by the customer. \\
+\hline
+{\em tab\+ID} & The tab ID associated with the bill. \\
+\hline
+{\em paid} & A boolean indicating whether the bill is paid.\\
+\hline
+{\em order\+ID} & String representing the order ID. \\
+\hline
+{\em customer\+ID} & String representing the customer ID. \\
+\hline
+{\em total\+Amount} & Double representing the total amount. \\
+\hline
+{\em table\+Num} & Integer representing the table number. \\
+\hline
+{\em rating} & Integer representing the rating. \\
+\hline
+{\em tab\+ID} & String representing the tab ID. \\
+\hline
+{\em paid} & Boolean representing whether the bill is paid or not. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBill_a641e5d2fde60490655b724de6cf48485}\label{classBill_a641e5d2fde60490655b724de6cf48485}} 
+\index{Bill@{Bill}!createBillMemento@{createBillMemento}}
+\index{createBillMemento@{createBillMemento}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{createBillMemento()}{createBillMemento()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} Bill\+::create\+Bill\+Memento (\begin{DoxyParamCaption}\item[{string}]{order\+ID,  }\item[{string}]{customer\+ID,  }\item[{double}]{total\+Amount,  }\item[{int}]{table\+Num,  }\item[{int}]{rating,  }\item[{string}]{tab\+ID,  }\item[{bool}]{paid }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object based on the bill\textquotesingle{}s current state. 
+
+This method creates a memento of the bill.
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+ID} & The order ID. \\
+\hline
+{\em customer\+ID} & The customer ID. \\
+\hline
+{\em total\+Amount} & The total amount. \\
+\hline
+{\em table\+Num} & The table number. \\
+\hline
+{\em rating} & The customer\textquotesingle{}s rating. \\
+\hline
+{\em tab\+ID} & The tab ID. \\
+\hline
+{\em paid} & The payment status. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object representing the bill\textquotesingle{}s state.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em order\+ID} & String representing the order ID. \\
+\hline
+{\em customer\+ID} & String representing the customer ID. \\
+\hline
+{\em total\+Amount} & Double representing the total amount. \\
+\hline
+{\em table\+Num} & Integer representing the table number. \\
+\hline
+{\em rating} & Integer representing the rating. \\
+\hline
+{\em tab\+ID} & String representing the tab ID. \\
+\hline
+{\em paid} & Boolean representing whether the bill is paid or not. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object representing the memento of the bill. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_a395deff869b17741cc4a817bfc02e4cc}\label{classBill_a395deff869b17741cc4a817bfc02e4cc}} 
+\index{Bill@{Bill}!generateOrderID@{generateOrderID}}
+\index{generateOrderID@{generateOrderID}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{generateOrderID()}{generateOrderID()}}
+{\footnotesize\ttfamily string Bill\+::generate\+Order\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Generates a unique order ID for the bill. 
+
+Generates a unique \mbox{\hyperlink{classOrder}{Order}} ID.
+
+\begin{DoxyReturn}{Returns}
+The generated order ID.
+
+The newly created \mbox{\hyperlink{classOrder}{Order}} ID. 
+\end{DoxyReturn}
+seed the random with the customer\+ID
+
+generates random digits
+
+here we generate a random capital letter
+
+put the string together
+
+return the newly created Order\+ID\mbox{\Hypertarget{classBill_a5b49d9170dd345fa07459bc40f285ec8}\label{classBill_a5b49d9170dd345fa07459bc40f285ec8}} 
+\index{Bill@{Bill}!generateTabID@{generateTabID}}
+\index{generateTabID@{generateTabID}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{generateTabID()}{generateTabID()}}
+{\footnotesize\ttfamily string Bill\+::generate\+Tab\+ID (\begin{DoxyParamCaption}\item[{string}]{customer\+ID }\end{DoxyParamCaption})}
+
+
+
+Generates a unique tab ID for the bill based on the customer ID. 
+
+Generates a unique \mbox{\hyperlink{classTab}{Tab}} ID.
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+ID} & The customer\textquotesingle{}s ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The generated tab ID.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em customer\+ID} & The customer\textquotesingle{}s ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The newly created \mbox{\hyperlink{classTab}{Tab}} ID. 
+\end{DoxyReturn}
+seed the random with the customer\+ID
+
+generates random digits
+
+here we generate a random capital letter
+
+put the string together
+
+return the newly created Tab\+ID\mbox{\Hypertarget{classBill_ac032b534c4909456195fe2e6cb12fda6}\label{classBill_ac032b534c4909456195fe2e6cb12fda6}} 
+\index{Bill@{Bill}!getCustomerID@{getCustomerID}}
+\index{getCustomerID@{getCustomerID}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{getCustomerID()}{getCustomerID()}}
+{\footnotesize\ttfamily string Bill\+::get\+Customer\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the customer ID associated with the bill. 
+
+\begin{DoxyReturn}{Returns}
+The customer ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_a016162ea9e6d29f605fe175385713dcd}\label{classBill_a016162ea9e6d29f605fe175385713dcd}} 
+\index{Bill@{Bill}!getOrderID@{getOrderID}}
+\index{getOrderID@{getOrderID}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{getOrderID()}{getOrderID()}}
+{\footnotesize\ttfamily string Bill\+::get\+Order\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the order ID associated with the bill. 
+
+\begin{DoxyReturn}{Returns}
+The order ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_aaa7882c509a32b6cbe0d8fb2592d083b}\label{classBill_aaa7882c509a32b6cbe0d8fb2592d083b}} 
+\index{Bill@{Bill}!getRating@{getRating}}
+\index{getRating@{getRating}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{getRating()}{getRating()}}
+{\footnotesize\ttfamily int Bill\+::get\+Rating (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the rating given by the customer. 
+
+\begin{DoxyReturn}{Returns}
+The rating. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_ad9b5536e3b34dc8660040c4b14cf4cce}\label{classBill_ad9b5536e3b34dc8660040c4b14cf4cce}} 
+\index{Bill@{Bill}!getTabID@{getTabID}}
+\index{getTabID@{getTabID}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{getTabID()}{getTabID()}}
+{\footnotesize\ttfamily string Bill\+::get\+Tab\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the tab ID associated with the bill. 
+
+\begin{DoxyReturn}{Returns}
+The tab ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_ab57003d9a4e6159508398136cc910820}\label{classBill_ab57003d9a4e6159508398136cc910820}} 
+\index{Bill@{Bill}!getTableNum@{getTableNum}}
+\index{getTableNum@{getTableNum}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{getTableNum()}{getTableNum()}}
+{\footnotesize\ttfamily int Bill\+::get\+Table\+Num (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the table number associated with the bill. 
+
+\begin{DoxyReturn}{Returns}
+The table number. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_a5707a493b398d9ce0cabc0ecdcd75e91}\label{classBill_a5707a493b398d9ce0cabc0ecdcd75e91}} 
+\index{Bill@{Bill}!getTotalAmount@{getTotalAmount}}
+\index{getTotalAmount@{getTotalAmount}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{getTotalAmount()}{getTotalAmount()}}
+{\footnotesize\ttfamily double Bill\+::get\+Total\+Amount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the total amount of the bill. 
+
+\begin{DoxyReturn}{Returns}
+The total amount.
+
+The total amount of the bill. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_a6c60fd311a37365aece6a733fdb26803}\label{classBill_a6c60fd311a37365aece6a733fdb26803}} 
+\index{Bill@{Bill}!isPaid@{isPaid}}
+\index{isPaid@{isPaid}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{isPaid()}{isPaid()}}
+{\footnotesize\ttfamily bool Bill\+::is\+Paid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if the bill has been paid. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the bill is paid, {\ttfamily false} if it\textquotesingle{}s unpaid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_a654ae1604c5709b699c5607f309322c8}\label{classBill_a654ae1604c5709b699c5607f309322c8}} 
+\index{Bill@{Bill}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Bill\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classBill}{Bill}} \&}]{other }\end{DoxyParamCaption}) const}
+
+
+
+Compares two bills to determine their order for sorting. 
+
+This operator allows the comparison of two \mbox{\hyperlink{classBill}{Bill}} objects based on their order IDs.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \mbox{\hyperlink{classBill}{Bill}} object to compare. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if this bill is less than the other, {\ttfamily false} otherwise.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The \mbox{\hyperlink{classBill}{Bill}} object to be compared with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the order ID of the current \mbox{\hyperlink{classBill}{Bill}} object is less than the order ID of the other \mbox{\hyperlink{classBill}{Bill}} object, false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_ad3f92f5ff3d0f6acae97317102433af5}\label{classBill_ad3f92f5ff3d0f6acae97317102433af5}} 
+\index{Bill@{Bill}!payBill@{payBill}}
+\index{payBill@{payBill}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{payBill()}{payBill()}}
+{\footnotesize\ttfamily void Bill\+::pay\+Bill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Marks the bill as paid. 
+
+check if the bill has been paid
+
+pay the bill\mbox{\Hypertarget{classBill_a9169e7018785bb2ba2c204d078bffc65}\label{classBill_a9169e7018785bb2ba2c204d078bffc65}} 
+\index{Bill@{Bill}!restoreFromMemento@{restoreFromMemento}}
+\index{restoreFromMemento@{restoreFromMemento}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{restoreFromMemento()}{restoreFromMemento()}}
+{\footnotesize\ttfamily void Bill\+::restore\+From\+Memento (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBillMemento}{Bill\+Memento}}}]{memento }\end{DoxyParamCaption})}
+
+
+
+Restores the bill\textquotesingle{}s state from a \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object. 
+
+This method restores the bill from a memento.
+
+
+\begin{DoxyParams}{Parameters}
+{\em memento} & The \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object to restore from.\\
+\hline
+{\em memento} & \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object representing the memento from which the bill is to be restored. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBill_a2ba96686a841701ef69519691f69108b}\label{classBill_a2ba96686a841701ef69519691f69108b}} 
+\index{Bill@{Bill}!setBillMemento@{setBillMemento}}
+\index{setBillMemento@{setBillMemento}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{setBillMemento()}{setBillMemento()}}
+{\footnotesize\ttfamily void Bill\+::set\+Bill\+Memento (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classBillMemento}{Bill\+Memento}}}]{memento }\end{DoxyParamCaption})}
+
+
+
+Sets the bill\textquotesingle{}s state based on a \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object. 
+
+This method sets the memento of the bill.
+
+
+\begin{DoxyParams}{Parameters}
+{\em memento} & The \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object to restore from.\\
+\hline
+{\em memento} & \mbox{\hyperlink{classBillMemento}{Bill\+Memento}} object representing the memento to be set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBill_a15a8695e302b3309abd43a2811ed2ed8}\label{classBill_a15a8695e302b3309abd43a2811ed2ed8}} 
+\index{Bill@{Bill}!splitBill@{splitBill}}
+\index{splitBill@{splitBill}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{splitBill()}{splitBill()}}
+{\footnotesize\ttfamily map$<$ string, \mbox{\hyperlink{classBill}{Bill}} $>$ Bill\+::split\+Bill (\begin{DoxyParamCaption}\item[{int}]{split\+Into\+NBills,  }\item[{\mbox{\hyperlink{classBill}{Bill}}}]{bill,  }\item[{int}]{order,  }\item[{std\+::string}]{customer\+IDs\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Splits the bill into a specified number of bills. 
+
+Splits a bill into multiple bills.
+
+
+\begin{DoxyParams}{Parameters}
+{\em split\+Into\+NBills} & The number of bills to split into. \\
+\hline
+{\em bill} & The bill to split. \\
+\hline
+{\em order} & The order to split. \\
+\hline
+{\em customer\+IDs} & The customer IDs associated with the bill. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of the split bills.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em split\+Into\+NBills} & The number of bills to split into. \\
+\hline
+{\em bill} & The original bill to split. \\
+\hline
+{\em order} & The order number. \\
+\hline
+{\em customer\+IDs} & The array of customer IDs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map of split bills. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_a70038c963ba701877fb5d9f6601b4f7a}\label{classBill_a70038c963ba701877fb5d9f6601b4f7a}} 
+\index{Bill@{Bill}!tipWaiter@{tipWaiter}}
+\index{tipWaiter@{tipWaiter}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{tipWaiter()}{tipWaiter()}}
+{\footnotesize\ttfamily double Bill\+::tip\+Waiter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculates tip based on customer rating. 
+
+\begin{DoxyReturn}{Returns}
+The tip amount 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBill_af290ab42bbeb6c9d8cf86d3fb9a8f9d4}\label{classBill_af290ab42bbeb6c9d8cf86d3fb9a8f9d4}} 
+\index{Bill@{Bill}!toString@{toString}}
+\index{toString@{toString}!Bill@{Bill}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily string Bill\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a string representation of the bill. 
+
+This method returns a string representation of the bill.
+
+\begin{DoxyReturn}{Returns}
+The string representation.
+
+String representing the bill. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Bill_8h}{Bill.\+h}}\item 
+\mbox{\hyperlink{Bill_8cpp}{Bill.\+cpp}}\end{DoxyCompactItemize}
